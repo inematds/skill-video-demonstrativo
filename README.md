@@ -1,5 +1,9 @@
 # skill-video-demonstrativo
 
+> 🌐 **Curso navegável (GitHub Pages):** https://inematds.github.io/skill-video-demonstrativo/
+> — landing + 3 trilhas / 10 módulos no formato INEMA.CLUB, com a Skill em `.zip` pra baixar.
+> Também listado no portal [inema.club](https://inema.club).
+
 Projeto de desenvolvimento da skill **`video-demonstrativo`** — gera vídeos de
 demonstração (walkthrough) de uma aplicação web a partir do link do app: navega o app de
 verdade, captura as telas reais passo a passo e monta um vídeo narrado com moldura de
