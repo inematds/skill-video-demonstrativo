@@ -34,14 +34,26 @@ skill-video-demonstrativo/
 > outro projeto, repositório ou skill pra funcionar.
 
 ## Como instalar a skill
-Copie a pasta `video-demonstrativo/` para onde o Claude Code lê skills:
+Três opções. Em todas, reinicie a sessão depois — a skill dispara com pedidos como
+"vídeo de demonstração", "demo do app", "walkthrough", "tutorial em vídeo da
+ferramenta", ou ao dar um link/localhost.
+
+**A) A partir do repositório (clone):**
 ```bash
-cp -r video-demonstrativo ~/.claude/skills/        # global (qualquer projeto)
-# ou
-cp -r video-demonstrativo <repo>/.claude/skills/   # só num projeto
+git clone git@github.com:inematds/skill-video-demonstrativo.git
+cp -r skill-video-demonstrativo/video-demonstrativo ~/.claude/skills/   # global
+# ou cp -r .../video-demonstrativo <repo>/.claude/skills/               # só num projeto
 ```
-Reinicie a sessão. A skill dispara com pedidos como "vídeo de demonstração", "demo do
-app", "walkthrough", "tutorial em vídeo da ferramenta", ou ao dar um link/localhost.
+
+**B) A partir do pacote `.zip`** (versionado na raiz do repo):
+```bash
+unzip video-demonstrativo.zip -d ~/.claude/skills/    # extrai a pasta video-demonstrativo/
+```
+
+**C) Symlink** (pra desenvolver — edição no repo reflete na hora):
+```bash
+ln -s "$(pwd)/video-demonstrativo" ~/.claude/skills/video-demonstrativo
+```
 
 ## Fluxo de uso (resumo)
 1. Num projeto novo: `npx hyperframes init <nome> --example blank --non-interactive`.
