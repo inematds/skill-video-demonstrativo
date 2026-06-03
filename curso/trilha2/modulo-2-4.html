@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2.4 — Páginas longas, inputs React & multi-estado | Vídeo Demonstrativo · INEMA.CLUB</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-blue-300 { color: #1d4ed8; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,0.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+    html:not(.dark) .border-blue-500\/20 { border-color: rgba(37,99,235,0.18); }
+    html:not(.dark) .hover\:bg-blue-500\/30:hover { background-color: rgba(37,99,235,0.18); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .group:hover .group-hover\:text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+    html:not(.dark) .text-emerald-300 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) .text-red-400 { color: #dc2626; }
+    html:not(.dark) .bg-red-500\/10 { background-color: rgba(220,38,38,0.08); }
+    html:not(.dark) .border-red-500\/30 { border-color: rgba(220,38,38,0.25); }
+    html:not(.dark) .text-cyan-400 { color: #0891b2; }
+    html:not(.dark) .text-cyan-300 { color: #0e7490; }
+    html:not(.dark) .text-orange-400 { color: #c2410c; }
+    html:not(.dark) .text-yellow-300 { color: #a16207; }
+    html:not(.dark) .text-amber-400 { color: #b45309; }
+    html:not(.dark) .bg-amber-500\/10 { background-color: rgba(180,83,9,0.08); }
+    html:not(.dark) .border-amber-500\/30 { border-color: rgba(180,83,9,0.25); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+    @keyframes m24-flow { 0% { stroke-dashoffset: 140; } 100% { stroke-dashoffset: 0; } }
+    @keyframes m24-pulse { 0%,100% { opacity:.3 } 50% { opacity:.9 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .m24-anim-flow { animation: m24-flow 3s linear infinite; }
+      .m24-anim-pulse { animation: m24-pulse 2.4s ease-in-out infinite; }
+      .m24-anim-pulse:nth-child(2) { animation-delay: .6s; }
+      .m24-anim-pulse:nth-child(3) { animation-delay: 1.2s; }
+    }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🖱️</span><span class="font-bold text-lg hidden sm:inline">Demonstrativo</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Captura</span></a>
+          <a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Render</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <nav class="flex items-center space-x-2 text-sm text-neutral-500">
+      <a href="../../index.html" class="hover:text-blue-400 transition-colors">Início</a>
+      <span>/</span>
+      <a href="index.html" class="hover:text-blue-400 transition-colors">Trilha 2 — Captura</a>
+      <span>/</span>
+      <span class="text-blue-400 font-medium">Módulo 2.4</span>
+    </nav>
+  </div>
+
+  <!-- HEADER -->
+  <header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-10 border-b border-dark-600 mt-4">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.4</span>
+          <h1 class="text-3xl sm:text-4xl font-bold mb-4">⏳ Páginas longas, inputs React &amp; multi-estado</h1>
+          <p class="text-lg text-neutral-400 max-w-xl">Os casos difíceis das demos reais: rolar páginas longas, lidar com inputs controlados por React/Vue, esperar condição em vez de tempo, e capturar fluxos assíncronos. Honestamente: o que já funciona vs o que é roadmap.</p>
+          <div class="grid grid-cols-4 gap-3 mt-6">
+            <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">7</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+            <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+            <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Avanç.</div><div class="text-xs text-neutral-400">Nível</div></div>
+            <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Edge</div><div class="text-xs text-neutral-400">Tipo</div></div>
+          </div>
+        </div>
+
+        <!-- SVG FUTURISTA — fluxo multi-estado com poll -->
+        <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4">
+          <svg viewBox="0 0 400 240" class="w-full h-auto" role="img" aria-label="Diagrama de um fluxo assíncrono multi-estado: analisar, esperar aprovação, dublar e concluir, com poll de conclusão entre etapas" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="m24-bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0e1622"/><stop offset="100%" style="stop-color:#0e1b26"/></linearGradient>
+              <filter id="m24-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <rect width="400" height="240" fill="url(#m24-bg)" rx="12"/>
+            <g stroke="#1e3a5f" stroke-width="0.5" opacity="0.5">
+              <line x1="0" y1="120" x2="400" y2="120"/><line x1="133" y1="0" x2="133" y2="240"/><line x1="266" y1="0" x2="266" y2="240"/>
+            </g>
+            <text x="200" y="26" text-anchor="middle" font-family="Inter,sans-serif" font-size="12" font-weight="800" fill="#60a5fa">fluxo assíncrono multi-estado</text>
+            <text x="200" y="42" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#38bdf8" letter-spacing="1">POLL DE CONCLUSÃO ENTRE ETAPAS</text>
+
+            <!-- estados -->
+            <rect x="22" y="70" width="80" height="40" rx="8" fill="#0e1622" stroke="#60a5fa" stroke-width="1.4"/>
+            <text x="62" y="88" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#60a5fa">analisar</text>
+            <text x="62" y="101" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#7db8f7">→ status</text>
+
+            <rect x="118" y="70" width="86" height="40" rx="8" fill="#0a1a2e" stroke="#fbbf24" stroke-width="1.4" filter="url(#m24-glow)"/>
+            <text x="161" y="86" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" font-weight="700" fill="#fbbf24">waiting_</text>
+            <text x="161" y="98" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" font-weight="700" fill="#fbbf24">approval</text>
+
+            <rect x="220" y="70" width="80" height="40" rx="8" fill="#0e1622" stroke="#60a5fa" stroke-width="1.4"/>
+            <text x="260" y="88" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#60a5fa">dublar</text>
+            <text x="260" y="101" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#7db8f7">processando</text>
+
+            <rect x="316" y="70" width="62" height="40" rx="8" fill="#0a1a2e" stroke="#38bdf8" stroke-width="1.4" filter="url(#m24-glow)"/>
+            <text x="347" y="88" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#38bdf8">concluído</text>
+            <text x="347" y="101" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#7db8f7">✓</text>
+
+            <!-- setas -->
+            <path d="M102 90 L116 90" stroke="#38bdf8" stroke-width="2" stroke-dasharray="5,3" class="m24-anim-flow" fill="none"/>
+            <polygon points="116,86 124,90 116,94" fill="#38bdf8"/>
+            <path d="M204 90 L218 90" stroke="#38bdf8" stroke-width="2" stroke-dasharray="5,3" class="m24-anim-flow" fill="none"/>
+            <polygon points="218,86 226,90 218,94" fill="#38bdf8"/>
+            <path d="M300 90 L314 90" stroke="#38bdf8" stroke-width="2" stroke-dasharray="5,3" class="m24-anim-flow" fill="none"/>
+            <polygon points="314,86 322,90 314,94" fill="#38bdf8"/>
+
+            <!-- poll abaixo -->
+            <rect x="60" y="140" width="280" height="36" rx="8" fill="#0a1422" stroke="#38bdf8" stroke-width="1.2"/>
+            <text x="200" y="156" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#38bdf8">waitFor (roadmap) — esperar CONDIÇÃO, não tempo fixo</text>
+            <text x="200" y="170" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#7db8f7">poll por texto / seletor / mudança de status · sub-passos nomeados</text>
+            <circle cx="78" cy="158" r="3" fill="#38bdf8" class="m24-anim-pulse"/>
+            <circle cx="200" cy="158" r="3" fill="#38bdf8" class="m24-anim-pulse"/>
+            <circle cx="322" cy="158" r="3" fill="#38bdf8" class="m24-anim-pulse"/>
+
+            <text x="200" y="206" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#9ad6ff">validado no inemaVOX: 14 passos · 2:08</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+
+    <!-- BOX HONESTIDADE -->
+    <section class="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-5 flex gap-3">
+      <span class="text-amber-400 text-2xl flex-shrink-0">🗺️</span>
+      <div>
+        <div class="text-amber-400 font-semibold text-sm mb-1">Leia antes: o que é hoje vs o que é roadmap</div>
+        <p class="text-neutral-300 text-sm">Este módulo cobre os casos difíceis. Alguns já funcionam no <code class="text-blue-300">capture.mjs</code>; outros ainda exigem dirigir o agent-browser na mão e estão no backlog. Cada tópico marca claramente o status.</p>
+      </div>
+    </section>
+
+    <!-- TÓPICO 1 -->
+    <section id="topico-1" class="bg-dark-800 rounded-2xl border border-blue-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">1</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">📜 Scroll antes do screenshot <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">roadmap</span></h2>
+            <p class="text-neutral-400 mt-2">Páginas longas exigem <code class="text-blue-400">scrollIntoView</code> na seção antes de capturar. Hoje, feito na mão.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div class="rounded-xl bg-gradient-to-br from-blue-900/30 to-dark-700/50 border border-blue-500/30 p-5">
+          <div class="text-xs font-semibold text-blue-400 uppercase tracking-widest mb-2">O problema</div>
+          <p class="text-neutral-200 font-medium">O <code class="text-blue-300">capture.mjs</code> não rola a página. Nas telas do inemaVOX, foi preciso dirigir o agent-browser na mão, fazendo <code class="text-blue-300">scrollIntoView</code> por seção antes de cada screenshot.</p>
+        </div>
+
+        <div class="rounded-xl border border-blue-500/30 bg-blue-500/10 p-4">
+          <div class="text-blue-400 font-semibold text-sm mb-3">📊 A solução planejada (backlog nº 1)</div>
+          <div class="grid sm:grid-cols-2 gap-4 text-sm">
+            <div class="bg-dark-700/60 rounded-lg p-4"><div class="text-blue-400 font-bold mb-1">Ação scroll / scrollTo</div><div class="text-neutral-300">Adicionar ao capture.mjs uma ação de scroll por passo.</div></div>
+            <div class="bg-dark-700/60 rounded-lg p-4"><div class="text-blue-400 font-bold mb-1">scrollIntoView({block})</div><div class="text-neutral-300">Rolar até o alvo antes do screenshot. As bboxes (viewport-relative) batem com o shot daquele scroll.</div></div>
+          </div>
+        </div>
+
+        <div class="rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 flex gap-3">
+          <span class="text-blue-400 text-xl flex-shrink-0">💡</span>
+          <div>
+            <div class="text-blue-400 font-semibold text-sm mb-1">É o item que mais economiza trabalho manual</div>
+            <p class="text-neutral-400 text-sm">Por isso é a prioridade nº 1 do backlog. Enquanto não chega, rolar na mão antes de medir/capturar funciona — só dá mais trabalho.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 2 -->
+    <section id="topico-2" class="bg-dark-800 rounded-2xl border border-blue-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">2</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">⚛️ Inputs controlados por React/Vue <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">parcial</span></h2>
+            <p class="text-neutral-400 mt-2">Setar <code class="text-blue-400">.value</code> mostra o texto mas não dispara o estado — botões ficam disabled.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4">
+            <div class="text-red-400 font-semibold text-sm mb-3">✗ Não faça</div>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> <code class="text-red-300 bg-dark-700 px-1 rounded text-xs">el.value = "768"</code> via eval puro</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> O React não percebe → botão segue disabled</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> O screenshot sai com o controle inativo</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
+            <div class="text-emerald-400 font-semibold text-sm mb-3">✓ Faça</div>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">setValue</code> dispara <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">input</code>+<code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">change</code></li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Ideal (roadmap): <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">fill</code> nativo do Playwright</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Conferir que o botão habilitou no shot</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">setValue dispara os eventos (trecho do capture.mjs)</div>
+          <div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
+            <div><span class="text-neutral-300">el.value = </span><span class="text-yellow-300">"768"</span><span class="text-neutral-300">;</span></div>
+            <div><span class="text-neutral-300">el.dispatchEvent(</span><span class="text-blue-400">new</span> <span class="text-cyan-400">Event</span><span class="text-neutral-300">(</span><span class="text-yellow-300">'input'</span><span class="text-neutral-300">,{bubbles:</span><span class="text-orange-400">true</span><span class="text-neutral-300">}));</span></div>
+            <div><span class="text-neutral-300">el.dispatchEvent(</span><span class="text-blue-400">new</span> <span class="text-cyan-400">Event</span><span class="text-neutral-300">(</span><span class="text-yellow-300">'change'</span><span class="text-neutral-300">,{bubbles:</span><span class="text-orange-400">true</span><span class="text-neutral-300">}));</span></div>
+          </div>
+        </div>
+
+        <div class="rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 flex gap-3">
+          <span class="text-blue-400 text-xl flex-shrink-0">💡</span>
+          <div>
+            <div class="text-blue-400 font-semibold text-sm mb-1">Backlog nº 2: usar o fill nativo</div>
+            <p class="text-neutral-400 text-sm">O ideal é o <code class="text-blue-300">capture.mjs</code> chamar <code class="text-blue-300">agent-browser fill @ref</code> (fill nativo do Playwright) em vez de setar <code class="text-blue-300">.value</code> — simula digitação real e dispara o estado de forma confiável.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 3 -->
+    <section id="topico-3" class="bg-dark-800 rounded-2xl border border-blue-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">3</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">⏱️ Esperar CONDIÇÃO, não tempo fixo <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">roadmap</span></h2>
+            <p class="text-neutral-400 mt-2">Hoje o capture usa <code class="text-blue-400">wait</code> (ms). O ideal é um <code class="text-blue-400">waitFor</code> de texto/seletor.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div class="overflow-x-auto rounded-xl border border-dark-600">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-dark-700/60 border-b border-dark-600">
+                <th class="text-left p-3 text-neutral-400 font-semibold">Abordagem</th>
+                <th class="text-center p-3 text-blue-400 font-semibold">wait (ms) — hoje</th>
+                <th class="text-center p-3 text-neutral-400 font-semibold">waitFor — roadmap</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-dark-600">
+              <tr class="hover:bg-dark-700/30"><td class="p-3 text-neutral-300">Critério</td><td class="p-3 text-center text-amber-400">tempo fixo</td><td class="p-3 text-center text-emerald-400">condição real</td></tr>
+              <tr class="hover:bg-dark-700/30"><td class="p-3 text-neutral-300">Geração lenta</td><td class="p-3 text-center text-amber-400">chuta a folga</td><td class="p-3 text-center text-emerald-400">espera o &lt;img&gt;</td></tr>
+              <tr class="hover:bg-dark-700/30"><td class="p-3 text-neutral-300">Risco</td><td class="p-3 text-center text-red-400">cedo demais / lento</td><td class="p-3 text-center text-emerald-400">sai na hora certa</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 flex gap-3">
+          <span class="text-blue-400 text-xl flex-shrink-0">💡</span>
+          <div>
+            <div class="text-blue-400 font-semibold text-sm mb-1">Geração demorada: poll por um &lt;img&gt; real</div>
+            <p class="text-neutral-400 text-sm">O flux2-klein levou ~2,5 min no POC. Antes do screenshot do resultado, faça poll por um <code class="text-blue-300">&lt;img&gt;</code> de fato carregado no painel — não confie só no relógio. Trocar <code class="text-blue-300">wait</code> por <code class="text-blue-300">waitFor</code> é o backlog nº 3.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 4 -->
+    <section id="topico-4" class="bg-dark-800 rounded-2xl border border-blue-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">4</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">🔄 Fluxos assíncronos multi-estado <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">feito na mão</span></h2>
+            <p class="text-neutral-400 mt-2">Analisar → aprovar → dublar → concluído: capturados como sub-passos nomeados, com poll de conclusão.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-4">O pipeline do inemaVOX</div>
+          <div class="relative pl-8 space-y-0">
+            <div class="absolute left-3 top-2 bottom-2 w-0.5 bg-blue-500/30"></div>
+            <div class="relative pb-5">
+              <div class="absolute -left-5 w-4 h-4 rounded-full bg-blue-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">1</span></div>
+              <div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600"><div class="font-semibold text-blue-400 text-sm">Analisar</div><p class="text-neutral-400 text-sm mt-1">Dispara o processamento; o status muda. Captura o estado "analisando".</p></div>
+            </div>
+            <div class="relative pb-5">
+              <div class="absolute -left-5 w-4 h-4 rounded-full bg-amber-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">2</span></div>
+              <div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600"><div class="font-semibold text-amber-400 text-sm">Aprovar (waiting_approval)</div><p class="text-neutral-400 text-sm mt-1">O fluxo para até a aprovação. Captura o estado de espera e a ação de aprovar.</p></div>
+            </div>
+            <div class="relative pb-5">
+              <div class="absolute -left-5 w-4 h-4 rounded-full bg-blue-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">3</span></div>
+              <div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600"><div class="font-semibold text-blue-400 text-sm">Dublar</div><p class="text-neutral-400 text-sm mt-1">Processo longo; poll de conclusão entre as capturas.</p></div>
+            </div>
+            <div class="relative">
+              <div class="absolute -left-5 w-4 h-4 rounded-full bg-cyan-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">4</span></div>
+              <div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600"><div class="font-semibold text-cyan-400 text-sm">Concluído</div><p class="text-neutral-400 text-sm mt-1">Resultado final, com zoom. Encerra o walkthrough antes da CTA.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4 flex gap-3">
+          <span class="text-red-400 text-xl flex-shrink-0">⚠️</span>
+          <div>
+            <div class="text-red-400 font-semibold text-sm mb-1">O poll foi script à mão</div>
+            <p class="text-neutral-400 text-sm">No POC, o poll de conclusão (<code class="text-red-300">poll-job*.sh</code>) foi feito fora do capture.mjs. Embuti-lo como sub-passos nomeados com poll é o backlog nº 4.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 5 -->
+    <section id="topico-5" class="bg-dark-800 rounded-2xl border border-blue-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">5</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">⏸️ Estados como waiting_approval</h2>
+            <p class="text-neutral-400 mt-2">Estados disparados por evento (não por tempo) precisam de um poll de status — não de um <code class="text-blue-400">wait</code> fixo.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div class="rounded-xl bg-gradient-to-br from-blue-900/30 to-dark-700/50 border border-blue-500/30 p-5">
+          <div class="text-xs font-semibold text-blue-400 uppercase tracking-widest mb-2">Por que tempo fixo não resolve</div>
+          <p class="text-neutral-200 font-medium">Um <code class="text-blue-300">waiting_approval</code> muda quando alguém aprova — não quando o relógio bate. Esperar X ms pode capturar antes da hora (ou tarde demais).</p>
+        </div>
+
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Poll de status (conceito)</div>
+          <div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
+            <div class="text-neutral-500 text-xs mb-2">// repetir até o status sair de "waiting_approval"</div>
+            <div><span class="text-blue-400">while</span> <span class="text-neutral-300">(status === </span><span class="text-yellow-300">"waiting_approval"</span><span class="text-neutral-300">) {</span></div>
+            <div class="ml-4"><span class="text-neutral-300">status = </span><span class="text-cyan-400">readStatus</span><span class="text-neutral-300">();  </span><span class="text-neutral-500">// eval no DOM / API</span></div>
+            <div class="ml-4"><span class="text-cyan-400">sleep</span><span class="text-neutral-300">(</span><span class="text-orange-400">2000</span><span class="text-neutral-300">);</span></div>
+            <div><span class="text-neutral-300">}</span> <span class="text-neutral-500">// → então captura o próximo estado</span></div>
+          </div>
+        </div>
+
+        <div class="rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 flex gap-3">
+          <span class="text-blue-400 text-xl flex-shrink-0">💡</span>
+          <div>
+            <div class="text-blue-400 font-semibold text-sm mb-1">É o que liga este tópico ao waitFor</div>
+            <p class="text-neutral-400 text-sm">O <code class="text-blue-300">waiting_approval</code> é o caso de uso que justifica o <code class="text-blue-300">waitFor</code> do tópico 3: esperar uma condição (status mudou) em vez de um tempo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 6 -->
+    <section id="topico-6" class="bg-dark-800 rounded-2xl border border-blue-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">6</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">⚠️ Armadilhas de captura</h2>
+            <p class="text-neutral-400 mt-2">Os erros que mais custam tempo — aplique antes de renderizar. Detalhe em <code class="text-blue-400">gotchas.md</code>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4">
+            <div class="text-red-400 font-semibold text-sm mb-3">✗ Armadilhas de captura</div>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Viewport inconsistente → cursor erra o alvo</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Refs @eN deslocam após mudança de DOM</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> <code class="text-red-300 bg-dark-700 px-1 rounded text-xs">eval --json</code> aninhado: data URL em <code class="text-red-300 bg-dark-700 px-1 rounded text-xs">data.result</code></li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Screenshot estourando os limites do canvas</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
+            <div class="text-emerald-400 font-semibold text-sm mb-3">✓ Correções</div>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Mesmo viewport para bbox e shot; recapturar tudo</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> CSS selectors / {tag,text} + re-snapshot</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Ler <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">data.result</code>; decodificar base64 se salvar</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Viewport 1280×800 → print x320..1600, y148..948</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 flex gap-3">
+          <span class="text-blue-400 text-xl flex-shrink-0">💡</span>
+          <div>
+            <div class="text-blue-400 font-semibold text-sm mb-1">Salvar o resultado gerado</div>
+            <p class="text-neutral-400 text-sm">Se o app gera um arquivo (ex.: imagem), pegue o <code class="text-blue-300">src</code> (data: URL) via eval — que vem em <code class="text-blue-300">data.result</code> — e decodifique base64 para PNG, ou clique no botão de download.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 7 -->
+    <section id="topico-7" class="bg-dark-800 rounded-2xl border border-blue-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">7</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">🗺️ O que já funciona vs o que é roadmap</h2>
+            <p class="text-neutral-400 mt-2">A fronteira honesta da skill: o que o capture.mjs faz hoje e o que ainda exige a mão.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
+            <div class="text-emerald-400 font-semibold text-sm mb-3">✓ Funciona hoje (v1)</div>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> actions.json: fill, click, clickText, setValue, wait</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Bboxes via getBoundingClientRect → steps.json</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> 1 shot por estado + moldura + cursor + zoom + CTA</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Páginas longas e multi-estado, dirigindo na mão</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border border-amber-500/30 bg-amber-500/10 p-4">
+            <div class="text-amber-400 font-semibold text-sm mb-3">⏳ Roadmap / backlog</div>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">1.</span> Scroll/scrollIntoView no capture.mjs</li>
+              <li class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">2.</span> fill nativo do Playwright para inputs React</li>
+              <li class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">3.</span> waitFor (condição) em vez de wait fixo</li>
+              <li class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">4.</span> Poll multi-estado embutido · 5. 9:16 · 6. v3 gravação</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4 flex gap-3">
+          <span class="text-red-400 text-xl flex-shrink-0">⚠️</span>
+          <div>
+            <div class="text-red-400 font-semibold text-sm mb-1">Limites conhecidos (seja honesto com o usuário)</div>
+            <p class="text-neutral-400 text-sm">Estado dinâmico vira print estático (movimento real seria v3, gravar a tela). App com login precisa de credenciais de teste. O formato natural é 16:9 — 9:16 exigiria reenquadre.</p>
+          </div>
+        </div>
+
+        <!-- RESUMO FINAL -->
+        <div class="rounded-xl bg-gradient-to-br from-blue-900/30 to-dark-700/50 border border-blue-500/30 p-5">
+          <h3 class="text-lg font-bold mb-3 flex items-center gap-2">🎯 Resumo do módulo</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> Páginas longas: scrollIntoView na mão hoje (scroll = backlog nº 1)</li>
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> Inputs React: use setValue (dispara input/change); fill nativo é nº 2</li>
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> Esperar condição (waitFor) &gt; tempo fixo; poll por &lt;img&gt; real (nº 3)</li>
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> Multi-estado (analisar→aprovar→dublar→concluído) com poll (nº 4)</li>
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> Aplique os gotchas antes de renderizar; marque sempre o que é roadmap</li>
+          </ul>
+        </div>
+
+        <!-- fim da trilha -->
+        <div class="bg-dark-700/50 rounded-xl border border-blue-500/20 p-5">
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Continua na Trilha 3</div>
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center flex-shrink-0 text-purple-400 font-bold">T3</div>
+            <div>
+              <div class="font-semibold text-neutral-200">🎬 Composição &amp; Render</div>
+              <div class="text-sm text-neutral-400 mt-1">Com o steps.json em mãos, a T3 monta o vídeo: moldura, cursor, zoom, narração Kokoro e o render HyperFrames até o MP4.</div>
+            </div>
+          </div>
+          <a href="../trilha3/index.html" class="mt-4 flex items-center justify-start gap-2 text-purple-400 hover:text-purple-300 text-sm font-medium transition-colors">Ir para a Trilha 3 →</a>
+        </div>
+      </div>
+
+      <!-- CTAs -->
+      <div class="p-6 pt-0 flex flex-col sm:flex-row gap-4">
+        <a href="modulo-2-3.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo 2.3</a>
+        <a href="../trilha3/index.html" class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors">Trilha 3: Composição &amp; Render →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-4">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p class="mb-1">Conteúdo do <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 font-medium">INEMA.CLUB</a></p>
+      <p>Vídeo Demonstrativo — Trilha 2: Captura do app real · Módulo 2.4 · 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const di = document.getElementById('theme-toggle-dark-icon');
+    const li = document.getElementById('theme-toggle-light-icon');
+    const root = document.documentElement;
+    if (localStorage.getItem('theme') === 'light') { di.classList.remove('hidden'); root.classList.remove('dark'); } else { li.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      di.classList.toggle('hidden'); li.classList.toggle('hidden'); root.classList.toggle('dark');
+      localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

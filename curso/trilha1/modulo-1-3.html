@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1.3 — A stack sem API key | Vídeo Demonstrativo · INEMA.CLUB</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-emerald-300 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) .border-emerald-500\/20 { border-color: rgba(5,150,105,0.18); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .text-yellow-300 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+    html:not(.dark) .text-red-400 { color: #dc2626; }
+    html:not(.dark) .bg-red-500\/10 { background-color: rgba(220,38,38,0.08); }
+    html:not(.dark) .border-red-500\/30 { border-color: rgba(220,38,38,0.25); }
+    html:not(.dark) .text-blue-300 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+    html:not(.dark) .text-cyan-400 { color: #0891b2; }
+    html:not(.dark) .text-cyan-300 { color: #0891b2; }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+    @keyframes m13-flow { 0% { stroke-dashoffset: 120; } 100% { stroke-dashoffset: 0; } }
+    @keyframes m13-pulse { 0%,100% { opacity:.4 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .m13-anim-flow { animation: m13-flow 2.5s linear infinite; }
+      .m13-anim-pulse { animation: m13-pulse 2.8s ease-in-out infinite; }
+      .m13-anim-pulse:nth-child(2) { animation-delay: .35s; }
+      .m13-anim-pulse:nth-child(3) { animation-delay: .7s; }
+    }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🖱️</span><span class="font-bold text-lg hidden sm:inline">Demonstrativo</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+          <a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Captura</span></a>
+          <a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Render</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <nav class="flex items-center space-x-2 text-sm text-neutral-500">
+      <a href="../../index.html" class="hover:text-emerald-400 transition-colors">Início</a>
+      <span>/</span>
+      <a href="index.html" class="hover:text-emerald-400 transition-colors">Trilha 1 — Fundamentos</a>
+      <span>/</span>
+      <span class="text-emerald-400 font-medium">Módulo 1.3</span>
+    </nav>
+  </div>
+
+  <!-- HEADER -->
+  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-10 border-b border-dark-600 mt-4">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.3</span>
+          <h1 class="text-2xl sm:text-3xl font-bold mb-4">🧰 A stack sem API key</h1>
+          <p class="text-lg text-neutral-400 max-w-xl">Três peças locais executam o princípio: <strong>agent-browser</strong> (Playwright) captura, <strong>HyperFrames</strong> renderiza HTML→MP4, e <strong>Kokoro</strong> narra com TTS local. Nada disso depende de chave de API — tudo roda na sua máquina. Aqui você também aprende a instalar e disparar a skill.</p>
+          <div class="grid grid-cols-4 gap-3 mt-6">
+            <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">7</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+            <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">~30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+            <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nível</div></div>
+            <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Prático</div><div class="text-xs text-neutral-400">Tipo</div></div>
+          </div>
+        </div>
+
+        <!-- SVG FUTURISTA -->
+        <div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4">
+          <svg viewBox="0 0 400 240" class="w-full h-auto" role="img" aria-label="A stack local de três peças: agent-browser com Playwright captura, HyperFrames converte HTML em MP4, e Kokoro gera a narração — tudo roda na máquina sem chave de API" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="m13-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0e2018"/><stop offset="100%" style="stop-color:#0e1b26"/></linearGradient>
+              <filter id="m13-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <rect width="400" height="240" fill="url(#m13-bg-grad)" rx="12"/>
+            <g stroke="#1a3b2a" stroke-width="0.5" opacity="0.5">
+              <line x1="0" y1="80" x2="400" y2="80"/><line x1="0" y1="160" x2="400" y2="160"/>
+              <line x1="133" y1="0" x2="133" y2="240"/><line x1="266" y1="0" x2="266" y2="240"/>
+            </g>
+            <text x="200" y="22" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="800" fill="#34d399">STACK LOCAL · SEM API KEY</text>
+            <!-- peça 1 -->
+            <rect x="24" y="50" width="86" height="78" rx="8" fill="#0b1a13" stroke="#34d399" stroke-width="1.5" filter="url(#m13-glow)"/>
+            <text x="67" y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="18" fill="#34d399">🌐</text>
+            <text x="67" y="94" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" fill="#34d399">agent-browser</text>
+            <text x="67" y="106" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#6ee7b7">Playwright</text>
+            <text x="67" y="120" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#bfe6ff">captura</text>
+            <!-- peça 2 -->
+            <rect x="157" y="50" width="86" height="78" rx="8" fill="#0b1722" stroke="#38bdf8" stroke-width="1.5" filter="url(#m13-glow)"/>
+            <text x="200" y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="18" fill="#38bdf8">🎞️</text>
+            <text x="200" y="94" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" fill="#38bdf8">HyperFrames</text>
+            <text x="200" y="106" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#bfe6ff">HTML → MP4</text>
+            <text x="200" y="120" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#bfe6ff">render</text>
+            <!-- peça 3 -->
+            <rect x="290" y="50" width="86" height="78" rx="8" fill="#0b1a13" stroke="#34d399" stroke-width="1.5" filter="url(#m13-glow)"/>
+            <text x="333" y="74" text-anchor="middle" font-family="Inter,sans-serif" font-size="18" fill="#34d399">🗣️</text>
+            <text x="333" y="94" text-anchor="middle" font-family="Inter,sans-serif" font-size="8.5" font-weight="700" fill="#34d399">Kokoro</text>
+            <text x="333" y="106" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#6ee7b7">pf_dora</text>
+            <text x="333" y="120" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#bfe6ff">narração</text>
+            <!-- conectores -->
+            <path d="M110 89 L155 89" stroke="#34d399" stroke-width="1.5" stroke-dasharray="4,3" class="m13-anim-flow"/>
+            <polygon points="155,86 161,89 155,92" fill="#34d399"/>
+            <path d="M243 89 L288 89" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="4,3" class="m13-anim-flow"/>
+            <polygon points="288,86 294,89 288,92" fill="#38bdf8"/>
+            <!-- máquina local -->
+            <rect x="40" y="150" width="320" height="30" rx="6" fill="#091a12" stroke="#34d399" stroke-width="1"/>
+            <text x="200" y="169" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#34d399">💻 tudo roda na máquina · custo zero · privado</text>
+            <!-- selo sem nuvem -->
+            <rect x="120" y="194" width="160" height="30" rx="15" fill="#0e2018" stroke="#34d399" stroke-width="1.2" class="m13-anim-pulse"/>
+            <text x="200" y="213" text-anchor="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="700" fill="#34d399">🔒 zero chaves de API</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+
+    <!-- TÓPICO 1 -->
+    <section id="topico-1" class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">1</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">🌐 agent-browser (Playwright)</h2>
+            <p class="text-neutral-400 mt-2">A primeira peça é a captura. O agent-browser dirige um navegador via Playwright: abre a URL num viewport fixo, navega o app, executa ações e tira os screenshots reais com suas bounding boxes.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div class="rounded-xl bg-gradient-to-br from-emerald-900/30 to-dark-700/50 border border-emerald-500/30 p-5">
+          <div class="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-2">Conceito Principal</div>
+          <p class="text-neutral-200 font-medium">É o agent-browser que produz a matéria-prima do vídeo: <code class="text-emerald-300">assets/shots/*.png</code> (os estados) e o <code class="text-emerald-300">steps.json</code> (caixas + captions + narração). Sem essa etapa, não há o que animar.</p>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Dirigindo o agent-browser na mão</div>
+          <div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
+            <div class="text-neutral-500 text-xs mb-3"># o padrão de captura manual</div>
+            <div><span class="text-emerald-400">agent-browser</span> set viewport <span class="text-cyan-300">1280 800</span></div>
+            <div><span class="text-emerald-400">agent-browser</span> open <span class="text-cyan-300">http://localhost:8000/</span></div>
+            <div><span class="text-emerald-400">agent-browser</span> snapshot -i      <span class="text-neutral-600"># refs @e1, @e2…</span></div>
+            <div><span class="text-emerald-400">agent-browser</span> fill @e6 <span class="text-cyan-300">"texto"</span></div>
+            <div><span class="text-emerald-400">agent-browser</span> screenshot <span class="text-cyan-300">assets/shots/01-prompt.png</span></div>
+          </div>
+        </div>
+        <div class="rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-4 flex gap-3">
+          <span class="text-emerald-400 text-xl flex-shrink-0">💡</span>
+          <div>
+            <div class="text-emerald-400 font-semibold text-sm mb-1">O app-alvo precisa estar no ar</div>
+            <p class="text-neutral-400 text-sm">O agent-browser navega o app de verdade — então o <code class="text-emerald-300">localhost:8000</code> (ou a URL) precisa estar respondendo durante a captura. Os detalhes do <code class="text-emerald-300">capture.mjs</code> e do <code class="text-emerald-300">actions.json</code> ficam na Trilha 2.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 2 -->
+    <section id="topico-2" class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">2</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">🎞️ HyperFrames (HTML→MP4)</h2>
+            <p class="text-neutral-400 mt-2">A segunda peça é o render. O HyperFrames converte uma página HTML animada em vídeo MP4, usando Chrome headless para gerar os frames e FFmpeg para montá-los.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-4">Como o HTML vira MP4</div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="bg-dark-700/40 rounded-xl border border-dark-600 p-4 text-center">
+              <div class="text-2xl mb-2">📄</div>
+              <div class="font-semibold text-neutral-200 text-sm mb-1">index.html</div>
+              <p class="text-neutral-400 text-xs">A página animada (moldura + shots + cursor + zoom + CTA), gerada pelo build-demo.mjs.</p>
+            </div>
+            <div class="bg-dark-700/40 rounded-xl border border-dark-600 p-4 text-center">
+              <div class="text-2xl mb-2">🖥️</div>
+              <div class="font-semibold text-neutral-200 text-sm mb-1">Chrome headless</div>
+              <p class="text-neutral-400 text-xs">Renderiza frame a frame, de forma determinística, sem interface visível.</p>
+            </div>
+            <div class="bg-dark-700/40 rounded-xl border border-dark-600 p-4 text-center">
+              <div class="text-2xl mb-2">🎬</div>
+              <div class="font-semibold text-neutral-200 text-sm mb-1">FFmpeg → MP4</div>
+              <p class="text-neutral-400 text-xs">Junta os frames e o áudio num MP4 16:9 final.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Validar e renderizar</div>
+          <div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
+            <div class="text-neutral-500 text-xs mb-3"># lint e inspect antes do render final</div>
+            <div><span class="text-emerald-400">npx hyperframes</span> lint            <span class="text-neutral-600"># 0 erros</span></div>
+            <div><span class="text-emerald-400">npx hyperframes</span> inspect --samples 14   <span class="text-neutral-600"># 0 problemas</span></div>
+            <div><span class="text-emerald-400">npx hyperframes</span> ... --quality high --fps 30 --output renders/demo-16x9.mp4</div>
+          </div>
+        </div>
+        <div class="rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-4 flex gap-3">
+          <span class="text-emerald-400 text-xl flex-shrink-0">💡</span>
+          <div>
+            <div class="text-emerald-400 font-semibold text-sm mb-1">HTML→MP4 explica o determinismo</div>
+            <p class="text-neutral-400 text-sm">Como o vídeo nasce de HTML renderizado em Chrome headless, é natural que o render seja determinístico (sem rede) — exatamente o princípio do Módulo 1.2. Os detalhes do render ficam na Trilha 3.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 3 -->
+    <section id="topico-3" class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">3</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">🗣️ Kokoro TTS local</h2>
+            <p class="text-neutral-400 mt-2">A terceira peça é a narração. O Kokoro gera a fala em PT-BR localmente — um WAV por passo (mais a CTA), com a voz <code class="text-emerald-400">pf_dora</code> a <code class="text-emerald-400">--speed 0.98</code>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div class="rounded-xl bg-gradient-to-br from-emerald-900/30 to-dark-700/50 border border-emerald-500/30 p-5">
+          <div class="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-2">Conceito Principal</div>
+          <p class="text-neutral-200 font-medium">O Kokoro roda como modelo local (<code class="text-emerald-300">kokoro-onnx</code>). A primeira execução baixa ~340MB; depois, cada vídeo gera os WAVs sem nenhum serviço externo. O gerador mede esses WAVs com ffprobe para sincronizar o timing automaticamente.</p>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Boas práticas de narração</div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
+              <div class="text-emerald-400 font-semibold text-sm mb-3">✓ Expandir para a fala</div>
+              <ul class="space-y-2 text-sm text-neutral-300">
+                <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> "512" → "quinhentos e doze"</li>
+                <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> "inema.club" → "inema ponto club"</li>
+                <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Siglas e URLs soletradas/expandidas</li>
+                <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> 1 frase curta por passo</li>
+              </ul>
+            </div>
+            <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4">
+              <div class="text-red-400 font-semibold text-sm mb-3">✗ O que evitar</div>
+              <ul class="space-y-2 text-sm text-neutral-300">
+                <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Deixar números crus (lê errado)</li>
+                <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Esperar atuação dramática (voz é boa, mas neutra)</li>
+                <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Frases longas que estouram o passo</li>
+                <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Inglês na narração (sempre PT-BR)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-xl border border-blue-500/30 bg-blue-500/10 p-4 flex gap-3">
+          <span class="text-blue-400 text-xl flex-shrink-0">🔎</span>
+          <div>
+            <div class="text-blue-400 font-semibold text-sm mb-1">Você não escuta — o usuário valida</div>
+            <p class="text-neutral-400 text-sm">Como o áudio não dá para ouvir no fluxo de geração, o padrão é mostrar frames ao usuário e pedir que ele confirme a locução antes do render final.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 4 -->
+    <section id="topico-4" class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">4</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">🔒 Sem chave de API</h2>
+            <p class="text-neutral-400 mt-2">As três peças rodam localmente. Captura, render e narração não dependem de nenhum serviço pago nem de chave de API — o que significa custo zero por vídeo e nenhum dado saindo da máquina.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div class="rounded-xl bg-gradient-to-br from-emerald-900/30 to-dark-700/50 border border-emerald-500/30 p-5">
+          <div class="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-2">Pré-requisitos (locais)</div>
+          <p class="text-neutral-400 text-sm">Node 22+ e FFmpeg; o Chrome do HyperFrames (<code class="text-emerald-300">npx hyperframes browser ensure</code>); o TTS Kokoro (<code class="text-emerald-300">pip install kokoro-onnx soundfile</code>); e o <code class="text-emerald-300">agent-browser</code> no PATH. Tudo software local — nenhuma credencial de nuvem.</p>
+        </div>
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">O que "sem API" garante</div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">💸</div><div class="text-xs font-semibold text-neutral-200">Custo zero</div><div class="text-xs text-neutral-500">Por vídeo</div></div>
+            <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">🔐</div><div class="text-xs font-semibold text-neutral-200">Privado</div><div class="text-xs text-neutral-500">Nada sai da máquina</div></div>
+            <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">✈️</div><div class="text-xs font-semibold text-neutral-200">Offline-friendly</div><div class="text-xs text-neutral-500">Após o setup</div></div>
+            <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">📦</div><div class="text-xs font-semibold text-neutral-200">Auto-contida</div><div class="text-xs text-neutral-500">Skill traz fontes</div></div>
+          </div>
+        </div>
+        <div class="rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-4 flex gap-3">
+          <span class="text-emerald-400 text-xl flex-shrink-0">💡</span>
+          <div>
+            <div class="text-emerald-400 font-semibold text-sm mb-1">A skill é auto-contida</div>
+            <p class="text-neutral-400 text-sm">Ela traz as próprias fontes (Sora/Inter/JetBrains Mono em <code class="text-emerald-300">assets/fonts/</code>) e a house style. Não depende de nenhum outro projeto, repositório ou serviço para funcionar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 5 -->
+    <section id="topico-5" class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">5</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">📥 Instalar a skill</h2>
+            <p class="text-neutral-400 mt-2">Como skill é só uma pasta, instalar é simples. Há três caminhos: descompactar o <code class="text-emerald-400">.zip</code>, copiar a pasta, ou criar um symlink para desenvolver.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Três jeitos de instalar</div>
+          <div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
+            <div class="text-neutral-500 text-xs mb-2"># A) a partir do .zip (versionado na raiz do repo)</div>
+            <div><span class="text-emerald-400">unzip</span> video-demonstrativo.zip -d <span class="text-cyan-300">~/.claude/skills/</span></div>
+            <br>
+            <div class="text-neutral-500 text-xs mb-2"># B) copiar a pasta (clone do repo)</div>
+            <div><span class="text-emerald-400">cp -r</span> .../video-demonstrativo <span class="text-cyan-300">~/.claude/skills/</span></div>
+            <br>
+            <div class="text-neutral-500 text-xs mb-2"># C) symlink (dev — edição no repo reflete na hora)</div>
+            <div><span class="text-emerald-400">ln -s</span> "$(pwd)/video-demonstrativo" <span class="text-cyan-300">~/.claude/skills/video-demonstrativo</span></div>
+          </div>
+        </div>
+        <div class="rounded-xl border border-blue-500/30 bg-blue-500/10 p-4">
+          <div class="text-blue-400 font-semibold text-sm mb-3">📊 Qual caminho escolher</div>
+          <div class="grid sm:grid-cols-3 gap-3 text-sm">
+            <div class="bg-dark-700/60 rounded-lg p-3"><div class="text-emerald-400 font-bold mb-1 text-xs">.zip</div><div class="text-neutral-400 text-xs">Você recebeu o pacote pronto e só quer usar.</div></div>
+            <div class="bg-dark-700/60 rounded-lg p-3"><div class="text-emerald-400 font-bold mb-1 text-xs">copiar pasta</div><div class="text-neutral-400 text-xs">Clonou o repo e quer uma cópia estável instalada.</div></div>
+            <div class="bg-dark-700/60 rounded-lg p-3"><div class="text-emerald-400 font-bold mb-1 text-xs">symlink</div><div class="text-neutral-400 text-xs">Vai editar a skill e quer ver as mudanças na hora.</div></div>
+          </div>
+        </div>
+        <div class="rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-4 flex gap-3">
+          <span class="text-emerald-400 text-xl flex-shrink-0">💡</span>
+          <div>
+            <div class="text-emerald-400 font-semibold text-sm mb-1">Reinicie a sessão depois</div>
+            <p class="text-neutral-400 text-sm">Em qualquer um dos três jeitos, reinicie a sessão para o Claude Code reconhecer a skill recém-instalada.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 6 -->
+    <section id="topico-6" class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">6</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">📂 Onde a skill vive</h2>
+            <p class="text-neutral-400 mt-2">Skills moram em <code class="text-emerald-400">.claude/skills</code>. A escolha do local define o escopo: global (qualquer projeto) ou de projeto (só naquele repositório).</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
+            <div class="text-emerald-400 font-semibold text-sm mb-2">🌐 Global</div>
+            <div class="font-mono text-xs text-neutral-400 mb-2">~/.claude/skills/video-demonstrativo/</div>
+            <p class="text-neutral-300 text-sm">Disponível em qualquer projeto. Ideal para uma skill que você usa o tempo todo, em vários repositórios.</p>
+          </div>
+          <div class="rounded-xl border border-blue-500/30 bg-blue-500/10 p-4">
+            <div class="text-blue-400 font-semibold text-sm mb-2">📁 Projeto</div>
+            <div class="font-mono text-xs text-neutral-400 mb-2">&lt;repo&gt;/.claude/skills/video-demonstrativo/</div>
+            <p class="text-neutral-300 text-sm">Disponível só naquele projeto e versionável junto com o código — bom para times.</p>
+          </div>
+        </div>
+        <div class="rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-4 flex gap-3">
+          <span class="text-emerald-400 text-xl flex-shrink-0">💡</span>
+          <div>
+            <div class="text-emerald-400 font-semibold text-sm mb-1">Escolha o escopo certo</div>
+            <p class="text-neutral-400 text-sm">Skill pessoal de uso constante → global. Skill específica de um produto e compartilhada com o time → no <code class="text-emerald-300">.claude/skills</code> do repositório.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 7 -->
+    <section id="topico-7" class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">7</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">⚡ Como disparar a skill</h2>
+            <p class="text-neutral-400 mt-2">Instalada, a skill dispara por frases-gatilho do dia a dia. Conhecer essas frases garante que o demonstrativo (e não o explicativo) entre em ação.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Frases-gatilho</div>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div class="bg-dark-700/40 rounded-xl border border-dark-600 p-4">
+              <div class="text-emerald-400 font-semibold text-sm mb-2">🗣️ Pedidos diretos</div>
+              <ul class="space-y-1.5 text-sm text-neutral-300">
+                <li class="flex items-start gap-2"><span class="text-emerald-400">•</span> "vídeo de demonstração"</li>
+                <li class="flex items-start gap-2"><span class="text-emerald-400">•</span> "demo do app / do sistema"</li>
+                <li class="flex items-start gap-2"><span class="text-emerald-400">•</span> "walkthrough"</li>
+                <li class="flex items-start gap-2"><span class="text-emerald-400">•</span> "mostrar passo a passo usando o app"</li>
+              </ul>
+            </div>
+            <div class="bg-dark-700/40 rounded-xl border border-dark-600 p-4">
+              <div class="text-emerald-400 font-semibold text-sm mb-2">🔗 Ou simplesmente o link</div>
+              <ul class="space-y-1.5 text-sm text-neutral-300">
+                <li class="flex items-start gap-2"><span class="text-emerald-400">•</span> Dar uma URL e pedir um vídeo do uso</li>
+                <li class="flex items-start gap-2"><span class="text-emerald-400">•</span> Dar um <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">localhost:8000</code></li>
+                <li class="flex items-start gap-2"><span class="text-emerald-400">•</span> "gravar a tela do sistema"</li>
+                <li class="flex items-start gap-2"><span class="text-emerald-400">•</span> "vídeo mostrando como usar X"</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4 flex gap-3">
+          <span class="text-red-400 text-xl flex-shrink-0">⚠️</span>
+          <div>
+            <div class="text-red-400 font-semibold text-sm mb-1">Cuidado para não acionar o explicativo</div>
+            <p class="text-neutral-400 text-sm">"Faça um vídeo sobre X" (sem app) tende a acionar o <code class="text-red-300">video-explicativo</code>. Para o demonstrativo, deixe claro que há um app a mostrar — ou dê o link.</p>
+          </div>
+        </div>
+        <div class="rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-4 flex gap-3">
+          <span class="text-emerald-400 text-xl flex-shrink-0">💡</span>
+          <div>
+            <div class="text-emerald-400 font-semibold text-sm mb-1">Dar o link é o gatilho mais forte</div>
+            <p class="text-neutral-400 text-sm">Como a entrada da skill é o link do app, oferecer a URL logo de início já comunica a intenção e ativa o fluxo certo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUMO DO MÓDULO -->
+    <section class="rounded-2xl bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 border border-emerald-500/30 p-8">
+      <h2 class="text-2xl font-bold mb-6 text-emerald-400">📋 Resumo do Módulo 1.3</h2>
+      <div class="grid sm:grid-cols-2 gap-6 mb-8">
+        <div>
+          <div class="text-sm font-semibold text-neutral-400 mb-3">O que você aprendeu</div>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-emerald-400 mt-0.5">✓</span> agent-browser (Playwright) captura os shots + boxes</li>
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-emerald-400 mt-0.5">✓</span> HyperFrames renderiza HTML→MP4 (Chrome headless + FFmpeg)</li>
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-emerald-400 mt-0.5">✓</span> Kokoro TTS local narra (voz pf_dora, --speed 0.98)</li>
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-emerald-400 mt-0.5">✓</span> Tudo roda na máquina — sem chave de API, custo zero</li>
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-emerald-400 mt-0.5">✓</span> Instalar: zip, copiar pasta ou symlink; global vs projeto</li>
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-emerald-400 mt-0.5">✓</span> Disparar: "demo", "walkthrough", ou dar o link</li>
+          </ul>
+        </div>
+        <div class="bg-dark-700/50 rounded-xl border border-emerald-500/20 p-5">
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Próxima trilha</div>
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-xs">T2</div>
+            <div>
+              <div class="font-semibold text-neutral-200">📸 Captura</div>
+              <div class="text-sm text-neutral-400 mt-1">Com os fundamentos firmes, a Trilha 2 entra na captura na prática: actions.json, capture.mjs, steps.json, login, estados dinâmicos e o salvamento do resultado.</div>
+            </div>
+          </div>
+          <a href="../trilha2/index.html" class="mt-4 flex items-center justify-start gap-2 text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors">Ir para a Trilha 2 →</a>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Voltar para Trilha 1</a>
+        <a href="../trilha2/index.html" class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors">Trilha 2: Captura →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-4">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p class="mb-1">Conteúdo do <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 font-medium">INEMA.CLUB</a></p>
+      <p>Vídeo Demonstrativo — Trilha 1: Fundamentos · Módulo 1.3 · 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const di = document.getElementById('theme-toggle-dark-icon');
+    const li = document.getElementById('theme-toggle-light-icon');
+    const root = document.documentElement;
+    if (localStorage.getItem('theme') === 'light') { di.classList.remove('hidden'); root.classList.remove('dark'); } else { li.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      di.classList.toggle('hidden'); li.classList.toggle('hidden'); root.classList.toggle('dark');
+      localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

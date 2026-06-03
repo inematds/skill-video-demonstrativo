@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2.1 — Dirigir o app com agent-browser | Vídeo Demonstrativo · INEMA.CLUB</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    /* acento blue */
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .text-blue-300 { color: #1d4ed8; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,0.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+    html:not(.dark) .border-blue-500\/20 { border-color: rgba(37,99,235,0.18); }
+    html:not(.dark) .hover\:bg-blue-500\/30:hover { background-color: rgba(37,99,235,0.18); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .group:hover .group-hover\:text-blue-400 { color: #2563eb; }
+    /* outras trilhas (nav) */
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+    html:not(.dark) .text-emerald-300 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) .text-red-400 { color: #dc2626; }
+    html:not(.dark) .bg-red-500\/10 { background-color: rgba(220,38,38,0.08); }
+    html:not(.dark) .border-red-500\/30 { border-color: rgba(220,38,38,0.25); }
+    html:not(.dark) .text-cyan-400 { color: #0891b2; }
+    html:not(.dark) .text-cyan-300 { color: #0e7490; }
+    html:not(.dark) .text-orange-400 { color: #c2410c; }
+    html:not(.dark) .text-yellow-300 { color: #a16207; }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+    @keyframes m21-flow { 0% { stroke-dashoffset: 120; } 100% { stroke-dashoffset: 0; } }
+    @keyframes m21-pulse { 0%,100% { opacity:.4 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .m21-anim-flow { animation: m21-flow 2.5s linear infinite; }
+      .m21-anim-pulse { animation: m21-pulse 2.8s ease-in-out infinite; }
+      .m21-anim-pulse:nth-child(2) { animation-delay: .4s; }
+      .m21-anim-pulse:nth-child(3) { animation-delay: .8s; }
+    }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🖱️</span><span class="font-bold text-lg hidden sm:inline">Demonstrativo</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Captura</span></a>
+          <a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Render</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <nav class="flex items-center space-x-2 text-sm text-neutral-500">
+      <a href="../../index.html" class="hover:text-blue-400 transition-colors">Início</a>
+      <span>/</span>
+      <a href="index.html" class="hover:text-blue-400 transition-colors">Trilha 2 — Captura</a>
+      <span>/</span>
+      <span class="text-blue-400 font-medium">Módulo 2.1</span>
+    </nav>
+  </div>
+
+  <!-- HEADER -->
+  <header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-10 border-b border-dark-600 mt-4">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.1</span>
+          <h1 class="text-3xl sm:text-4xl font-bold mb-4">🌐 Dirigir o app com agent-browser</h1>
+          <p class="text-lg text-neutral-400 max-w-xl">O agent-browser (Playwright por baixo) abre o app de verdade num viewport fixo, navega a URL, encontra elementos, executa ações e captura cada tela — é o motor da captura desta skill.</p>
+          <div class="grid grid-cols-4 gap-3 mt-6">
+            <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">7</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+            <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+            <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Prático</div><div class="text-xs text-neutral-400">Nível</div></div>
+            <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Captura</div><div class="text-xs text-neutral-400">Tipo</div></div>
+          </div>
+        </div>
+
+        <!-- SVG FUTURISTA — viewport fixo → ações → shot + bbox -->
+        <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4">
+          <svg viewBox="0 0 400 240" class="w-full h-auto" role="img" aria-label="Diagrama do agent-browser abrindo o app num viewport fixo, executando ações e capturando screenshot mais bounding box" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="m21-bg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0e1622"/><stop offset="100%" style="stop-color:#0e1b26"/></linearGradient>
+              <filter id="m21-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <rect width="400" height="240" fill="url(#m21-bg)" rx="12"/>
+            <g stroke="#1e3a5f" stroke-width="0.5" opacity="0.5">
+              <line x1="0" y1="80" x2="400" y2="80"/><line x1="0" y1="160" x2="400" y2="160"/>
+              <line x1="133" y1="0" x2="133" y2="240"/><line x1="266" y1="0" x2="266" y2="240"/>
+            </g>
+            <text x="200" y="26" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="800" fill="#60a5fa">agent-browser</text>
+            <text x="200" y="42" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" fill="#38bdf8" letter-spacing="2">PLAYWRIGHT · VIEWPORT FIXO</text>
+
+            <!-- janela de app (viewport) -->
+            <rect x="30" y="60" width="180" height="120" rx="8" fill="#0a1422" stroke="#38bdf8" stroke-width="1.5" filter="url(#m21-glow)"/>
+            <rect x="30" y="60" width="180" height="20" rx="8" fill="#0e1b26"/>
+            <circle cx="42" cy="70" r="2.5" fill="#f87171"/><circle cx="52" cy="70" r="2.5" fill="#fbbf24"/><circle cx="62" cy="70" r="2.5" fill="#34d399"/>
+            <rect x="78" y="65" width="124" height="10" rx="5" fill="#13283d"/>
+            <text x="140" y="73" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#7db8f7">localhost:8000</text>
+            <text x="120" y="50" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#60a5fa">1280 × 800</text>
+            <!-- elemento alvo com bbox -->
+            <rect x="60" y="110" width="120" height="22" rx="4" fill="#13283d"/>
+            <rect x="56" y="106" width="128" height="30" rx="5" fill="none" stroke="#fbbf24" stroke-width="1.5" stroke-dasharray="4,3" class="m21-anim-flow"/>
+            <text x="120" y="125" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#bfe6ff">botão alvo</text>
+            <text x="120" y="152" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#fbbf24">getBoundingClientRect</text>
+            <!-- cursor -->
+            <polygon points="150,128 150,142 154,138 158,144 161,142 157,137 162,137" fill="#fff" stroke="#3b82f6" stroke-width="0.6"/>
+
+            <!-- ações -->
+            <rect x="226" y="60" width="148" height="56" rx="8" fill="#0e1622" stroke="#60a5fa" stroke-width="1.5"/>
+            <text x="300" y="78" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#60a5fa">ações</text>
+            <text x="300" y="93" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#bfe6ff">open · snapshot -i</text>
+            <text x="300" y="106" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#bfe6ff">fill · click · screenshot</text>
+            <!-- saídas -->
+            <rect x="226" y="124" width="70" height="56" rx="8" fill="#0a1a2e" stroke="#38bdf8" stroke-width="1.2" filter="url(#m21-glow)"/>
+            <text x="261" y="148" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#38bdf8">shot.png</text>
+            <text x="261" y="162" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#7db8f7">tela real</text>
+            <rect x="304" y="124" width="70" height="56" rx="8" fill="#0a1a2e" stroke="#38bdf8" stroke-width="1.2" filter="url(#m21-glow)"/>
+            <text x="339" y="148" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" font-weight="700" fill="#38bdf8">bbox</text>
+            <text x="339" y="162" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#7db8f7">x,y,w,h</text>
+
+            <!-- conector -->
+            <path d="M210 120 L226 120" stroke="#38bdf8" stroke-width="2" stroke-dasharray="5,3" class="m21-anim-flow" fill="none"/>
+            <polygon points="226,116 234,120 226,124" fill="#38bdf8"/>
+
+            <text x="200" y="206" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#9ad6ff">capturar antes · animar depois · sem chave de API</text>
+            <circle cx="20" cy="20" r="2" fill="#38bdf8" class="m21-anim-pulse" opacity="0.6"/>
+            <circle cx="380" cy="220" r="2" fill="#60a5fa" class="m21-anim-pulse" opacity="0.6"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+
+    <!-- TÓPICO 1 -->
+    <section id="topico-1" class="bg-dark-800 rounded-2xl border border-blue-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">1</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">🤖 O que é o agent-browser</h2>
+            <p class="text-neutral-400 mt-2">Uma skill de navegação que controla um navegador real (Playwright por baixo) por comandos de linha — é o que abre o app de verdade e captura as telas que viram o vídeo.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div class="rounded-xl bg-gradient-to-br from-blue-900/30 to-dark-700/50 border border-blue-500/30 p-5">
+          <div class="text-xs font-semibold text-blue-400 uppercase tracking-widest mb-2">Conceito Principal</div>
+          <p class="text-neutral-200 font-medium">O agent-browser não simula a tela — ele <em>usa</em> o app. Cada screenshot é uma captura real do DOM no estado daquele passo, no viewport que você fixou.</p>
+          <p class="text-neutral-400 text-sm mt-3">É por isso que esta skill <strong>mostra</strong> um app real, em vez de explicar um conceito com motion graphics.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
+            <div class="text-emerald-400 font-semibold text-sm mb-3">✓ O que o agent-browser faz</div>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Abre uma URL real num navegador controlado</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Lista elementos interativos com <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">snapshot -i</code></li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Preenche, clica e tira screenshots de cada estado</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Roda JS via <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">eval</code> (ex.: ler a bbox)</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4">
+            <div class="text-red-400 font-semibold text-sm mb-3">✗ O que ele NÃO é</div>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Não renderiza o vídeo (isso é o HyperFrames, na T3)</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Não grava vídeo da tela (isso seria o modo v3, roadmap)</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Não precisa de chave de API nem de nuvem</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Não anima nada — só captura o estado real</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-blue-500/30 bg-blue-500/10 p-4">
+          <div class="text-blue-400 font-semibold text-sm mb-3">📦 Pré-requisitos da captura</div>
+          <div class="grid sm:grid-cols-3 gap-3 text-sm">
+            <div class="bg-dark-700/60 rounded-lg p-3"><div class="text-blue-400 font-bold mb-1">agent-browser no PATH</div><div class="text-neutral-400">A skill de navegação precisa estar disponível na linha de comando.</div></div>
+            <div class="bg-dark-700/60 rounded-lg p-3"><div class="text-blue-400 font-bold mb-1">App no ar</div><div class="text-neutral-400">O app-alvo precisa estar rodando, ex.: <code class="text-blue-300">localhost:8000</code>.</div></div>
+            <div class="bg-dark-700/60 rounded-lg p-3"><div class="text-blue-400 font-bold mb-1">Node 22+</div><div class="text-neutral-400">O <code class="text-blue-300">capture.mjs</code> roda em Node e chama o agent-browser.</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 2 -->
+    <section id="topico-2" class="bg-dark-800 rounded-2xl border border-blue-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">2</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">🔗 Abrir sessão e navegar a URL</h2>
+            <p class="text-neutral-400 mt-2">Fixe o viewport, abra a URL e estabeleça o estado. A ordem importa: viewport <em>antes</em> de abrir.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Abrir o app (forma manual)</div>
+          <div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
+            <div class="text-neutral-500 text-xs mb-3"># viewport ANTES de abrir — vira o espaço das coordenadas</div>
+            <div><span class="text-cyan-400">agent-browser</span> set viewport <span class="text-yellow-300">1280 800</span></div>
+            <div><span class="text-cyan-400">agent-browser</span> open <span class="text-yellow-300">http://localhost:8000/</span></div>
+            <div><span class="text-cyan-400">agent-browser</span> snapshot <span class="text-blue-400">-i</span>  <span class="text-neutral-500"># descobre refs @e1, @e2...</span></div>
+          </div>
+        </div>
+
+        <div class="rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 flex gap-3">
+          <span class="text-blue-400 text-xl flex-shrink-0">💡</span>
+          <div>
+            <div class="text-blue-400 font-semibold text-sm mb-1">A sessão fica viva entre comandos</div>
+            <p class="text-neutral-400 text-sm">Cada comando atua na mesma aba aberta. Você navega, age, captura e mede — passo a passo — sem reabrir o app a cada chamada.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Equivalente no actions.json (forma automatizada)</div>
+          <div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
+            <div><span class="text-neutral-300">{</span></div>
+            <div class="ml-4"><span class="text-blue-300">"url"</span><span class="text-neutral-300">:</span> <span class="text-yellow-300">"http://localhost:8000/"</span><span class="text-neutral-300">,</span></div>
+            <div class="ml-4"><span class="text-blue-300">"viewport"</span><span class="text-neutral-300">:</span> <span class="text-neutral-300">[</span><span class="text-orange-400">1280</span><span class="text-neutral-300">,</span> <span class="text-orange-400">800</span><span class="text-neutral-300">]</span></div>
+            <div><span class="text-neutral-300">}</span></div>
+            <div class="text-neutral-500 text-xs mt-2"># o capture.mjs faz set viewport + open com esses valores</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 3 -->
+    <section id="topico-3" class="bg-dark-800 rounded-2xl border border-blue-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">3</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">📑 Referências @ref e snapshot</h2>
+            <p class="text-neutral-400 mt-2">O <code class="text-blue-400">snapshot -i</code> mapeia os elementos e dá refs (<code class="text-blue-400">@e1</code>, <code class="text-blue-400">@e2</code>…) — mas eles deslocam quando o DOM muda.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-4">Fluxo de descoberta de elementos</div>
+          <div class="relative pl-8 space-y-0">
+            <div class="absolute left-3 top-2 bottom-2 w-0.5 bg-blue-500/30"></div>
+            <div class="relative pb-5">
+              <div class="absolute -left-5 w-4 h-4 rounded-full bg-blue-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">1</span></div>
+              <div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600">
+                <div class="font-semibold text-blue-400 text-sm">snapshot -i lista os interativos</div>
+                <p class="text-neutral-400 text-sm mt-1">Cada botão, campo e link ganha um ref (<code class="text-blue-300">@e6</code> = textarea, por exemplo).</p>
+              </div>
+            </div>
+            <div class="relative pb-5">
+              <div class="absolute -left-5 w-4 h-4 rounded-full bg-blue-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">2</span></div>
+              <div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600">
+                <div class="font-semibold text-blue-400 text-sm">Você age pelo ref</div>
+                <p class="text-neutral-400 text-sm mt-1"><code class="text-blue-300">agent-browser fill @e6 "texto"</code> preenche aquele elemento específico.</p>
+              </div>
+            </div>
+            <div class="relative">
+              <div class="absolute -left-5 w-4 h-4 rounded-full bg-cyan-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">3</span></div>
+              <div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600">
+                <div class="font-semibold text-cyan-400 text-sm">DOM mudou? Re-snapshot</div>
+                <p class="text-neutral-400 text-sm mt-1">Depois de "Gerar", surge um link de download e os refs deslocam. Re-snapshot ou troque por seletor estável.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4 flex gap-3">
+          <span class="text-red-400 text-xl flex-shrink-0">⚠️</span>
+          <div>
+            <div class="text-red-400 font-semibold text-sm mb-1">Refs são voláteis</div>
+            <p class="text-neutral-400 text-sm">Não confie em <code class="text-red-300">@eN</code> quando o estado muda entre passos. Em telas que mudam muito, prefira CSS selectors ou <code class="text-red-300">{tag,text}</code> — assunto do módulo 2.3.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 4 -->
+    <section id="topico-4" class="bg-dark-800 rounded-2xl border border-blue-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">4</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">🖱️ Ações: click, fill, scroll, screenshot</h2>
+            <p class="text-neutral-400 mt-2">O vocabulário básico de cada passo. Cada ação muda o estado da tela — e cada estado vira um screenshot.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div class="overflow-x-auto rounded-xl border border-dark-600">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-dark-700/60 border-b border-dark-600">
+                <th class="text-left p-3 text-blue-400 font-semibold">Ação</th>
+                <th class="text-left p-3 text-neutral-400 font-semibold">O que faz</th>
+                <th class="text-center p-3 text-neutral-400 font-semibold">Status</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-dark-600">
+              <tr class="hover:bg-dark-700/30"><td class="p-3 text-blue-300 font-mono">fill</td><td class="p-3 text-neutral-300">Preenche input/textarea (CSS selector)</td><td class="p-3 text-center text-emerald-400">funciona</td></tr>
+              <tr class="hover:bg-dark-700/30"><td class="p-3 text-blue-300 font-mono">click</td><td class="p-3 text-neutral-300">Clica um elemento (CSS selector)</td><td class="p-3 text-center text-emerald-400">funciona</td></tr>
+              <tr class="hover:bg-dark-700/30"><td class="p-3 text-blue-300 font-mono">screenshot</td><td class="p-3 text-neutral-300">Salva a tela do estado atual em PNG</td><td class="p-3 text-center text-emerald-400">funciona</td></tr>
+              <tr class="hover:bg-dark-700/30"><td class="p-3 text-blue-300 font-mono">eval</td><td class="p-3 text-neutral-300">Roda JS no browser (ex.: ler a bbox)</td><td class="p-3 text-center text-emerald-400">funciona</td></tr>
+              <tr class="hover:bg-dark-700/30"><td class="p-3 text-blue-300 font-mono">scroll</td><td class="p-3 text-neutral-300">Rolar até o alvo antes do screenshot</td><td class="p-3 text-center text-yellow-400">manual / roadmap</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 flex gap-3">
+          <span class="text-blue-400 text-xl flex-shrink-0">💡</span>
+          <div>
+            <div class="text-blue-400 font-semibold text-sm mb-1">Scroll ainda é manual</div>
+            <p class="text-neutral-400 text-sm">O <code class="text-blue-300">capture.mjs</code> não rola a página por conta própria. Em páginas longas, hoje você dirige o agent-browser na mão (<code class="text-blue-300">scrollIntoView</code>). É o item nº 1 do backlog — detalhado no módulo 2.4.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 5 -->
+    <section id="topico-5" class="bg-dark-800 rounded-2xl border border-blue-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">5</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">📸 Capturar o screenshot da tela</h2>
+            <p class="text-neutral-400 mt-2">Um screenshot por estado, gravado em <code class="text-blue-400">assets/shots/NN-id.png</code>. É a base da regra de ouro: capturar antes, animar depois.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div class="rounded-xl bg-gradient-to-br from-blue-900/30 to-dark-700/50 border border-blue-500/30 p-5">
+          <div class="text-xs font-semibold text-blue-400 uppercase tracking-widest mb-2">Capturar antes, animar depois</div>
+          <p class="text-neutral-200 font-medium">O render do HyperFrames é determinístico (sem rede na renderização). Por isso nunca se carrega o site ao vivo no vídeo: a gente captura prints reais antes e anima por cima.</p>
+        </div>
+
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Capturar um estado</div>
+          <div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
+            <div><span class="text-cyan-400">agent-browser</span> fill <span class="text-yellow-300">@e6</span> <span class="text-yellow-300">"um cavalo galopando na praia"</span></div>
+            <div><span class="text-cyan-400">agent-browser</span> screenshot <span class="text-yellow-300">assets/shots/01-prompt.png</span></div>
+            <div class="text-neutral-500 text-xs mt-2"># 1 shot por estado → 02-size.png, 03-height.png, 04-resultado.png ...</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-blue-400 text-lg mb-1">🖼️</div><div class="text-xs font-semibold text-neutral-200">1 por estado</div><div class="text-xs text-neutral-500">um shot/passo</div></div>
+          <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-blue-400 text-lg mb-1">📁</div><div class="text-xs font-semibold text-neutral-200">assets/shots/</div><div class="text-xs text-neutral-500">NN-id.png</div></div>
+          <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-blue-400 text-lg mb-1">🎯</div><div class="text-xs font-semibold text-neutral-200">Determinístico</div><div class="text-xs text-neutral-500">sem site ao vivo</div></div>
+          <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-blue-400 text-lg mb-1">🪟</div><div class="text-xs font-semibold text-neutral-200">Na moldura</div><div class="text-xs text-neutral-500">look de navegador</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 6 -->
+    <section id="topico-6" class="bg-dark-800 rounded-2xl border border-blue-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">6</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">📐 Medir a bounding box de um elemento</h2>
+            <p class="text-neutral-400 mt-2">Via <code class="text-blue-400">eval</code>, ler o <code class="text-blue-400">getBoundingClientRect()</code> do alvo. É a caixa exata que o cursor mira no vídeo.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Ler a bbox do alvo</div>
+          <div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
+            <div class="text-neutral-500 text-xs mb-2"># bbox no espaço do screenshot (viewport-relative)</div>
+            <div><span class="text-cyan-400">agent-browser</span> eval <span class="text-yellow-300">"(()=&gt;{const r=</span></div>
+            <div class="ml-4"><span class="text-yellow-300">document.querySelector('textarea').getBoundingClientRect();</span></div>
+            <div class="ml-4"><span class="text-yellow-300">return{x:Math.round(r.x),y:Math.round(r.y),</span></div>
+            <div class="ml-4"><span class="text-yellow-300">w:Math.round(r.width),h:Math.round(r.height)}})()"</span> <span class="text-blue-400">--json</span></div>
+            <div class="text-neutral-500 text-xs mt-2"># resultado: {"x":129,"y":252,"w":482,"h":96}</div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4 flex gap-3">
+          <span class="text-red-400 text-xl flex-shrink-0">⚠️</span>
+          <div>
+            <div class="text-red-400 font-semibold text-sm mb-1">eval --json vem aninhado</div>
+            <p class="text-neutral-400 text-sm">O resultado fica em <code class="text-red-300">data.result</code> (não em <code class="text-red-300">result</code>). O <code class="text-red-300">capture.mjs</code> já trata isso — mas vale saber se dirigir na mão.</p>
+          </div>
+        </div>
+
+        <div class="rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 flex gap-3">
+          <span class="text-blue-400 text-xl flex-shrink-0">💡</span>
+          <div>
+            <div class="text-blue-400 font-semibold text-sm mb-1">É isso que faz parecer profissional</div>
+            <p class="text-neutral-400 text-sm">A bbox real (não "no olho") é o que faz o cursor cair exato no botão/campo. O mapeamento da bbox para o canvas do vídeo é o tema do módulo 2.3.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 7 -->
+    <section id="topico-7" class="bg-dark-800 rounded-2xl border border-blue-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">7</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">🖼️ O viewport fixo e por que ele importa</h2>
+            <p class="text-neutral-400 mt-2">O viewport da captura é o espaço de coordenadas de tudo. Mantenha-o igual para bboxes e screenshots — senão o cursor erra o alvo.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
+            <div class="text-emerald-400 font-semibold text-sm mb-3">✓ Viewport bem feito</div>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> O mesmo viewport para bbox e screenshot</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Largura ≤ ~1280 para caber no canvas 16:9</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Se recapturar, recapturar tudo no mesmo viewport</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">set viewport</code> antes de <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">open</code></li>
+            </ul>
+          </div>
+          <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4">
+            <div class="text-red-400 font-semibold text-sm mb-3">✗ Viewport quebrado</div>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Capturar bbox e shot em viewports diferentes</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Telas muito largas saem espremidas ou estouram</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Recapturar só uma tela e misturar com as antigas</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Abrir o app e só depois fixar o viewport</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-blue-500/30 bg-blue-500/10 p-4">
+          <div class="text-blue-400 font-semibold text-sm mb-3">📊 Limites do screenshot no canvas</div>
+          <p class="text-neutral-300 text-sm">Com viewport <strong>1280×800</strong> e a janela centralizada, o print vai de x320..1600 e y148..948 — dentro do canvas <strong>1920×1080</strong>. Mude o viewport e confira que não passa das bordas.</p>
+        </div>
+
+        <!-- RESUMO FINAL -->
+        <div class="rounded-xl bg-gradient-to-br from-blue-900/30 to-dark-700/50 border border-blue-500/30 p-5">
+          <h3 class="text-lg font-bold mb-3 flex items-center gap-2">🎯 Resumo do módulo</h3>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> agent-browser = Playwright na linha de comando; usa o app de verdade</li>
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> viewport ANTES de open; <code class="text-blue-300">snapshot -i</code> dá refs @eN voláteis</li>
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> ações: fill, click, screenshot, eval (scroll ainda é manual/roadmap)</li>
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> 1 shot por estado em <code class="text-blue-300">assets/shots/NN-id.png</code></li>
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> bbox via <code class="text-blue-300">getBoundingClientRect</code>; viewport fixo = espaço de coordenadas</li>
+          </ul>
+        </div>
+
+        <!-- próximo módulo -->
+        <div class="bg-dark-700/50 rounded-xl border border-blue-500/20 p-5">
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Próximo módulo</div>
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold">2.2</div>
+            <div>
+              <div class="font-semibold text-neutral-200">🗺️ O actions.json</div>
+              <div class="text-sm text-neutral-400 mt-1">Descreva URL, viewport e os passos num único arquivo e deixe o <code class="text-blue-300">capture.mjs</code> gerar os shots e o steps.json.</div>
+            </div>
+          </div>
+          <a href="modulo-2-2.html" class="mt-4 flex items-center justify-start gap-2 text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors">Ir para o módulo 2.2 →</a>
+        </div>
+      </div>
+
+      <!-- CTAs -->
+      <div class="p-6 pt-0 flex flex-col sm:flex-row gap-4">
+        <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Voltar para Trilha 2</a>
+        <a href="modulo-2-2.html" class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors">Próximo Módulo: 2.2 actions.json →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-4">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p class="mb-1">Conteúdo do <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 font-medium">INEMA.CLUB</a></p>
+      <p>Vídeo Demonstrativo — Trilha 2: Captura do app real · Módulo 2.1 · 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const di = document.getElementById('theme-toggle-dark-icon');
+    const li = document.getElementById('theme-toggle-light-icon');
+    const root = document.documentElement;
+    if (localStorage.getItem('theme') === 'light') { di.classList.remove('hidden'); root.classList.remove('dark'); } else { li.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      di.classList.toggle('hidden'); li.classList.toggle('hidden'); root.classList.toggle('dark');
+      localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trilha 1 — Fundamentos | Vídeo Demonstrativo · INEMA.CLUB</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    .modal.hidden { display: none; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    /* acento emerald */
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) .hover\:bg-emerald-500\/30:hover { background-color: rgba(5,150,105,0.18); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .group:hover .group-hover\:text-emerald-400 { color: #059669; }
+    /* outras trilhas (nav) */
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+    @keyframes wf-pulse { 0%,100% { opacity:.5 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .wf-a { animation: wf-pulse 2.6s ease-in-out infinite; }
+      .wf-a:nth-child(2){animation-delay:.2s} .wf-a:nth-child(3){animation-delay:.4s} .wf-a:nth-child(4){animation-delay:.6s}
+    }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🖱️</span><span class="font-bold text-lg hidden sm:inline">Demonstrativo</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+          <a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Captura</span></a>
+          <a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Render</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">TRILHA 1</span>
+      <h1 class="text-3xl sm:text-4xl font-bold mb-4">🧭 Fundamentos</h1>
+      <p class="text-lg text-neutral-400 max-w-3xl">Antes de capturar uma tela ou animar um cursor, é preciso entender <strong>quando</strong> o vídeo demonstrativo é a escolha certa — e o princípio que rege toda a skill: <span class="text-emerald-400">capturar a tela real antes, animar por cima depois</span>. Aqui você aprende a diferença entre <em>mostrar</em> e <em>explicar</em>, por que o render é determinístico, e a stack local sem chave de API.</p>
+      <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">3</div><div class="text-xs text-neutral-400">Módulos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">~20</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">~1,5h</div><div class="text-xs text-neutral-400">Duração</div></div>
+        <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nível</div></div>
+      </div>
+
+      <div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4 mt-8 overflow-hidden">
+        <svg viewBox="0 0 1000 200" class="w-full h-auto" role="img" aria-label="O fluxo da skill: o link do app vira screenshots reais capturados, sobre os quais se animam cursor e zoom, e tudo é renderizado em um vídeo MP4 16 por 9">
+          <defs>
+            <linearGradient id="t1-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#10b981"/></linearGradient>
+            <filter id="t1-glow" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <pattern id="t1-grid" width="32" height="32" patternUnits="userSpaceOnUse"><circle cx="1.3" cy="1.3" r="1.3" fill="#10b981" opacity="0.12"/></pattern>
+            <marker id="t1-ah" markerWidth="9" markerHeight="9" refX="6.5" refY="4.5" orient="auto"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#34d399"/></marker>
+          </defs>
+          <rect x="0" y="0" width="1000" height="200" fill="url(#t1-grid)"/>
+          <g filter="url(#t1-glow)"><rect x="34" y="64" width="180" height="72" rx="14" fill="#0e2018" stroke="url(#t1-grad)" stroke-width="2.5"/></g>
+          <text x="124" y="96" text-anchor="middle" fill="#34d399" font-family="Inter,sans-serif" font-weight="700" font-size="17">🔗 link do app</text>
+          <text x="124" y="118" text-anchor="middle" fill="#a7f3d0" font-family="Inter,sans-serif" font-size="12.5">localhost ou URL</text>
+          <path d="M214,100 L270,100" fill="none" stroke="#34d399" stroke-width="2" marker-end="url(#t1-ah)"/>
+          <g filter="url(#t1-glow)"><rect x="270" y="64" width="190" height="72" rx="14" fill="#0e2018" stroke="url(#t1-grad)" stroke-width="2.5"/></g>
+          <text x="365" y="96" text-anchor="middle" fill="#34d399" font-family="Inter,sans-serif" font-weight="700" font-size="17">📸 captura</text>
+          <text x="365" y="118" text-anchor="middle" fill="#a7f3d0" font-family="Inter,sans-serif" font-size="12.5">screenshots reais</text>
+          <path d="M460,100 L516,100" fill="none" stroke="#38bdf8" stroke-width="2" marker-end="url(#t1-ah)"/>
+          <g filter="url(#t1-glow)"><rect x="516" y="64" width="200" height="72" rx="14" fill="#0e1b26" stroke="#38bdf8" stroke-width="2.5"/></g>
+          <text x="616" y="96" text-anchor="middle" fill="#38bdf8" font-family="Inter,sans-serif" font-weight="700" font-size="17">🖱️ animar por cima</text>
+          <text x="616" y="118" text-anchor="middle" fill="#bfe6ff" font-family="Inter,sans-serif" font-size="12.5">cursor · zoom · narração</text>
+          <path d="M716,100 L772,100" fill="none" stroke="#38bdf8" stroke-width="2" marker-end="url(#t1-ah)"/>
+          <g class="wf-a" filter="url(#t1-glow)"><rect x="772" y="64" width="194" height="72" rx="14" fill="#0e2018" stroke="url(#t1-grad)" stroke-width="2.5"/></g>
+          <text x="869" y="96" text-anchor="middle" fill="#34d399" font-family="Inter,sans-serif" font-weight="700" font-size="17">🎬 MP4 16:9</text>
+          <text x="869" y="118" text-anchor="middle" fill="#a7f3d0" font-family="Inter,sans-serif" font-size="12.5">HyperFrames · sem API</text>
+          <text x="500" y="36" text-anchor="middle" fill="#34d399" font-family="Inter,sans-serif" font-weight="800" font-size="15" letter-spacing="1">CAPTURAR ANTES · ANIMAR DEPOIS</text>
+          <text x="500" y="174" text-anchor="middle" fill="#9ad6ff" font-family="Inter,sans-serif" font-size="12">o render é determinístico — nada de site ao vivo dentro do vídeo</text>
+        </svg>
+        <p class="text-center text-xs text-neutral-500 mt-2">O fluxo do vídeo demonstrativo — diagrama ilustrativo</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    <!-- MAPA DA TRILHA -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold mb-6">Mapa da trilha</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <a href="#modulo-1-1" class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-emerald-500/30 p-5 transition-all">
+          <div class="flex items-center justify-between mb-2"><span class="text-emerald-400 font-bold text-sm">1.1</span><span class="text-xs text-neutral-500">~30 min</span></div>
+          <h3 class="font-semibold mb-1 group-hover:text-emerald-400 transition-colors">🎯 Demonstrativo vs Explicativo</h3>
+          <p class="text-xs text-neutral-400">Mostrar o app, não explicar</p>
+        </a>
+        <a href="#modulo-1-2" class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-emerald-500/30 p-5 transition-all">
+          <div class="flex items-center justify-between mb-2"><span class="text-emerald-400 font-bold text-sm">1.2</span><span class="text-xs text-neutral-500">~30 min</span></div>
+          <h3 class="font-semibold mb-1 group-hover:text-emerald-400 transition-colors">🧠 Capturar antes, animar depois</h3>
+          <p class="text-xs text-neutral-400">O princípio que rege tudo</p>
+        </a>
+        <a href="#modulo-1-3" class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-emerald-500/30 p-5 transition-all">
+          <div class="flex items-center justify-between mb-2"><span class="text-emerald-400 font-bold text-sm">1.3</span><span class="text-xs text-neutral-500">~30 min</span></div>
+          <h3 class="font-semibold mb-1 group-hover:text-emerald-400 transition-colors">🧰 A stack sem API key</h3>
+          <p class="text-xs text-neutral-400">Tudo roda na máquina</p>
+        </a>
+      </div>
+    </section>
+
+    <h2 class="text-2xl font-bold mb-6">Conteúdo detalhado</h2>
+
+    <!-- MÓDULO 1.1 -->
+    <div id="modulo-1-1" class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2"><span class="text-emerald-400 font-bold">1.1</span><span class="text-xs text-neutral-500">~30 min</span></div>
+        <h3 class="text-2xl font-bold mb-2">🎯 Demonstrativo vs Explicativo</h3>
+        <p class="text-neutral-400 text-sm">A skill <code class="text-emerald-400">video-demonstrativo</code> MOSTRA um app real sendo usado — não explica um conceito com motion graphics. Aqui você entende o que é um walkthrough, quando usá-lo e o que a skill entrega.</p>
+      </div>
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg">🎬</span><div><span class="font-medium">O que é um walkthrough</span><span class="text-neutral-500 text-sm ml-2">- vídeo de demonstração</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Um walkthrough é um vídeo que percorre uma aplicação web passo a passo, mostrando telas reais do app sendo usado — clicar, preencher, gerar, ver o resultado.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o formato que demonstra como algo funciona na prática, sem o usuário precisar abrir o app sozinho.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">App real, passo a passo, tela por tela, narrado.</p></div>
+          </div></div>
+        </div>
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg">⚖️</span><div><span class="font-medium">Demonstrativo vs explicativo</span><span class="text-neutral-500 text-sm ml-2">- as skills irmãs</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm"><code>video-explicativo</code> explica um conceito com motion graphics (cenas animadas). <code>video-demonstrativo</code> mostra um app real navegado de verdade.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Escolher a skill errada custa tempo. Conceito abstrato → explicativo; ferramenta concreta → demonstrativo.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Mostrar vs explicar; tela real vs motion graphics.</p></div>
+          </div></div>
+        </div>
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg">🤔</span><div><span class="font-medium">Quando usar cada um</span><span class="text-neutral-500 text-sm ml-2">- o teste rápido</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Se existe uma tela para mostrar (um app, um localhost, uma URL), é demonstrativo. Se é uma ideia sem interface, é explicativo.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Um critério único elimina a dúvida e direciona ao fluxo certo logo no começo.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">"Tem tela?" = demonstrativo; "É conceito?" = explicativo.</p></div>
+          </div></div>
+        </div>
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg">📋</span><div><span class="font-medium">Casos de uso</span><span class="text-neutral-500 text-sm ml-2">- onboarding, feature, lançamento</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Onboarding de produto, tutorial de uma feature nova, vídeo de lançamento e material de suporte são os usos naturais do walkthrough.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Reconhecer o caso de uso ajuda a definir o roteiro de passos certo.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Onboarding, feature, lançamento, suporte.</p></div>
+          </div></div>
+        </div>
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg">🖱️</span><div><span class="font-medium">O que a skill entrega</span><span class="text-neutral-500 text-sm ml-2">- moldura, cursor, zoom, narração</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Os screenshots reais entram numa moldura de navegador (barra + URL), com um cursor animado que clica nos controles, zoom no resultado e narração TTS.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">São esses quatro elementos que transformam prints estáticos num vídeo que parece gravação de tela profissional.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Moldura de navegador, cursor, destaque/zoom, narração.</p></div>
+          </div></div>
+        </div>
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg">📐</span><div><span class="font-medium">Formato de saída</span><span class="text-neutral-500 text-sm ml-2">- 16:9, narrado, CTA</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A saída é um MP4 em 16:9 (telas de app são landscape), com narração em PT-BR e a CTA do INEMA.CLUB na cena final.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Saber o formato natural evita pedir 9:16 (que exigiria recorte) e alinha a expectativa.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">16:9, MP4, narrado, CTA final.</p></div>
+          </div></div>
+        </div>
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">7</span>
+            <span class="text-lg">🔗</span><div><span class="font-medium">A entrada é o link</span><span class="text-neutral-500 text-sm ml-2">- app ou localhost</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O ponto de partida é simplesmente o link do app — uma URL pública ou um <code>localhost:8000</code>. O app precisa estar no ar para a captura navegá-lo.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Entender que a entrada é o link (e não um arquivo de roteiro) muda como você prepara o trabalho.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Link do app, localhost, app no ar.</p></div>
+          </div></div>
+        </div>
+      </div>
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modal-1-1')" class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors">Ver em Modal</button>
+        <a href="modulo-1-1.html" class="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors">Ver Completo</a>
+      </div>
+    </div>
+
+    <!-- MÓDULO 1.2 -->
+    <div id="modulo-1-2" class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2"><span class="text-emerald-400 font-bold">1.2</span><span class="text-xs text-neutral-500">~30 min</span></div>
+        <h3 class="text-2xl font-bold mb-2">🧠 Capturar antes, animar depois</h3>
+        <p class="text-neutral-400 text-sm">O princípio que rege toda a skill. O render do HyperFrames é determinístico — sem rede no momento de renderizar. Por isso capturam-se screenshots reais antes, e o viewport fixo da captura vira o espaço de coordenadas do cursor.</p>
+      </div>
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg">⚙️</span><div><span class="font-medium">Render determinístico</span><span class="text-neutral-500 text-sm ml-2">- sem rede no render</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O HyperFrames renderiza o HTML em frames de forma determinística: nada de <code>fetch</code> ou requisições de rede durante a renderização.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É a restrição técnica de onde nasce todo o resto do princípio.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Determinístico, sem rede, frame a frame.</p></div>
+          </div></div>
+        </div>
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg">🚫</span><div><span class="font-medium">Nunca o site ao vivo</span><span class="text-neutral-500 text-sm ml-2">- nada de iframe live</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Como o render não acessa a rede, jamais se carrega o app ao vivo dentro do vídeo (nem em iframe) — seria inconsistente e quebraria.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Evita a tentação errada de "embedar o site" e direciona para a captura.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Sem live, sem iframe do app, só imagem.</p></div>
+          </div></div>
+        </div>
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg">📸</span><div><span class="font-medium">Capturar screenshots antes</span><span class="text-neutral-500 text-sm ml-2">- 1 por estado</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Antes de montar o vídeo, navega-se o app de verdade e tira-se um screenshot real por estado (tela inicial, depois de preencher, depois do resultado…).</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">São esses prints que vão para dentro da moldura — a base visual de tudo.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">1 shot por estado, antes do render, telas reais.</p></div>
+          </div></div>
+        </div>
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg">🖼️</span><div><span class="font-medium">Viewport fixo = coordenadas</span><span class="text-neutral-500 text-sm ml-2">- o espaço sagrado</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O viewport fixo usado na captura (ex.: 1280×800) vira o sistema de coordenadas em que tudo é posicionado depois.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Se o viewport mudar entre o shot e a medição da caixa, o cursor erra o alvo.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Viewport fixo, mesmo tamanho, ≤ ~1280 de largura.</p></div>
+          </div></div>
+        </div>
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg">📦</span><div><span class="font-medium">Bounding boxes reais</span><span class="text-neutral-500 text-sm ml-2">- viewport-relative</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">A posição de cada elemento-alvo vem de <code>getBoundingClientRect</code> — coordenadas relativas ao viewport, não "no olho".</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É a caixa real que faz o cursor cair exato no controle, dando o ar profissional.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">getBoundingClientRect, viewport-relative, caixa real.</p></div>
+          </div></div>
+        </div>
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg">🖱️</span><div><span class="font-medium">O cursor mira as boxes</span><span class="text-neutral-500 text-sm ml-2">- e a consistência shot↔coord</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O cursor anima mirando o centro de cada bounding box. Para acertar, o screenshot e a caixa têm que vir do mesmo viewport e mesmo scroll.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">A consistência shot↔coordenada é o que mantém o cursor sempre alinhado com o que aparece na tela.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Cursor mira a box, mesmo viewport, mesmo scroll.</p></div>
+          </div></div>
+        </div>
+      </div>
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modal-1-2')" class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors">Ver em Modal</button>
+        <a href="modulo-1-2.html" class="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors">Ver Completo</a>
+      </div>
+    </div>
+
+    <!-- MÓDULO 1.3 -->
+    <div id="modulo-1-3" class="bg-dark-800 rounded-xl border border-dark-600 mb-6">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-center justify-between mb-2"><span class="text-emerald-400 font-bold">1.3</span><span class="text-xs text-neutral-500">~30 min</span></div>
+        <h3 class="text-2xl font-bold mb-2">🧰 A stack sem API key</h3>
+        <p class="text-neutral-400 text-sm">Três peças locais fazem tudo: agent-browser (Playwright) para capturar, HyperFrames (HTML→MP4) para renderizar e Kokoro TTS para narrar. Nenhuma chave de API — tudo roda na sua máquina.</p>
+      </div>
+      <div class="divide-y divide-dark-600">
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+            <span class="text-lg">🌐</span><div><span class="font-medium">agent-browser (Playwright)</span><span class="text-neutral-500 text-sm ml-2">- a captura</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O agent-browser dirige um navegador via Playwright: abre a URL, navega o app, executa ações e tira os screenshots reais.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É a ferramenta que produz a matéria-prima do vídeo (shots + bounding boxes).</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Playwright, navegação automatizada, screenshots.</p></div>
+          </div></div>
+        </div>
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+            <span class="text-lg">🎞️</span><div><span class="font-medium">HyperFrames (HTML→MP4)</span><span class="text-neutral-500 text-sm ml-2">- o render</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O HyperFrames converte uma página HTML animada em MP4, usando Chrome headless para gerar frames e FFmpeg para montar o vídeo.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É o motor de saída — entender que é HTML→MP4 explica por que o render é determinístico.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">HTML→MP4, Chrome headless, FFmpeg.</p></div>
+          </div></div>
+        </div>
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+            <span class="text-lg">🗣️</span><div><span class="font-medium">Kokoro TTS local</span><span class="text-neutral-500 text-sm ml-2">- voz pf_dora</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">O Kokoro gera a narração em PT-BR localmente (voz <code>pf_dora</code>, <code>--speed 0.98</code>) — um WAV por passo, sem serviço externo.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">É a fonte do áudio; o gerador mede esses WAVs para sincronizar o timing.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">TTS local, pf_dora, PT-BR, WAV por passo.</p></div>
+          </div></div>
+        </div>
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+            <span class="text-lg">🔒</span><div><span class="font-medium">Sem chave de API</span><span class="text-neutral-500 text-sm ml-2">- tudo na máquina</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">As três peças rodam localmente — captura, render e narração não dependem de nenhum serviço pago nem chave de API.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Significa custo zero por vídeo e nenhum dado saindo da sua máquina.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Local, sem API, custo zero, privado.</p></div>
+          </div></div>
+        </div>
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+            <span class="text-lg">📥</span><div><span class="font-medium">Instalar a skill</span><span class="text-neutral-500 text-sm ml-2">- zip, cópia ou symlink</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Há três jeitos: descompactar o <code>.zip</code> em <code>~/.claude/skills/</code>, copiar a pasta <code>video-demonstrativo/</code>, ou criar um symlink (para desenvolver).</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Como skill é só uma pasta, instalar é copiar/colar — sem instalador.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">unzip, copiar pasta, symlink.</p></div>
+          </div></div>
+        </div>
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+            <span class="text-lg">📂</span><div><span class="font-medium">Onde a skill vive</span><span class="text-neutral-500 text-sm ml-2">- global vs projeto</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm"><code>~/.claude/skills/</code> torna a skill global (todo projeto); <code>.claude/skills/</code> no repositório a restringe àquele projeto.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Decidir o escopo certo evita duplicar a skill ou não encontrá-la.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Global, projeto, escopo.</p></div>
+          </div></div>
+        </div>
+        <div class="topic-item">
+          <button onclick="toggleTopic(this)" class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-bold flex items-center justify-center flex-shrink-0">7</span>
+            <span class="text-lg">⚡</span><div><span class="font-medium">Como disparar a skill</span><span class="text-neutral-500 text-sm ml-2">- frases-gatilho</span></div>
+          </button>
+          <div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+            <div><span class="text-emerald-400 font-semibold">O que é:</span><p class="text-neutral-300 text-sm">Pedidos como "vídeo de demonstração", "demo do app", "walkthrough", ou simplesmente dar um link/localhost acionam a skill.</p></div>
+            <div><span class="text-emerald-400 font-semibold">Por que aprender:</span><p class="text-neutral-300 text-sm">Conhecer os gatilhos garante que a skill certa entre em ação (e não a explicativo).</p></div>
+            <div><span class="text-emerald-400 font-semibold">Conceitos-chave:</span><p class="text-neutral-300 text-sm">Frases-gatilho, dar o link, walkthrough.</p></div>
+          </div></div>
+        </div>
+      </div>
+      <div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+        <button onclick="openModal('modal-1-3')" class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors">Ver em Modal</button>
+        <a href="modulo-1-3.html" class="px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-colors">Ver Completo</a>
+      </div>
+    </div>
+
+    <!-- NAV TRILHA -->
+    <div class="flex flex-col sm:flex-row gap-4 mt-10">
+      <a href="../index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Todas as trilhas</a>
+      <a href="../trilha2/index.html" class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors">Trilha 2: Captura →</a>
+    </div>
+  </main>
+
+  <!-- MODAIS -->
+  <div id="modal-1-1" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" onclick="if(event.target === this) closeModal()">
+    <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+      <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">1.1</span><span class="font-semibold">Demonstrativo vs Explicativo</span></div><button onclick="closeModal()" class="text-neutral-400 hover:text-white text-2xl leading-none">&times;</button></div>
+      <iframe src="modulo-1-1.html" class="flex-1 w-full rounded-b-xl"></iframe>
+    </div>
+  </div>
+  <div id="modal-1-2" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" onclick="if(event.target === this) closeModal()">
+    <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+      <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">1.2</span><span class="font-semibold">Capturar antes, animar depois</span></div><button onclick="closeModal()" class="text-neutral-400 hover:text-white text-2xl leading-none">&times;</button></div>
+      <iframe src="modulo-1-2.html" class="flex-1 w-full rounded-b-xl"></iframe>
+    </div>
+  </div>
+  <div id="modal-1-3" class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" onclick="if(event.target === this) closeModal()">
+    <div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+      <div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-emerald-400 font-bold">1.3</span><span class="font-semibold">A stack sem API key</span></div><button onclick="closeModal()" class="text-neutral-400 hover:text-white text-2xl leading-none">&times;</button></div>
+      <iframe src="modulo-1-3.html" class="flex-1 w-full rounded-b-xl"></iframe>
+    </div>
+  </div>
+
+  <footer class="border-t border-dark-600 py-8 mt-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p class="mb-1">Conteúdo do <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 font-medium">INEMA.CLUB</a></p>
+      <p>Vídeo Demonstrativo — Trilha 1: Fundamentos · 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    function openModal(id){ const m=document.getElementById(id); if(m){ m.classList.remove('hidden'); document.body.style.overflow='hidden'; } }
+    function closeModal(){ document.querySelectorAll('.modal').forEach(m=>m.classList.add('hidden')); document.body.style.overflow='auto'; }
+    document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+    const themeToggle=document.getElementById('theme-toggle');
+    const di=document.getElementById('theme-toggle-dark-icon'), li=document.getElementById('theme-toggle-light-icon');
+    const root=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){ di.classList.remove('hidden'); root.classList.remove('dark'); } else { li.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', ()=>{ di.classList.toggle('hidden'); li.classList.toggle('hidden'); root.classList.toggle('dark'); localStorage.setItem('theme', root.classList.contains('dark')?'dark':'light'); });
+  </script>
+</body>
+</html>

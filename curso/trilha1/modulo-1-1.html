@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1.1 — Demonstrativo vs Explicativo | Vídeo Demonstrativo · INEMA.CLUB</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    /* acento emerald */
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-emerald-300 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) .border-emerald-500\/20 { border-color: rgba(5,150,105,0.18); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    /* outras trilhas (nav) */
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .text-yellow-300 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+    html:not(.dark) .text-red-400 { color: #dc2626; }
+    html:not(.dark) .bg-red-500\/10 { background-color: rgba(220,38,38,0.08); }
+    html:not(.dark) .border-red-500\/30 { border-color: rgba(220,38,38,0.25); }
+    html:not(.dark) .text-blue-300 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+    html:not(.dark) .text-cyan-400 { color: #0891b2; }
+    html:not(.dark) .text-cyan-300 { color: #0891b2; }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+    @keyframes m11-flow { 0% { stroke-dashoffset: 120; } 100% { stroke-dashoffset: 0; } }
+    @keyframes m11-pulse { 0%,100% { opacity:.4 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .m11-anim-flow { animation: m11-flow 2.5s linear infinite; }
+      .m11-anim-pulse { animation: m11-pulse 2.8s ease-in-out infinite; }
+      .m11-anim-pulse:nth-child(2) { animation-delay: .4s; }
+      .m11-anim-pulse:nth-child(3) { animation-delay: .8s; }
+    }
+  </style>
+</head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-14">
+        <div class="flex items-center space-x-4">
+          <a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300">
+            <span class="text-2xl">🖱️</span><span class="font-bold text-lg hidden sm:inline">Demonstrativo</span>
+          </a>
+          <span class="text-neutral-600">|</span>
+          <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2">
+          <a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+          <a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Captura</span></a>
+          <a href="../trilha3/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Render</span></a>
+          <button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <nav class="flex items-center space-x-2 text-sm text-neutral-500">
+      <a href="../../index.html" class="hover:text-emerald-400 transition-colors">Início</a>
+      <span>/</span>
+      <a href="index.html" class="hover:text-emerald-400 transition-colors">Trilha 1 — Fundamentos</a>
+      <span>/</span>
+      <span class="text-emerald-400 font-medium">Módulo 1.1</span>
+    </nav>
+  </div>
+
+  <!-- HEADER -->
+  <header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-10 border-b border-dark-600 mt-4">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MÓDULO 1.1</span>
+          <h1 class="text-2xl sm:text-3xl font-bold mb-4">🎯 Demonstrativo vs Explicativo</h1>
+          <p class="text-lg text-neutral-400 max-w-xl">A regra de ouro deste módulo: <strong>mostrar o app, não explicar o conceito</strong>. A skill <code class="text-emerald-400">video-demonstrativo</code> navega uma aplicação web de verdade e a transforma num walkthrough narrado — diferente da irmã <code class="text-emerald-400">video-explicativo</code>, que anima conceitos.</p>
+          <div class="grid grid-cols-4 gap-3 mt-6">
+            <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">7</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+            <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">~30</div><div class="text-xs text-neutral-400">Minutos</div></div>
+            <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Básico</div><div class="text-xs text-neutral-400">Nível</div></div>
+            <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Teoria</div><div class="text-xs text-neutral-400">Tipo</div></div>
+          </div>
+        </div>
+
+        <!-- SVG FUTURISTA -->
+        <div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4">
+          <svg viewBox="0 0 400 240" class="w-full h-auto" role="img" aria-label="Comparação entre vídeo demonstrativo, que mostra a tela real de um app dentro de uma moldura de navegador, e vídeo explicativo, que usa motion graphics de um conceito" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="m11-bg-grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#0e2018"/><stop offset="100%" style="stop-color:#0e1b26"/></linearGradient>
+              <filter id="m11-glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <rect width="400" height="240" fill="url(#m11-bg-grad)" rx="12"/>
+            <g stroke="#1a3b2a" stroke-width="0.5" opacity="0.5">
+              <line x1="0" y1="60" x2="400" y2="60"/><line x1="0" y1="120" x2="400" y2="120"/><line x1="0" y1="180" x2="400" y2="180"/>
+              <line x1="200" y1="0" x2="200" y2="240"/>
+            </g>
+            <text x="200" y="24" text-anchor="middle" font-family="Inter,sans-serif" font-size="13" font-weight="800" fill="#34d399">DUAS SKILLS IRMÃS</text>
+            <!-- Lado demonstrativo (esq) -->
+            <text x="100" y="48" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#34d399">🖱️ DEMONSTRATIVO</text>
+            <rect x="28" y="62" width="144" height="98" rx="8" fill="#0b1a13" stroke="#34d399" stroke-width="1.5" filter="url(#m11-glow)"/>
+            <!-- moldura navegador -->
+            <rect x="28" y="62" width="144" height="16" rx="8" fill="#16271d"/>
+            <circle cx="40" cy="70" r="2.5" fill="#34d399"/><circle cx="49" cy="70" r="2.5" fill="#6ee7b7" opacity="0.6"/><circle cx="58" cy="70" r="2.5" fill="#6ee7b7" opacity="0.4"/>
+            <rect x="68" y="66" width="96" height="8" rx="4" fill="#0e2018"/>
+            <text x="116" y="72.5" text-anchor="middle" font-family="Inter,sans-serif" font-size="5.5" fill="#6ee7b7">localhost:8000</text>
+            <!-- conteúdo app -->
+            <rect x="40" y="88" width="120" height="10" rx="3" fill="#1f3b2c"/>
+            <rect x="40" y="104" width="80" height="8" rx="3" fill="#16271d"/>
+            <rect x="40" y="118" width="120" height="22" rx="4" fill="#0e2018" stroke="#34d399" stroke-width="1"/>
+            <text x="100" y="132" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#6ee7b7">tela real do app</text>
+            <!-- cursor -->
+            <path d="M132 128 L132 142 L136 138 L139 144 L142 142 L139 137 L144 137 Z" fill="#fff" stroke="#34d399" stroke-width="0.8"/>
+            <text x="100" y="176" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#34d399" class="m11-anim-pulse">mostra app sendo usado</text>
+            <!-- Lado explicativo (dir) -->
+            <text x="300" y="48" text-anchor="middle" font-family="Inter,sans-serif" font-size="10" font-weight="700" fill="#38bdf8">🎬 EXPLICATIVO</text>
+            <rect x="228" y="62" width="144" height="98" rx="8" fill="#0b1722" stroke="#38bdf8" stroke-width="1.5" filter="url(#m11-glow)"/>
+            <circle cx="300" cy="100" r="22" fill="none" stroke="#38bdf8" stroke-width="2" class="m11-anim-pulse"/>
+            <circle cx="300" cy="100" r="10" fill="#0e1b26" stroke="#38bdf8" stroke-width="1.5"/>
+            <path d="M260 130 Q300 110 340 130" fill="none" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="5,4" class="m11-anim-flow"/>
+            <text x="300" y="148" text-anchor="middle" font-family="Inter,sans-serif" font-size="7" fill="#bfe6ff">motion graphics</text>
+            <text x="300" y="176" text-anchor="middle" font-family="Inter,sans-serif" font-size="7.5" fill="#38bdf8" class="m11-anim-pulse">explica um conceito</text>
+            <!-- caixa inferior -->
+            <rect x="50" y="196" width="300" height="32" rx="6" fill="#091a12" stroke="#34d399" stroke-width="1" opacity="0.9"/>
+            <text x="200" y="210" text-anchor="middle" font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#34d399">🎯 Tem tela? → demonstrativo</text>
+            <text x="200" y="222" text-anchor="middle" font-family="Inter,sans-serif" font-size="8" fill="#6ee7b7">É conceito sem interface? → explicativo</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+
+    <!-- TÓPICO 1 -->
+    <section id="topico-1" class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">1</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">🎬 O que é um walkthrough</h2>
+            <p class="text-neutral-400 mt-2">Um walkthrough — ou vídeo de demonstração — percorre uma aplicação web real, tela por tela, mostrando o app em uso: abrir, clicar, preencher, gerar, ver o resultado. Nada é desenhado; tudo é capturado da tela de verdade.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div class="rounded-xl bg-gradient-to-br from-emerald-900/30 to-dark-700/50 border border-emerald-500/30 p-5">
+          <div class="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-2">Conceito Principal</div>
+          <p class="text-neutral-200 font-medium">O walkthrough responde "<em>como eu uso isso?</em>" mostrando a resposta na própria interface. Em vez de descrever botões e campos, ele aparece tocando neles — com um cursor que cai exatamente no controle e narração explicando cada passo.</p>
+          <p class="text-neutral-400 text-sm mt-3">Na prática: 5 a 8 passos + a CTA final dão um vídeo de cerca de 35 a 50 segundos. O arco típico é <code class="text-emerald-300">abrir o app → ação 1 → ação 2 → … → resultado → CTA</code>.</p>
+        </div>
+
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Anatomia de um passo no roteiro (STEPS.md)</div>
+          <div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
+            <div class="text-neutral-500 text-xs mb-3"># cada passo = uma ação + uma frase de narração</div>
+            <div><span class="text-emerald-400">Passo 1</span> <span class="text-neutral-500">(intro)</span> — tela inicial do app</div>
+            <div class="ml-4 text-neutral-300">narração: "Este é o gerador de imagens do INEMA."</div>
+            <div class="mt-2"><span class="text-emerald-400">Passo 2</span> — escrever o prompt</div>
+            <div class="ml-4 text-neutral-300">narração: "Escrevemos o que queremos gerar."</div>
+            <div class="mt-2"><span class="text-emerald-400">Passo 3</span> — clicar em Gerar</div>
+            <div class="ml-4 text-neutral-300">narração: "E clicamos em Gerar."</div>
+            <div class="mt-2"><span class="text-cyan-400">Passo final</span> <span class="text-neutral-500">(zoom)</span> — o resultado</div>
+            <div class="ml-4 text-neutral-300">narração: "Pronto: a imagem aparece em segundos."</div>
+          </div>
+        </div>
+
+        <div class="rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-4 flex gap-3">
+          <span class="text-emerald-400 text-xl flex-shrink-0">💡</span>
+          <div>
+            <div class="text-emerald-400 font-semibold text-sm mb-1">O primeiro passo apresenta, o último celebra</div>
+            <p class="text-neutral-400 text-sm">O passo de abertura costuma ser a tela inicial (marcada <code class="text-emerald-300">intro:true</code>) para apresentar o app. O último passo de conteúdo costuma ser o resultado (<code class="text-emerald-300">zoom:true</code>), com um zoom suave que valoriza a entrega.</p>
+          </div>
+        </div>
+
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Conceitos-chave</div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">🖥️</div><div class="text-xs font-semibold text-neutral-200">App real</div><div class="text-xs text-neutral-500">Tela de verdade</div></div>
+            <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">👣</div><div class="text-xs font-semibold text-neutral-200">Passo a passo</div><div class="text-xs text-neutral-500">5–8 passos</div></div>
+            <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">🗣️</div><div class="text-xs font-semibold text-neutral-200">Narrado</div><div class="text-xs text-neutral-500">1 frase/passo</div></div>
+            <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">⏱️</div><div class="text-xs font-semibold text-neutral-200">~35–50s</div><div class="text-xs text-neutral-500">Duração típica</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 2 -->
+    <section id="topico-2" class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">2</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">⚖️ Demonstrativo vs explicativo</h2>
+            <p class="text-neutral-400 mt-2">São duas skills irmãs com o mesmo motor de render (HyperFrames) e a mesma CTA, mas propósitos opostos. Uma mostra um app real; a outra explica um conceito abstrato com cenas animadas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-4">As duas skills lado a lado</div>
+          <div class="overflow-x-auto rounded-xl border border-dark-600">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="bg-dark-700/60 border-b border-dark-600">
+                  <th class="text-left p-3 text-neutral-400 font-semibold">Aspecto</th>
+                  <th class="text-center p-3 text-emerald-400 font-semibold">🖱️ video-demonstrativo</th>
+                  <th class="text-center p-3 text-blue-400 font-semibold">🎬 video-explicativo</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-dark-600">
+                <tr class="hover:bg-dark-700/30"><td class="p-3 text-neutral-300">Objetivo</td><td class="p-3 text-center text-emerald-400 font-semibold">Mostrar um app sendo usado</td><td class="p-3 text-center text-neutral-400">Explicar um conceito</td></tr>
+                <tr class="hover:bg-dark-700/30"><td class="p-3 text-neutral-300">Visual</td><td class="p-3 text-center text-emerald-400 font-semibold">Screenshots reais</td><td class="p-3 text-center text-neutral-400">Motion graphics animados</td></tr>
+                <tr class="hover:bg-dark-700/30"><td class="p-3 text-neutral-300">Entrada</td><td class="p-3 text-center text-emerald-400 font-semibold">Link do app / localhost</td><td class="p-3 text-center text-neutral-400">Um assunto / tema</td></tr>
+                <tr class="hover:bg-dark-700/30"><td class="p-3 text-neutral-300">Captura</td><td class="p-3 text-center text-emerald-400 font-semibold">agent-browser navega o app</td><td class="p-3 text-center text-neutral-400">Não há captura</td></tr>
+                <tr class="hover:bg-dark-700/30"><td class="p-3 text-neutral-300">Formato</td><td class="p-3 text-center text-emerald-400 font-semibold">16:9 (telas landscape)</td><td class="p-3 text-center text-neutral-400">16:9 e 9:16</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
+            <div class="text-emerald-400 font-semibold text-sm mb-3">✓ É demonstrativo quando...</div>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Existe um app/site com uma tela navegável</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> O usuário deu um link ou um localhost</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Quer mostrar como uma feature funciona na prática</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> O foco é o produto, não a ideia por trás</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border border-blue-500/30 bg-blue-500/10 p-4">
+            <div class="text-blue-400 font-semibold text-sm mb-3">🎬 É explicativo quando...</div>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">→</span> O tema é abstrato, sem interface para mostrar</li>
+              <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">→</span> Você quer ilustrar com diagramas e animações</li>
+              <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">→</span> Precisa de versão vertical (Shorts/Reels)</li>
+              <li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">→</span> O foco é educar sobre um conceito</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-4 flex gap-3">
+          <span class="text-emerald-400 text-xl flex-shrink-0">💡</span>
+          <div>
+            <div class="text-emerald-400 font-semibold text-sm mb-1">Mesmo DNA, propósitos opostos</div>
+            <p class="text-neutral-400 text-sm">Ambas terminam na CTA do INEMA.CLUB e usam TTS local + HyperFrames. A diferença está na origem do visual: <strong>tela capturada</strong> (demonstrativo) versus <strong>cena desenhada</strong> (explicativo).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 3 -->
+    <section id="topico-3" class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">3</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">🤔 Quando usar cada um</h2>
+            <p class="text-neutral-400 mt-2">Existe um teste de uma pergunta que decide a skill em segundos — e elimina a dúvida antes mesmo de começar o roteiro.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div class="rounded-xl bg-gradient-to-br from-emerald-900/30 to-dark-700/50 border border-emerald-500/30 p-5">
+          <div class="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-2">O teste de uma pergunta</div>
+          <p class="text-neutral-200 font-medium text-lg">"<strong>Existe uma tela para mostrar?</strong>"</p>
+          <p class="text-neutral-400 text-sm mt-3">Se a resposta é sim — há um app, um localhost, uma URL navegável —, é <span class="text-emerald-400 font-semibold">demonstrativo</span>. Se não há interface, só uma ideia para ilustrar, é <span class="text-blue-400 font-semibold">explicativo</span>.</p>
+        </div>
+
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-4">Árvore de decisão</div>
+          <div class="relative pl-8 space-y-0">
+            <div class="absolute left-3 top-2 bottom-2 w-0.5 bg-emerald-500/30"></div>
+            <div class="relative pb-5">
+              <div class="absolute -left-5 w-4 h-4 rounded-full bg-emerald-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">1</span></div>
+              <div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600">
+                <div class="font-semibold text-emerald-400 text-sm">O usuário deu um link ou localhost?</div>
+                <p class="text-neutral-400 text-sm mt-1">Se sim, é o sinal mais forte de demonstrativo. A própria entrada da skill é o link do app.</p>
+              </div>
+            </div>
+            <div class="relative pb-5">
+              <div class="absolute -left-5 w-4 h-4 rounded-full bg-emerald-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">2</span></div>
+              <div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600">
+                <div class="font-semibold text-emerald-400 text-sm">O pedido fala em "demo", "walkthrough", "mostrar como usar"?</div>
+                <p class="text-neutral-400 text-sm mt-1">Verbos de demonstração ("mostrar", "gravar a tela", "passo a passo usando") apontam para demonstrativo.</p>
+              </div>
+            </div>
+            <div class="relative pb-5">
+              <div class="absolute -left-5 w-4 h-4 rounded-full bg-blue-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">3</span></div>
+              <div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600">
+                <div class="font-semibold text-blue-400 text-sm">O pedido é "explique X", "vídeo sobre Y", sem app?</div>
+                <p class="text-neutral-400 text-sm mt-1">Aí é explicativo — o conteúdo será motion graphics, não captura de tela.</p>
+              </div>
+            </div>
+            <div class="relative">
+              <div class="absolute -left-5 w-4 h-4 rounded-full bg-emerald-400 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">✓</span></div>
+              <div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600">
+                <div class="font-semibold text-emerald-400 text-sm">Na dúvida, pergunte: "tem um app no ar?"</div>
+                <p class="text-neutral-400 text-sm mt-1">Uma única pergunta ao usuário resolve casos ambíguos sem custo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-4 flex gap-3">
+          <span class="text-emerald-400 text-xl flex-shrink-0">💡</span>
+          <div>
+            <div class="text-emerald-400 font-semibold text-sm mb-1">App precisa estar no ar</div>
+            <p class="text-neutral-400 text-sm">Demonstrativo exige o app acessível durante a captura (ex.: <code class="text-emerald-300">localhost:8000</code> rodando). Sem o app no ar, não há o que navegar — confirme isso antes de prometer o vídeo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 4 -->
+    <section id="topico-4" class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">4</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">📋 Casos de uso</h2>
+            <p class="text-neutral-400 mt-2">O walkthrough brilha sempre que o objetivo é mostrar um produto em funcionamento. Quatro situações cobrem a maioria dos pedidos.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-4">Quatro casos de uso clássicos</div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="bg-dark-700/40 rounded-xl border border-dark-600 p-4">
+              <div class="text-2xl mb-3">🚪</div>
+              <div class="font-semibold text-neutral-200 text-sm mb-2">Onboarding de produto</div>
+              <p class="text-neutral-400 text-xs">Um novo usuário vê os primeiros passos do app: cadastro, tela principal, primeira ação de valor. Reduz o atrito de quem acabou de chegar.</p>
+            </div>
+            <div class="bg-dark-700/40 rounded-xl border border-dark-600 p-4">
+              <div class="text-2xl mb-3">✨</div>
+              <div class="font-semibold text-neutral-200 text-sm mb-2">Tutorial de feature</div>
+              <p class="text-neutral-400 text-xs">Demonstra uma funcionalidade específica de ponta a ponta — útil quando uma feature nova precisa de um "como funciona" rápido.</p>
+            </div>
+            <div class="bg-dark-700/40 rounded-xl border border-dark-600 p-4">
+              <div class="text-2xl mb-3">🚀</div>
+              <div class="font-semibold text-neutral-200 text-sm mb-2">Lançamento</div>
+              <p class="text-neutral-400 text-xs">Vídeo de anúncio que mostra o produto real em ação no momento do lançamento, com a CTA do INEMA.CLUB no fim.</p>
+            </div>
+            <div class="bg-dark-700/40 rounded-xl border border-dark-600 p-4">
+              <div class="text-2xl mb-3">🛟</div>
+              <div class="font-semibold text-neutral-200 text-sm mb-2">Suporte</div>
+              <p class="text-neutral-400 text-xs">Responde "como faço X?" com um vídeo curto mostrando o caminho exato na tela — anexável a um chamado ou base de ajuda.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-blue-500/30 bg-blue-500/10 p-4">
+          <div class="text-blue-400 font-semibold text-sm mb-3">📊 Validado em apps reais</div>
+          <div class="grid sm:grid-cols-2 gap-3 text-sm">
+            <div class="bg-dark-700/60 rounded-lg p-3">
+              <div class="text-emerald-400 font-bold mb-1">App simples</div>
+              <div class="text-neutral-400 text-xs">Geração de imagem — fluxo de 7 passos, ~42s. O primeiro POC da skill.</div>
+            </div>
+            <div class="bg-dark-700/60 rounded-lg p-3">
+              <div class="text-emerald-400 font-bold mb-1">App complexo</div>
+              <div class="text-neutral-400 text-xs">Suíte de dublagem com IA — tutorial de 14 passos, 2:08, com input controlado por React e fluxo assíncrono multi-estado.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-4 flex gap-3">
+          <span class="text-emerald-400 text-xl flex-shrink-0">💡</span>
+          <div>
+            <div class="text-emerald-400 font-semibold text-sm mb-1">Quanto mais concreto o caso, melhor o roteiro</div>
+            <p class="text-neutral-400 text-sm">Saber se é onboarding, feature, lançamento ou suporte ajuda a escolher quais passos entram no vídeo — e qual é o "resultado" que merece o zoom final.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 5 -->
+    <section id="topico-5" class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">5</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">🖱️ O que a skill entrega</h2>
+            <p class="text-neutral-400 mt-2">Quatro elementos transformam screenshots estáticos num vídeo que parece gravação de tela profissional: moldura de navegador, cursor animado, destaque/zoom e narração.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div class="rounded-xl bg-gradient-to-br from-emerald-900/30 to-dark-700/50 border border-emerald-500/30 p-5">
+          <div class="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-2">Conceito Principal</div>
+          <p class="text-neutral-200 font-medium">Os prints reais entram dentro de uma moldura de navegador (barra + URL) para parecer uma janela de verdade. Por cima, um cursor global animado mira a bounding box real de cada controle, clica com pulse + ripple, e o resultado ganha um zoom suave. A narração TTS amarra tudo.</p>
+        </div>
+
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-4">Os quatro elementos</div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">🪟</div><div class="text-xs font-semibold text-neutral-200">Moldura</div><div class="text-xs text-neutral-500">Barra + URL</div></div>
+            <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">🖱️</div><div class="text-xs font-semibold text-neutral-200">Cursor</div><div class="text-xs text-neutral-500">Mira a box real</div></div>
+            <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">🔍</div><div class="text-xs font-semibold text-neutral-200">Destaque/zoom</div><div class="text-xs text-neutral-500">No resultado</div></div>
+            <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">🗣️</div><div class="text-xs font-semibold text-neutral-200">Narração</div><div class="text-xs text-neutral-500">TTS PT-BR</div></div>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
+            <div class="text-emerald-400 font-semibold text-sm mb-3">✓ O que a skill faz</div>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Cursor cai exato no controle (box real, não no olho)</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Clique vira pulse + ripple visíveis</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Zoom suave realça o resultado final</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Timing sincroniza com os WAVs medidos por ffprobe</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4">
+            <div class="text-red-400 font-semibold text-sm mb-3">✗ O que a skill NÃO faz (limites honestos)</div>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Estado dinâmico (vídeo, dados ao vivo) vira print estático</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Não carrega o site ao vivo dentro do vídeo</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> App com login exige credenciais de teste</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Movimento real só no modo v3 (roadmap, ainda não implementado)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 6 -->
+    <section id="topico-6" class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">6</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">📐 Formato de saída</h2>
+            <p class="text-neutral-400 mt-2">A saída é um MP4 em 16:9, narrado em PT-BR e terminado na CTA do INEMA.CLUB. O formato landscape não é estético — é técnico: telas de app são largas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-4">A saída em números</div>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg font-bold mb-1">16:9</div><div class="text-xs font-semibold text-neutral-200">Proporção</div><div class="text-xs text-neutral-500">1920×1080</div></div>
+            <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg font-bold mb-1">MP4</div><div class="text-xs font-semibold text-neutral-200">Container</div><div class="text-xs text-neutral-500">via FFmpeg</div></div>
+            <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg font-bold mb-1">30</div><div class="text-xs font-semibold text-neutral-200">FPS</div><div class="text-xs text-neutral-500">render high</div></div>
+            <div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg font-bold mb-1">PT-BR</div><div class="text-xs font-semibold text-neutral-200">Narração</div><div class="text-xs text-neutral-500">Kokoro local</div></div>
+          </div>
+        </div>
+
+        <div class="rounded-xl bg-gradient-to-br from-emerald-900/30 to-dark-700/50 border border-emerald-500/30 p-5">
+          <div class="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-2">A CTA final (padrão)</div>
+          <p class="text-neutral-200 font-medium">Toda saída termina na mesma cena: "CONTINUA EM" + <strong>INEMA.CLUB</strong> (INEMA em creme, .CLUB em âmbar com glow) + <code class="text-emerald-300">🌐 inema.club</code>. A narração fecha com "Isso é conteúdo do INEMA ponto CLUB. Acesse: inema ponto club." Já vem pronta no template de composição.</p>
+        </div>
+
+        <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4 flex gap-3">
+          <span class="text-red-400 text-xl flex-shrink-0">⚠️</span>
+          <div>
+            <div class="text-red-400 font-semibold text-sm mb-1">9:16 não é o formato natural</div>
+            <p class="text-neutral-400 text-sm">Como telas de app são landscape, o template gera 16:9. Uma versão vertical exigiria recortar/reenquadrar a região ativa — está no roadmap, não no fluxo padrão. Não prometa Shorts de um walkthrough sem alinhar o reenquadre.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÓPICO 7 -->
+    <section id="topico-7" class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden">
+      <div class="p-6 border-b border-dark-600">
+        <div class="flex items-start space-x-4">
+          <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">7</div>
+          <div>
+            <h2 class="text-xl font-bold flex items-center gap-2">🔗 A entrada é o link</h2>
+            <p class="text-neutral-400 mt-2">Diferente de skills que partem de um briefing ou roteiro, o ponto de partida do demonstrativo é literalmente o link do app — e ele precisa estar acessível.</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6 space-y-6">
+        <div>
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">O ponto de partida</div>
+          <div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
+            <div class="text-neutral-500 text-xs mb-3"># tudo começa com um link acessível</div>
+            <div><span class="text-emerald-400">URL pública</span> <span class="text-neutral-500">→</span> <span class="text-cyan-300">https://app.exemplo.com</span></div>
+            <div><span class="text-emerald-400">Localhost </span> <span class="text-neutral-500">→</span> <span class="text-cyan-300">http://localhost:8000/</span></div>
+            <br>
+            <div class="text-neutral-500 text-xs"># o agent-browser abre num viewport fixo</div>
+            <div><span class="text-neutral-300">agent-browser set viewport 1280 800</span></div>
+            <div><span class="text-neutral-300">agent-browser open http://localhost:8000/</span></div>
+          </div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
+            <div class="text-emerald-400 font-semibold text-sm mb-3">✓ Pré-requisitos da entrada</div>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> O app está no ar e responde</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> A tela-alvo é alcançável a partir da URL</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Há credenciais de teste se houver login</li>
+              <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Largura cabe no 16:9 (≤ ~1280)</li>
+            </ul>
+          </div>
+          <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4">
+            <div class="text-red-400 font-semibold text-sm mb-3">✗ Quando a entrada trava</div>
+            <ul class="space-y-2 text-sm text-neutral-300">
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> App offline — não há o que navegar</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Login sem credenciais (capture só telas públicas)</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Tela depende de dados ao vivo que somem</li>
+              <li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> URL inacessível pela máquina que captura</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-4 flex gap-3">
+          <span class="text-emerald-400 text-xl flex-shrink-0">💡</span>
+          <div>
+            <div class="text-emerald-400 font-semibold text-sm mb-1">Confirme o link antes de qualquer roteiro</div>
+            <p class="text-neutral-400 text-sm">O primeiro passo prático é garantir que o link abre e que a jornada-alvo é navegável. Sem isso, todo o resto do pipeline (captura, narração, render) não tem sobre o que trabalhar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESUMO DO MÓDULO -->
+    <section class="rounded-2xl bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 border border-emerald-500/30 p-8">
+      <h2 class="text-2xl font-bold mb-6 text-emerald-400">📋 Resumo do Módulo 1.1</h2>
+      <div class="grid sm:grid-cols-2 gap-6 mb-8">
+        <div>
+          <div class="text-sm font-semibold text-neutral-400 mb-3">O que você aprendeu</div>
+          <ul class="space-y-2">
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-emerald-400 mt-0.5">✓</span> Walkthrough = app real navegado passo a passo, narrado</li>
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-emerald-400 mt-0.5">✓</span> Demonstrativo MOSTRA app; explicativo EXPLICA conceito</li>
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-emerald-400 mt-0.5">✓</span> Teste de 1 pergunta: "existe uma tela para mostrar?"</li>
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-emerald-400 mt-0.5">✓</span> Casos: onboarding, feature, lançamento, suporte</li>
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-emerald-400 mt-0.5">✓</span> Entrega: moldura + cursor + zoom + narração</li>
+            <li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-emerald-400 mt-0.5">✓</span> Saída 16:9, narrada, CTA; entrada é o link do app</li>
+          </ul>
+        </div>
+        <div class="bg-dark-700/50 rounded-xl border border-emerald-500/20 p-5">
+          <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Próximo módulo</div>
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-xs">1.2</div>
+            <div>
+              <div class="font-semibold text-neutral-200">🧠 Capturar antes, animar depois</div>
+              <div class="text-sm text-neutral-400 mt-1">O princípio que rege a skill: por que o render é determinístico, por que se captura tela real antes, e como o viewport fixo vira o espaço de coordenadas do cursor.</div>
+            </div>
+          </div>
+          <a href="modulo-1-2.html" class="mt-4 flex items-center justify-start gap-2 text-emerald-400 hover:text-emerald-300 text-sm font-medium transition-colors">Ir para o módulo 1.2 →</a>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="index.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Voltar para Trilha 1</a>
+        <a href="modulo-1-2.html" class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors">Próximo Módulo: 1.2 Capturar antes →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-dark-600 py-8 mt-4">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+      <p class="mb-1">Conteúdo do <a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 font-medium">INEMA.CLUB</a></p>
+      <p>Vídeo Demonstrativo — Trilha 1: Fundamentos · Módulo 1.1 · 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const di = document.getElementById('theme-toggle-dark-icon');
+    const li = document.getElementById('theme-toggle-light-icon');
+    const root = document.documentElement;
+    if (localStorage.getItem('theme') === 'light') { di.classList.remove('hidden'); root.classList.remove('dark'); } else { li.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      di.classList.toggle('hidden'); li.classList.toggle('hidden'); root.classList.toggle('dark');
+      localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>
