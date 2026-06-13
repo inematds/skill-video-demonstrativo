@@ -15,8 +15,8 @@
     txt/sN.txt         # falas (gerado pelo narration-template a partir do steps.json)
     audio/sN.wav       # narração Kokoro (1 por passo + CTA)
     fonts/*.woff2 + fonts.css   # copiar de assets/fonts/ desta skill, ou rodar fetch-fonts.mjs
-  renders/
 ```
+> Tudo vive em `~/projetos/output/<nome>/` (o projeto é criado lá com `cd ~/projetos/output && npx hyperframes init <nome>`); o MP4 final sai na raiz desse projeto, sem `renders/` local.
 > Fontes: a skill já traz `assets/fonts/` pronto (Sora/Inter/JetBrains Mono, subset latin).
 > Copie pro projeto, ou rode `node fetch-fonts.mjs`. House style em
 > [house-style.md](house-style.md). Nada aqui depende de outro projeto.
@@ -74,5 +74,5 @@ destaque + zoom + CTA. `node build-demo.mjs` → `index.html` (16:9).
 ## 5. Validar e renderizar
 - `npx hyperframes lint` (0 erros) · `npx hyperframes inspect --samples 14` (0 problemas).
 - `--quality draft` pra conferir (extraia 1 frame por passo e mostre ao usuário); depois
-  `--quality high --fps 30 --output renders/<nome>-16x9.mp4`.
+  `--quality high --fps 30 --output <nome>-16x9.mp4` (na raiz do projeto, em `~/projetos/output/<nome>/`).
 - Extrair frame: `ffmpeg -nostdin -y -ss <t> -i video.mp4 -vframes 1 -update 1 frame.png`.

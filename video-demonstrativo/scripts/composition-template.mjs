@@ -235,8 +235,11 @@ ${audioHTML}
         const tl = gsap.timeline({ paused: true });
         const TOTAL = ${TOTAL};
         gsap.set("#cursor",{x:${cur0.x},y:${cur0.y}});
-        tl.to("#glow",{scale:1.18,opacity:.5,duration:4.5,yoyo:true,repeat:Math.ceil(TOTAL/4.5)+1,ease:"sine.inOut"},0);
-        tl.to("#grid",{backgroundPositionX:"+=128",backgroundPositionY:"+=128",duration:18,repeat:Math.ceil(TOTAL/18)+1,ease:"none"},0);
+        // repete um loop SEM ultrapassar TOTAL (senão tl.duration() estoura e sobra
+        // silêncio no fim do render — o HyperFrames usa tl.duration() como fim).
+        const ambientRepeat = (cycle) => Math.max(0, Math.floor(TOTAL / cycle) - 1);
+        tl.to("#glow",{scale:1.18,opacity:.5,duration:4.5,yoyo:true,repeat:ambientRepeat(4.5),ease:"sine.inOut"},0);
+        tl.to("#grid",{backgroundPositionX:"+=128",backgroundPositionY:"+=128",duration:18,repeat:ambientRepeat(18),ease:"none"},0);
         tl.fromTo("#progress",{scaleX:0},{scaleX:1,duration:TOTAL,ease:"none"},0);
       ${animJS}
       ${cursorJS}

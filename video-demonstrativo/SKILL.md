@@ -37,7 +37,9 @@ caixas (bounding boxes) que o cursor vai mirar.
    controle. Use [scripts/capture.mjs](scripts/capture.mjs) (lê `actions.json`) ou dirija o
    `agent-browser` na mão (passo a passo) — o resultado é `assets/shots/*.png` + `steps.json`.
    Detalhes em [references/pipeline.md](references/pipeline.md).
-3. **Projeto** — `npx hyperframes init <nome> --example blank --non-interactive`. Copie as
+3. **Projeto** — crie **tudo dentro de `~/projetos/output/<nome>/`** (pasta única do usuário):
+   `cd ~/projetos/output && npx hyperframes init <nome> --example blank --non-interactive`. Todo
+   o conteúdo (projeto, assets, captures, áudios, `index.html` e os MP4 finais) vive nessa pasta. Copie as
    fontes embutidas nesta skill (`assets/fonts/` → `assets/fonts/` do projeto), OU rode
    `node scripts/fetch-fonts.mjs` na raiz do projeto pra baixá-las. A house style (paleta,
    tipografia) está em [references/house-style.md](references/house-style.md). Esta skill é
@@ -54,9 +56,14 @@ caixas (bounding boxes) que o cursor vai mirar.
 6. **Validar** — `npx hyperframes lint` (0 erros) e `npx hyperframes inspect --samples 14`
    (0 problemas). Armadilhas em [references/gotchas.md](references/gotchas.md).
 7. **Render** — `--quality draft` pra conferir (extraia 1 frame por passo e mostre ao
-   usuário), depois `--quality high --fps 30 --output renders/<nome>-16x9.mp4`.
+   usuário), depois `--quality high --fps 30 --output <nome>-16x9.mp4`. O MP4 sai na raiz do
+   próprio projeto (que já está em `~/projetos/output/<nome>/`) — todo o conteúdo numa pasta só.
 
 ## Regras de ouro (não-negociáveis)
+- **Tudo em `~/projetos/output/<nome>/`** — o projeto inteiro (captures, áudios, `index.html` e
+  o MP4 final) mora nessa pasta única. Init com `cd ~/projetos/output && npx hyperframes init <nome>`. Nunca espalhar em `renders/` local.
+- **Sem silêncio no fim** — os loops de ambiente usam `ambientRepeat(ciclo)` (no template) para não
+  ultrapassar `TOTAL`; assim `tl.duration()` = duração real e o render não sobra cauda muda. Não voltar para `Math.ceil(...)+1`.
 - **Capturar antes, animar depois** — render determinístico; nada de site ao vivo no render.
 - **Viewport fixo na captura = espaço das coordenadas.** Mantenha o mesmo viewport na hora
   de pegar as bounding boxes e de tirar os screenshots. Largura ≤ ~1280 pra caber no 16:9.
