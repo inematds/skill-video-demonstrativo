@@ -1,5 +1,6 @@
 ---
 name: video-demonstrativo
+version: 1.1.0
 description: Cria vídeos de DEMONSTRAÇÃO (walkthrough/tutorial) de uma aplicação web em PT-BR, a partir do link do app — navega o app de verdade com um navegador automatizado, captura as telas reais passo a passo, e monta um vídeo narrado com moldura de navegador, cursor animado que clica exatamente nos controles, destaque/zoom e CTA do INEMA.CLUB (16:9 via HyperFrames). Use SEMPRE que o usuário pedir "vídeo de demonstração", "vídeo demonstrativo", "demo do app/sistema", "walkthrough", "tutorial em vídeo de uma ferramenta", "mostrar passo a passo usando o app", "gravar a tela do sistema", "vídeo mostrando como usar X", ou der um link/localhost de uma aplicação e quiser um vídeo mostrando o uso. Diferente da skill video-explicativo (que explica um conceito com motion graphics): esta MOSTRA um app real sendo usado. Cobre captura, narração TTS local, animação de cursor/zoom, render e a CTA final.
 ---
 

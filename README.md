@@ -12,6 +12,8 @@ navegador, cursor animado, destaque/zoom e CTA do INEMA.CLUB.
 É a irmã da skill `video-explicativo`: aquela **explica um conceito** (motion graphics);
 esta **mostra um app real sendo usado**.
 
+**Versão da Skill:** `v1.1.0` · esquema `v1.yy.xxx` (yy = recurso, xxx = bug) · histórico em [`video-demonstrativo/CHANGELOG.md`](video-demonstrativo/CHANGELOG.md).
+
 ## Estrutura
 ```
 skill-video-demonstrativo/
