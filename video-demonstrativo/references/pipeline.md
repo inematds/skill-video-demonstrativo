@@ -28,6 +28,13 @@
 - O 1º passo costuma ser a tela inicial (`intro:true`) — apresenta o app.
 - O último passo de conteúdo costuma ser o resultado (`zoom:true`) — dá um zoom suave.
 
+## 1.5 Revisão de texto (antes de narração e captions)
+Antes de gerar WAVs e de fixar `caption`/`narration` no `steps.json`. Detalhe + checklist + léxico
+de inglês em [revisao-texto.md](revisao-texto.md). Resumo:
+- **Duas formas por frase**: **tela** (`caption` + labels) = PT-BR acentuado + inglês na grafia original (botões/menus do app); **fala** (`txt/sN.txt`) = números/siglas expandidos **e** inglês reescrito foneticamente.
+- **Acentuação**: varrer palavra a palavra (vídeo, você, é, só, código, página, conteúdo…).
+- **Inglês (forma-fala)**: `upload`→"âploud", `deploy`→"deplói", `Generate`→"djenereit"… (o Kokoro fonemiza pela grafia escrita). Na dúvida, gerar WAV de teste e o usuário ouvir.
+
 ## 2. Captura (o passo que faz a diferença)
 Duas formas:
 

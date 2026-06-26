@@ -31,31 +31,38 @@ caixas (bounding boxes) que o cursor vai mirar.
    "escrever prompt → escolher 512² → ajustar altura → Gerar → salvar"), com 1 frase de
    narração por passo. 5–8 passos + CTA ≈ 35–50s de vídeo. Veja
    [references/pipeline.md](references/pipeline.md).
-2. **Captura** — com `agent-browser`: abra a URL num **viewport fixo**, faça `snapshot -i`,
+2. **Revisão de texto** — **antes** de capturar/narrar, revise o texto de cada passo. Cada
+   frase tem **duas formas**: (a) **tela** (`caption` no `steps.json` + labels) → PT-BR
+   acentuado, com botões/menus do app na **grafia original** em inglês (`Generate`, `Upload`);
+   (b) **fala** (`txt/sN.txt`) → números/siglas expandidos **e** termos em inglês reescritos
+   foneticamente (ex.: `upload` → "âploud", `deploy` → "deplói"). Varra a acentuação palavra a
+   palavra; na dúvida sobre uma pronúncia, gere um WAV de teste e peça o usuário ouvir.
+   Checklist + léxico em [references/revisao-texto.md](references/revisao-texto.md).
+3. **Captura** — com `agent-browser`: abra a URL num **viewport fixo**, faça `snapshot -i`,
    execute cada ação, tire 1 **screenshot por estado** e pegue a **bounding box real** de
    cada elemento-alvo (`getBoundingClientRect`). É o que faz o cursor cair *exato* no
    controle. Use [scripts/capture.mjs](scripts/capture.mjs) (lê `actions.json`) ou dirija o
    `agent-browser` na mão (passo a passo) — o resultado é `assets/shots/*.png` + `steps.json`.
    Detalhes em [references/pipeline.md](references/pipeline.md).
-3. **Projeto** — crie **tudo dentro de `~/projetos/output/<nome>/`** (pasta única do usuário):
+4. **Projeto** — crie **tudo dentro de `~/projetos/output/<nome>/`** (pasta única do usuário):
    `cd ~/projetos/output && npx hyperframes init <nome> --example blank --non-interactive`. Todo
    o conteúdo (projeto, assets, captures, áudios, `index.html` e os MP4 finais) vive nessa pasta. Copie as
    fontes embutidas nesta skill (`assets/fonts/` → `assets/fonts/` do projeto), OU rode
    `node scripts/fetch-fonts.mjs` na raiz do projeto pra baixá-las. A house style (paleta,
    tipografia) está em [references/house-style.md](references/house-style.md). Esta skill é
    auto-contida — não depende de nenhum outro projeto.
-4. **Narração** — escreva `assets/txt/sN.txt` (1 por passo + CTA) e gere os WAVs com Kokoro
+5. **Narração** — escreva `assets/txt/sN.txt` (1 por passo + CTA, já na **forma-fala** revisada no passo 2) e gere os WAVs com Kokoro
    voz `pf_dora`, `--speed 0.98`. Expanda números/siglas pra fala ("512" → "quinhentos e
    doze"; URLs → "inema ponto club"). Template: [scripts/narration-template.sh](scripts/narration-template.sh).
-5. **Composição** — copie [scripts/composition-template.mjs](scripts/composition-template.mjs)
+6. **Composição** — copie [scripts/composition-template.mjs](scripts/composition-template.mjs)
    como `build-demo.mjs`. Ele **lê `steps.json`** (telas + bounding boxes + captions) e
    **mede as durações dos WAVs com ffprobe** automaticamente — timing único, áudio e
    animação sempre batidos. A moldura de navegador, o cursor global animado, o destaque, o
    zoom no resultado e a **CTA do INEMA.CLUB** já vêm prontos. Rode `node build-demo.mjs`.
    Como o cursor e o zoom funcionam: [references/cursor-and-chrome.md](references/cursor-and-chrome.md).
-6. **Validar** — `npx hyperframes lint` (0 erros) e `npx hyperframes inspect --samples 14`
+7. **Validar** — `npx hyperframes lint` (0 erros) e `npx hyperframes inspect --samples 14`
    (0 problemas). Armadilhas em [references/gotchas.md](references/gotchas.md).
-7. **Render** — `--quality draft` pra conferir (extraia 1 frame por passo e mostre ao
+8. **Render** — `--quality draft` pra conferir (extraia 1 frame por passo e mostre ao
    usuário), depois `--quality high --fps 30 --output <nome>-16x9.mp4`. O MP4 sai na raiz do
    próprio projeto (que já está em `~/projetos/output/<nome>/`) — todo o conteúdo numa pasta só.
 
@@ -77,6 +84,10 @@ caixas (bounding boxes) que o cursor vai mirar.
   alternados (1/3 e 2/4); decorativos e moldura com `data-layout-ignore`; fontes locais
   (sem CDN — use as de `assets/fonts/`). Detalhes em [references/gotchas.md](references/gotchas.md).
 - **Timing é fonte única**: o gerador mede os WAVs com ffprobe → não há `AUDIO[]` manual.
+- **Revisar texto antes de narrar/capturar**: acentuação PT-BR varrida palavra a palavra; termos
+  em inglês (incl. botões do app) na **grafia original na tela** mas **foneticamente na forma-fala**
+  (`txt/sN.txt`, ex.: `upload`→"âploud"). Acento/pronúncia errados contaminam tela **e** locução.
+  Ver [references/revisao-texto.md](references/revisao-texto.md).
 - Sempre **conferir frames com o usuário** antes do render final (não dá pra ouvir o áudio
   — peça pra ele validar a locução).
 
