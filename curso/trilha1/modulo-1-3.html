@@ -348,7 +348,7 @@
           <div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">5</div>
           <div>
             <h2 class="text-xl font-bold flex items-center gap-2">📥 Instalar a skill</h2>
-            <p class="text-neutral-400 mt-2">Como skill é só uma pasta, instalar é simples. Há três caminhos: descompactar o <code class="text-emerald-400">.zip</code>, copiar a pasta, ou criar um symlink para desenvolver.</p>
+            <p class="text-neutral-400 mt-2">Como skill é só uma pasta, instalar é simples. Há três caminhos: clonar o <code class="text-emerald-400">repo da skill</code>, copiar a pasta, ou criar um symlink para desenvolver.</p>
           </div>
         </div>
       </div>
@@ -356,20 +356,20 @@
         <div>
           <div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Três jeitos de instalar</div>
           <div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
-            <div class="text-neutral-500 text-xs mb-2"># A) a partir do .zip (versionado na raiz do repo)</div>
-            <div><span class="text-emerald-400">unzip</span> video-demonstrativo.zip -d <span class="text-cyan-300">~/.claude/skills/</span></div>
+            <div class="text-neutral-500 text-xs mb-2"># A) clonar o repo da skill</div>
+            <div><span class="text-emerald-400">git clone</span> <span class="text-amber-300">https://github.com/inematds/video-demonstrativo</span></div>
             <br>
-            <div class="text-neutral-500 text-xs mb-2"># B) copiar a pasta (clone do repo)</div>
-            <div><span class="text-emerald-400">cp -r</span> .../video-demonstrativo <span class="text-cyan-300">~/.claude/skills/</span></div>
+            <div class="text-neutral-500 text-xs mb-2"># B) copiar a pasta (a skill vive em skills/ dentro do repo)</div>
+            <div><span class="text-emerald-400">cp -r</span> video-demonstrativo/skills/video-demonstrativo <span class="text-cyan-300">~/.claude/skills/</span></div>
             <br>
             <div class="text-neutral-500 text-xs mb-2"># C) symlink (dev — edição no repo reflete na hora)</div>
-            <div><span class="text-emerald-400">ln -s</span> "$(pwd)/video-demonstrativo" <span class="text-cyan-300">~/.claude/skills/video-demonstrativo</span></div>
+            <div><span class="text-emerald-400">ln -s</span> "$(pwd)/video-demonstrativo/skills/video-demonstrativo" <span class="text-cyan-300">~/.claude/skills/video-demonstrativo</span></div>
           </div>
         </div>
         <div class="rounded-xl border border-blue-500/30 bg-blue-500/10 p-4">
           <div class="text-blue-400 font-semibold text-sm mb-3">📊 Qual caminho escolher</div>
           <div class="grid sm:grid-cols-3 gap-3 text-sm">
-            <div class="bg-dark-700/60 rounded-lg p-3"><div class="text-emerald-400 font-bold mb-1 text-xs">.zip</div><div class="text-neutral-400 text-xs">Você recebeu o pacote pronto e só quer usar.</div></div>
+            <div class="bg-dark-700/60 rounded-lg p-3"><div class="text-emerald-400 font-bold mb-1 text-xs">clonar</div><div class="text-neutral-400 text-xs">Quer a versão mais atual, direto da fonte.</div></div>
             <div class="bg-dark-700/60 rounded-lg p-3"><div class="text-emerald-400 font-bold mb-1 text-xs">copiar pasta</div><div class="text-neutral-400 text-xs">Clonou o repo e quer uma cópia estável instalada.</div></div>
             <div class="bg-dark-700/60 rounded-lg p-3"><div class="text-emerald-400 font-bold mb-1 text-xs">symlink</div><div class="text-neutral-400 text-xs">Vai editar a skill e quer ver as mudanças na hora.</div></div>
           </div>
