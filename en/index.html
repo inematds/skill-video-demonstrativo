@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="pt-BR">
+<html class="dark" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Vídeo Demonstrativo — Walkthroughs de app com Claude Code | INEMA.CLUB</title>
-<meta content="Curso completo da Skill video-demonstrativo: gere walkthroughs narrados de uma aplicação web (HTML→MP4) a partir do link do app — captura real, cursor animado, zoom e narração local, sem chave de API." name="description"/>
+<title>Demo Video — App Walkthroughs with Claude Code | INEMA.CLUB</title>
+<meta content="Complete course on the Skill video-demonstrativo: create narrated walkthroughs of a web application (HTML→MP4) from the app link — real capture, animated cursor, zoom, and local narration, with no API key." name="description"/>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = {
@@ -78,7 +78,7 @@
     }
   </style>
 <link href="https://inematds.github.io/skill-video-demonstrativo/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skill-video-demonstrativo/en/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skill-video-demonstrativo/es/" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="./" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="en/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="es/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../es/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- NAVIGATION -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,14 +86,14 @@
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="index.html">
 <span class="text-2xl">🖱️</span>
-<span class="font-bold text-lg hidden sm:inline">Demonstrativo</span>
+<span class="font-bold text-lg hidden sm:inline">Demonstration</span>
 </a>
 <span class="text-neutral-600">|</span>
 <a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
-<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="curso/trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
-<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="curso/trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Captura</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="curso/trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentals</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="curso/trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Capture</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="curso/trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Render</span></a>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -108,25 +108,25 @@
 <div class="absolute inset-0 bg-gradient-to-br from-amber-900/20 via-dark-900 to-dark-900"></div>
 <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
 <span class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary border border-primary/40 text-xs font-semibold rounded-full mb-6">
-<span class="w-2 h-2 rounded-full bg-primary"></span> CURSO · CLAUDE CODE · SKILLS
+<span class="w-2 h-2 rounded-full bg-primary"></span> COURSE · CLAUDE CODE · SKILLS
       </span>
 <h1 class="text-4xl sm:text-6xl font-bold leading-tight mb-6">
-        Do <span class="text-primary">link do app</span> ao<br/>
-        vídeo de demonstração.
+        From <span class="text-primary">app link</span> when<br/>
+        demonstration video.
       </h1>
 <p class="text-lg sm:text-xl text-neutral-400 max-w-3xl mb-8 leading-relaxed">
-        Um curso completo sobre a Skill <strong class="text-neutral-100">video-demonstrativo</strong>: ela navega o seu app
-        de verdade com um navegador automatizado, captura as telas reais passo a passo e monta um
-        <strong class="text-neutral-100">walkthrough narrado</strong> — moldura de navegador, cursor que clica nos controles, zoom e narração local.
-        <span class="text-neutral-300">Tudo na sua máquina, sem chave de API.</span>
+        A complete course on the Skill <strong class="text-neutral-100">demonstration video</strong>: it navigates your app
+        for real with an automated browser, captures the actual screens step by step, and builds a
+        <strong class="text-neutral-100">narrated walkthrough</strong> — browser frame, cursor that clicks controls, zoom, and local narration.
+        <span class="text-neutral-300">Everything on your machine, with no API key.</span>
 </p>
 <div class="flex flex-col sm:flex-row gap-4">
-<a class="inline-flex items-center justify-center px-6 py-3 bg-primary text-dark-900 rounded-lg font-bold hover:bg-yellow-300 transition-colors" href="curso/trilha1/index.html">Começar pela Trilha 1 →</a>
-<a class="inline-flex items-center justify-center px-6 py-3 bg-dark-700 text-neutral-100 rounded-lg font-semibold hover:bg-dark-600 transition-colors border border-dark-600" href="curso/index.html">Ver todas as trilhas</a>
+<a class="inline-flex items-center justify-center px-6 py-3 bg-primary text-dark-900 rounded-lg font-bold hover:bg-yellow-300 transition-colors" href="curso/trilha1/index.html">Start with Track 1 →</a>
+<a class="inline-flex items-center justify-center px-6 py-3 bg-dark-700 text-neutral-100 rounded-lg font-semibold hover:bg-dark-600 transition-colors border border-dark-600" href="curso/index.html">View all tracks</a>
 </div>
 <!-- Hero SVG: app real -> captura -> cursor/zoom/narração -> MP4 walkthrough -->
 <div class="rounded-2xl border border-amber-500/30 bg-dark-900/40 p-3 sm:p-4 mt-12 overflow-hidden">
-<svg aria-label="O link do app é navegado pelo agent-browser, que captura telas reais; o HyperFrames anima cursor, zoom e narração por cima e exporta um MP4 de walkthrough" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
+<svg aria-label="agent-browser navigates to the app link and captures real screens; HyperFrames animates the cursor, zoom, and narration over them, then exports a walkthrough MP4" class="w-full h-auto" role="img" viewbox="0 0 1000 240">
 <defs>
 <lineargradient id="hp-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fbbf24"></stop><stop offset="1" stop-color="#f59e0b"></stop></lineargradient>
 <filter height="180%" id="hp-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="3"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -137,18 +137,18 @@
 <rect fill="url(#hp-grid)" height="240" width="1000" x="0" y="0"></rect>
 <!-- input: link do app -->
 <g class="wf-a" font-family="Inter,sans-serif" font-size="13" font-weight="600">
-<rect fill="#0e1b26" height="40" rx="10" stroke="#38bdf8" stroke-width="2" width="156" x="30" y="100"></rect><text fill="#bfe6ff" text-anchor="middle" x="108" y="125">link do app / localhost</text>
+<rect fill="#0e1b26" height="40" rx="10" stroke="#38bdf8" stroke-width="2" width="156" x="30" y="100"></rect><text fill="#bfe6ff" text-anchor="middle" x="108" y="125">app link / localhost</text>
 </g>
 <path d="M186,120 L252,120" fill="none" marker-end="url(#hp-ahc)" opacity="0.7" stroke="#38bdf8" stroke-width="2"></path>
 <!-- agent-browser capture -->
 <g filter="url(#hp-glow)"><rect fill="#0e1b26" height="72" rx="14" stroke="#38bdf8" stroke-width="2.5" width="150" x="252" y="84"></rect></g>
 <text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="16" font-weight="700" text-anchor="middle" x="327" y="114">agent-browser</text>
-<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="327" y="135">captura telas reais</text>
+<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="12.5" text-anchor="middle" x="327" y="135">captures real screens</text>
 <path d="M402,120 L470,120" fill="none" marker-end="url(#hp-ah)" opacity="0.7" stroke="#fbbf24" stroke-width="2"></path>
 <!-- render box: cursor + zoom + narração -->
 <g filter="url(#hp-glow)"><rect fill="#1f1604" height="92" rx="14" stroke="url(#hp-grad)" stroke-width="2.5" width="186" x="470" y="74"></rect></g>
 <text fill="#fbbf24" font-family="Inter,sans-serif" font-size="17" font-weight="700" text-anchor="middle" x="563" y="104">HyperFrames</text>
-<text fill="#fcd9a0" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="563" y="126">cursor · zoom · narração</text>
+<text fill="#fcd9a0" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="563" y="126">cursor · zoom · narration</text>
 <!-- mini browser frame w/ animated cursor -->
 <g transform="translate(496,134)">
 <rect fill="#0b0b0c" height="22" rx="4" stroke="#3a2f12" stroke-width="1" width="134" x="0" y="0"></rect>
@@ -160,9 +160,9 @@
 <!-- output -->
 <g filter="url(#hp-glow)"><rect fill="#1f1604" height="56" rx="12" stroke="url(#hp-grad)" stroke-width="2.5" width="170" x="800" y="64"></rect></g>
 <text fill="#fbbf24" font-family="Inter,sans-serif" font-size="16" font-weight="700" text-anchor="middle" x="885" y="89">MP4 · walkthrough</text>
-<text fill="#fcd9a0" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="885" y="108">16:9 narrado</text>
+<text fill="#fcd9a0" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="885" y="108">16:9 narrated</text>
 </svg>
-<p class="text-center text-xs text-neutral-500 mt-2">Diagrama ilustrativo do pipeline do vídeo demonstrativo</p>
+<p class="text-center text-xs text-neutral-500 mt-2">Illustrative diagram of the demo video pipeline</p>
 </div>
 </div>
 </header>
@@ -170,13 +170,13 @@
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 <div class="bg-dark-800 rounded-xl p-5 border border-dark-600 text-center">
-<div class="text-3xl font-bold text-amber-400">3</div><div class="text-sm text-neutral-400 mt-1">Trilhas</div>
+<div class="text-3xl font-bold text-amber-400">3</div><div class="text-sm text-neutral-400 mt-1">Tracks</div>
 </div>
 <div class="bg-dark-800 rounded-xl p-5 border border-dark-600 text-center">
-<div class="text-3xl font-bold text-emerald-400">10</div><div class="text-sm text-neutral-400 mt-1">Módulos</div>
+<div class="text-3xl font-bold text-emerald-400">10</div><div class="text-sm text-neutral-400 mt-1">Modules</div>
 </div>
 <div class="bg-dark-800 rounded-xl p-5 border border-dark-600 text-center">
-<div class="text-3xl font-bold text-blue-400">0</div><div class="text-sm text-neutral-400 mt-1">Chaves de API</div>
+<div class="text-3xl font-bold text-blue-400">0</div><div class="text-sm text-neutral-400 mt-1">API keys</div>
 </div>
 <div class="bg-dark-800 rounded-xl p-5 border border-dark-600 text-center">
 <div class="text-3xl font-bold text-purple-400">100%</div><div class="text-sm text-neutral-400 mt-1">Local</div>
@@ -186,74 +186,74 @@
 <!-- DEMONSTRATIVO vs EXPLICATIVO -->
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-4">
 <div class="bg-dark-800 rounded-2xl border border-dark-600 p-7">
-<h2 class="text-2xl font-bold mb-2">Demonstrativo ≠ Explicativo</h2>
-<p class="text-neutral-400 mb-6 max-w-3xl">Duas skills irmãs, dois objetivos. Esta <strong class="text-neutral-100">mostra um app real sendo usado</strong>; a outra explica um conceito com motion graphics.</p>
+<h2 class="text-2xl font-bold mb-2">Demonstration ≠ Explainer</h2>
+<p class="text-neutral-400 mb-6 max-w-3xl">Two sister skills, two goals. This <strong class="text-neutral-100">shows a real app being used</strong>; the other explains a concept with motion graphics.</p>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 <div class="bg-gradient-to-br from-amber-900/20 to-dark-800 rounded-xl border border-amber-500/30 p-5">
 <div class="text-2xl mb-2">🖱️</div>
-<h3 class="font-bold text-amber-400 mb-1">video-demonstrativo (este curso)</h3>
-<p class="text-neutral-400 text-sm">Captura as telas reais do app e anima cursor + zoom por cima. Tutorial/walkthrough de "como usar a ferramenta X".</p>
+<h3 class="font-bold text-amber-400 mb-1">demonstration video (this course)</h3>
+<p class="text-neutral-400 text-sm">Captures the app’s actual screens and animates the cursor + zoom over them. Tutorial/walkthrough on “how to use tool X.”</p>
 </div>
 <div class="bg-dark-900 rounded-xl border border-dark-600 p-5">
 <div class="text-2xl mb-2">🎬</div>
-<h3 class="font-bold text-neutral-300 mb-1">video-explicativo (a irmã)</h3>
-<p class="text-neutral-400 text-sm">Cenas em motion graphics que explicam um conceito. Sem app real — tudo é HTML animado. <a class="text-sky-400 hover:text-sky-300" href="https://inematds.github.io/skill-video-explicativo/" target="_blank">Ver curso →</a></p>
+<h3 class="font-bold text-neutral-300 mb-1">explainer video (the sibling)</h3>
+<p class="text-neutral-400 text-sm">Motion graphics scenes that explain a concept. No real app — everything is animated HTML. <a class="text-sky-400 hover:text-sky-300" href="https://inematds.github.io/skill-video-explicativo/" target="_blank">View course →</a></p>
 </div>
 </div>
 </div>
 </section>
 <!-- TRILHAS -->
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-<h2 class="text-3xl font-bold mb-2">As 3 trilhas</h2>
-<p class="text-neutral-400 mb-8">Do conceito de walkthrough até o MP4 narrado do seu app rodando.</p>
+<h2 class="text-3xl font-bold mb-2">The 3 tracks</h2>
+<p class="text-neutral-400 mb-8">From the concept of a walkthrough to a narrated MP4 of your app running.</p>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 <a class="group bg-gradient-to-br from-emerald-900/30 to-dark-800 rounded-2xl border border-emerald-500/30 p-7 hover:border-emerald-500/60 transition-all" href="curso/trilha1/index.html">
 <div class="flex items-center justify-between mb-4">
 <span class="text-4xl">🧭</span>
-<span class="text-xs font-semibold text-emerald-400 bg-emerald-500/20 px-3 py-1 rounded-full">TRILHA 1</span>
+<span class="text-xs font-semibold text-emerald-400 bg-emerald-500/20 px-3 py-1 rounded-full">TRACK 1</span>
 </div>
-<h3 class="text-2xl font-bold mb-2 group-hover:text-emerald-400 transition-colors">Fundamentos</h3>
-<p class="text-neutral-400 text-sm mb-4">O que é um vídeo demonstrativo, quando usá-lo, o princípio "capturar antes, animar depois" e a stack sem API key (agent-browser + HyperFrames + Kokoro).</p>
-<span class="text-emerald-400 text-sm font-semibold">3 módulos · básico →</span>
+<h3 class="text-2xl font-bold mb-2 group-hover:text-emerald-400 transition-colors">Fundamentals</h3>
+<p class="text-neutral-400 text-sm mb-4">What a demo video is, when to use one, the principle “capture first, animate later,” and the API-key-free stack (agent-browser + HyperFrames + Kokoro).</p>
+<span class="text-emerald-400 text-sm font-semibold">3 modules · basic →</span>
 </a>
 <a class="group bg-gradient-to-br from-blue-900/30 to-dark-800 rounded-2xl border border-blue-500/30 p-7 hover:border-blue-500/60 transition-all" href="curso/trilha2/index.html">
 <div class="flex items-center justify-between mb-4">
 <span class="text-4xl">🎥</span>
-<span class="text-xs font-semibold text-blue-400 bg-blue-500/20 px-3 py-1 rounded-full">TRILHA 2</span>
+<span class="text-xs font-semibold text-blue-400 bg-blue-500/20 px-3 py-1 rounded-full">TRACK 2</span>
 </div>
-<h3 class="text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors">Captura do app real</h3>
-<p class="text-neutral-400 text-sm mb-4">Dirigir o app de verdade com agent-browser/Playwright: o actions.json, coordenadas e bounding boxes, scroll em páginas longas, inputs React e fluxos multi-estado.</p>
-<span class="text-blue-400 text-sm font-semibold">4 módulos · prático →</span>
+<h3 class="text-2xl font-bold mb-2 group-hover:text-blue-400 transition-colors">Capture of the actual app</h3>
+<p class="text-neutral-400 text-sm mb-4">Drive the actual app with agent-browser/Playwright: actions.json, coordinates and bounding boxes, scrolling through long pages, React inputs, and multi-state flows.</p>
+<span class="text-blue-400 text-sm font-semibold">4 modules · hands-on →</span>
 </a>
 <a class="group bg-gradient-to-br from-purple-900/30 to-dark-800 rounded-2xl border border-purple-500/30 p-7 hover:border-purple-500/60 transition-all" href="curso/trilha3/index.html">
 <div class="flex items-center justify-between mb-4">
 <span class="text-4xl">🎬</span>
-<span class="text-xs font-semibold text-purple-400 bg-purple-500/20 px-3 py-1 rounded-full">TRILHA 3</span>
+<span class="text-xs font-semibold text-purple-400 bg-purple-500/20 px-3 py-1 rounded-full">TRACK 3</span>
 </div>
-<h3 class="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">Composição &amp; Render</h3>
-<p class="text-neutral-400 text-sm mb-4">Moldura de navegador, cursor animado e zoom; house style dark premium; narração TTS local Kokoro; e o render no HyperFrames com lint, inspect e a CTA do INEMA.CLUB.</p>
-<span class="text-purple-400 text-sm font-semibold">3 módulos · avançado →</span>
+<h3 class="text-2xl font-bold mb-2 group-hover:text-purple-400 transition-colors">Composition &amp; Rendering</h3>
+<p class="text-neutral-400 text-sm mb-4">Browser frame, animated cursor, and zoom; premium dark house style; local Kokoro TTS narration; and rendering in HyperFrames with lint, inspect, and the INEMA.CLUB CTA.</p>
+<span class="text-purple-400 text-sm font-semibold">3 modules · advanced →</span>
 </a>
 </div>
 </section>
 <!-- COMO FUNCIONA -->
 <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-<h2 class="text-3xl font-bold mb-8">Como funciona, em 1 minuto</h2>
+<h2 class="text-3xl font-bold mb-8">How it works in 1 minute</h2>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
 <div class="text-emerald-400 font-mono text-sm mb-2">01</div>
-<h3 class="font-bold mb-2">Você dá o link do app</h3>
-<p class="text-neutral-400 text-sm">Um <code class="text-emerald-400">actions.json</code> descreve URL, viewport e os passos. O agent-browser navega o app de verdade e captura as telas reais (shots + steps.json).</p>
+<h3 class="font-bold mb-2">You provide the app link</h3>
+<p class="text-neutral-400 text-sm">One <code class="text-emerald-400">actions.json</code> describes the URL, viewport, and steps. agent-browser navigates the actual app and captures real screens (shots + steps.json).</p>
 </div>
 <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
 <div class="text-blue-400 font-mono text-sm mb-2">02</div>
-<h3 class="font-bold mb-2">Anima por cima</h3>
-<p class="text-neutral-400 text-sm">O viewport fixo vira o espaço de coordenadas. Cursor mira os controles, zoom destaca a ação, e a narração Kokoro é medida pra bater com cada passo.</p>
+<h3 class="font-bold mb-2">Animate on top</h3>
+<p class="text-neutral-400 text-sm">The fixed viewport becomes the coordinate space. The cursor targets controls, zoom highlights the action, and Kokoro narration is timed to match each step.</p>
 </div>
 <div class="bg-dark-800 rounded-xl p-6 border border-dark-600">
 <div class="text-purple-400 font-mono text-sm mb-2">03</div>
-<h3 class="font-bold mb-2">Renderiza em MP4</h3>
-<p class="text-neutral-400 text-sm">HyperFrames roda Chrome headless + FFmpeg e exporta o walkthrough em 16:9 com moldura de navegador e a CTA do INEMA.CLUB. Sem nuvem, sem API.</p>
+<h3 class="font-bold mb-2">Renders to MP4</h3>
+<p class="text-neutral-400 text-sm">HyperFrames runs headless Chrome + FFmpeg and exports the walkthrough in 16:9 with a browser frame and the INEMA.CLUB CTA. No cloud, no API.</p>
 </div>
 </div>
 </section>
@@ -263,14 +263,14 @@
 <div class="flex flex-col lg:flex-row lg:items-center gap-8">
 <div class="flex-1">
 <span class="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 text-primary border border-primary/40 text-xs font-semibold rounded-full mb-4">
-<span class="text-base">📦</span> A SKILL, NO AR
+<span class="text-base">📦</span> THE SKILL, LIVE
           </span>
-<h2 class="text-2xl sm:text-3xl font-bold mb-3">Baixe a Skill <span class="text-primary">video-demonstrativo</span></h2>
-<p class="text-neutral-400 mb-4 max-w-2xl">É uma pasta auto-contida: <code class="text-primary">SKILL.md</code>, scripts (capture + composição + narração), referências e as fontes. Coloque em <code>~/.claude/skills/</code> (global) ou <code>.claude/skills/</code> (projeto) e peça um vídeo de demonstração ao Claude Code. Este curso inteiro explica cada parte dela.</p>
+<h2 class="text-2xl sm:text-3xl font-bold mb-3">Download the Skill <span class="text-primary">demonstration video</span></h2>
+<p class="text-neutral-400 mb-4 max-w-2xl">It's a self-contained folder: <code class="text-primary">SKILL.md</code>, scripts (capture + composition + narration), references, and sources. Put it in <code>~/.claude/skills/</code> (global) or <code>.claude/skills/</code> (project) and ask Claude Code for a demo video. This entire course explains each part of it.</p>
 <div class="flex flex-wrap gap-3">
-<a class="inline-flex items-center justify-center px-5 py-2.5 bg-primary text-dark-900 rounded-lg font-bold hover:bg-yellow-300 transition-colors" href="https://inematds.github.io/video-demonstrativo/guia/" rel="noopener" target="_blank">🚀 Guia da Skill</a>
-<a class="inline-flex items-center justify-center px-5 py-2.5 bg-dark-700 text-neutral-100 rounded-lg font-semibold hover:bg-dark-600 transition-colors border border-dark-600" href="https://github.com/inematds/video-demonstrativo/blob/main/skills/video-demonstrativo/SKILL.md" rel="noopener" target="_blank">Ver o SKILL.md</a>
-<a class="inline-flex items-center justify-center px-5 py-2.5 bg-dark-700 text-neutral-100 rounded-lg font-semibold hover:bg-dark-600 transition-colors border border-dark-600" href="curso/trilha3/index.html">Trilha 3: composição &amp; render →</a>
+<a class="inline-flex items-center justify-center px-5 py-2.5 bg-primary text-dark-900 rounded-lg font-bold hover:bg-yellow-300 transition-colors" href="https://inematds.github.io/video-demonstrativo/guia/" rel="noopener" target="_blank">🚀 Skill Guide</a>
+<a class="inline-flex items-center justify-center px-5 py-2.5 bg-dark-700 text-neutral-100 rounded-lg font-semibold hover:bg-dark-600 transition-colors border border-dark-600" href="https://github.com/inematds/video-demonstrativo/blob/main/skills/video-demonstrativo/SKILL.md" rel="noopener" target="_blank">View the SKILL.md</a>
+<a class="inline-flex items-center justify-center px-5 py-2.5 bg-dark-700 text-neutral-100 rounded-lg font-semibold hover:bg-dark-600 transition-colors border border-dark-600" href="curso/trilha3/index.html">Track 3: composition &amp; rendering →</a>
 </div>
 </div>
 <div class="lg:w-80 flex-shrink-0">
@@ -288,8 +288,8 @@
 <!-- FOOTER -->
 <footer class="border-t border-dark-600 py-10 mt-8">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-<p class="text-neutral-400 mb-2">Conteúdo do <a class="text-sky-400 hover:text-sky-300 font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
-<p class="text-neutral-500 text-sm">Vídeo Demonstrativo — Walkthroughs de app com Claude Code · 2026</p>
+<p class="text-neutral-400 mb-2">Content of the <a class="text-sky-400 hover:text-sky-300 font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+<p class="text-neutral-500 text-sm">Demo Video — App Walkthroughs with Claude Code · 2026</p>
 </div>
 </footer>
 <script>

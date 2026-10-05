@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="pt-BR">
+<html class="dark" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Módulo 2.4 — Páginas longas, inputs React &amp; multi-estado | Vídeo Demonstrativo · INEMA.CLUB</title>
+<title>Module 2.4 — Long pages, React inputs &amp; multi-state | Demonstrative Video · INEMA.CLUB</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -72,21 +72,21 @@
     }
   </style>
 <link href="https://inematds.github.io/skill-video-demonstrativo/curso/trilha2/modulo-2-4.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skill-video-demonstrativo/en/curso/trilha2/modulo-2-4.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skill-video-demonstrativo/es/curso/trilha2/modulo-2-4.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/modulo-2-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/modulo-2-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-4.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-4.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-4.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- NAV -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">🖱️</span><span class="font-bold text-lg hidden sm:inline">Demonstrativo</span>
+<span class="text-2xl">🖱️</span><span class="font-bold text-lg hidden sm:inline">Demonstration</span>
 </a>
 <span class="text-neutral-600">|</span>
 <a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
-<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
-<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Captura</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentals</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Capture</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Render</span></a>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -99,11 +99,11 @@
 <!-- BREADCRUMB -->
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
 <nav class="flex items-center space-x-2 text-sm text-neutral-500">
-<a class="hover:text-blue-400 transition-colors" href="../../index.html">Início</a>
+<a class="hover:text-blue-400 transition-colors" href="../../index.html">Start</a>
 <span>/</span>
-<a class="hover:text-blue-400 transition-colors" href="index.html">Trilha 2 — Captura</a>
+<a class="hover:text-blue-400 transition-colors" href="index.html">Track 2 — Capture</a>
 <span>/</span>
-<span class="text-blue-400 font-medium">Módulo 2.4</span>
+<span class="text-blue-400 font-medium">Module 2.4</span>
 </nav>
 </div>
 <!-- HEADER -->
@@ -111,19 +111,19 @@
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="grid lg:grid-cols-2 gap-8 items-center">
 <div>
-<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.4</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">⏳ Páginas longas, inputs React &amp; multi-estado</h1>
-<p class="text-lg text-neutral-400 max-w-xl">Os casos difíceis das demos reais: rolar páginas longas, lidar com inputs controlados por React/Vue, esperar condição em vez de tempo, e capturar fluxos assíncronos. Honestamente: o que já funciona vs o que é roadmap.</p>
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MODULE 2.4</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">⏳ Long pages, React inputs &amp; multi-state</h1>
+<p class="text-lg text-neutral-400 max-w-xl">The tricky cases in real demos: scrolling long pages, handling React/Vue-controlled inputs, waiting for a condition instead of a fixed time, and capturing asynchronous flows. Honestly: what already works vs. what’s on the roadmap.</p>
 <div class="grid grid-cols-4 gap-3 mt-6">
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">7</div><div class="text-xs text-neutral-400">Tópicos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~30</div><div class="text-xs text-neutral-400">Minutos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Avanç.</div><div class="text-xs text-neutral-400">Nível</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Edge</div><div class="text-xs text-neutral-400">Tipo</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">7</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~30</div><div class="text-xs text-neutral-400">Minutes</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Advanced</div><div class="text-xs text-neutral-400">Level</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Edge</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
 </div>
 <!-- SVG FUTURISTA — fluxo multi-estado com poll -->
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4">
-<svg aria-label="Diagrama de um fluxo assíncrono multi-estado: analisar, esperar aprovação, dublar e concluir, com poll de conclusão entre etapas" class="w-full h-auto" role="img" viewbox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+<svg aria-label="Diagram of an asynchronous, multi-state flow: analyze, wait for approval, dub, and finish, with a completion poll between steps" class="w-full h-auto" role="img" viewbox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <lineargradient id="m24-bg" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" style="stop-color:#0e1622"></stop><stop offset="100%" style="stop-color:#0e1b26"></stop></lineargradient>
 <filter height="140%" id="m24-glow" width="140%" x="-20%" y="-20%"><fegaussianblur result="blur" stddeviation="3"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -132,20 +132,20 @@
 <g opacity="0.5" stroke="#1e3a5f" stroke-width="0.5">
 <line x1="0" x2="400" y1="120" y2="120"></line><line x1="133" x2="133" y1="0" y2="240"></line><line x1="266" x2="266" y1="0" y2="240"></line>
 </g>
-<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="200" y="26">fluxo assíncrono multi-estado</text>
-<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="8" letter-spacing="1" text-anchor="middle" x="200" y="42">POLL DE CONCLUSÃO ENTRE ETAPAS</text>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="200" y="26">asynchronous multi-state flow</text>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="8" letter-spacing="1" text-anchor="middle" x="200" y="42">COMPLETION POLLING BETWEEN STEPS</text>
 <!-- estados -->
 <rect fill="#0e1622" height="40" rx="8" stroke="#60a5fa" stroke-width="1.4" width="80" x="22" y="70"></rect>
-<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="8" font-weight="700" text-anchor="middle" x="62" y="88">analisar</text>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="8" font-weight="700" text-anchor="middle" x="62" y="88">analyze</text>
 <text fill="#7db8f7" font-family="Inter,sans-serif" font-size="7" text-anchor="middle" x="62" y="101">→ status</text>
 <rect fill="#0a1a2e" filter="url(#m24-glow)" height="40" rx="8" stroke="#fbbf24" stroke-width="1.4" width="86" x="118" y="70"></rect>
 <text fill="#fbbf24" font-family="Inter,sans-serif" font-size="7.5" font-weight="700" text-anchor="middle" x="161" y="86">waiting_</text>
 <text fill="#fbbf24" font-family="Inter,sans-serif" font-size="7.5" font-weight="700" text-anchor="middle" x="161" y="98">approval</text>
 <rect fill="#0e1622" height="40" rx="8" stroke="#60a5fa" stroke-width="1.4" width="80" x="220" y="70"></rect>
-<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="8" font-weight="700" text-anchor="middle" x="260" y="88">dublar</text>
-<text fill="#7db8f7" font-family="Inter,sans-serif" font-size="7" text-anchor="middle" x="260" y="101">processando</text>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="8" font-weight="700" text-anchor="middle" x="260" y="88">dub</text>
+<text fill="#7db8f7" font-family="Inter,sans-serif" font-size="7" text-anchor="middle" x="260" y="101">processing</text>
 <rect fill="#0a1a2e" filter="url(#m24-glow)" height="40" rx="8" stroke="#38bdf8" stroke-width="1.4" width="62" x="316" y="70"></rect>
-<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="8" font-weight="700" text-anchor="middle" x="347" y="88">concluído</text>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="8" font-weight="700" text-anchor="middle" x="347" y="88">completed</text>
 <text fill="#7db8f7" font-family="Inter,sans-serif" font-size="7" text-anchor="middle" x="347" y="101">✓</text>
 <!-- setas -->
 <path class="m24-anim-flow" d="M102 90 L116 90" fill="none" stroke="#38bdf8" stroke-dasharray="5,3" stroke-width="2"></path>
@@ -156,12 +156,12 @@
 <polygon fill="#38bdf8" points="314,86 322,90 314,94"></polygon>
 <!-- poll abaixo -->
 <rect fill="#0a1422" height="36" rx="8" stroke="#38bdf8" stroke-width="1.2" width="280" x="60" y="140"></rect>
-<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="8" font-weight="700" text-anchor="middle" x="200" y="156">waitFor (roadmap) — esperar CONDIÇÃO, não tempo fixo</text>
-<text fill="#7db8f7" font-family="Inter,sans-serif" font-size="7" text-anchor="middle" x="200" y="170">poll por texto / seletor / mudança de status · sub-passos nomeados</text>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="8" font-weight="700" text-anchor="middle" x="200" y="156">waitFor (roadmap) — wait for a CONDITION, not a fixed amount of time</text>
+<text fill="#7db8f7" font-family="Inter,sans-serif" font-size="7" text-anchor="middle" x="200" y="170">poll by text / selector / status change · named substeps</text>
 <circle class="m24-anim-pulse" cx="78" cy="158" fill="#38bdf8" r="3"></circle>
 <circle class="m24-anim-pulse" cx="200" cy="158" fill="#38bdf8" r="3"></circle>
 <circle class="m24-anim-pulse" cx="322" cy="158" fill="#38bdf8" r="3"></circle>
-<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="200" y="206">validado no inemaVOX: 14 passos · 2:08</text>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="200" y="206">validated in inemaVOX: 14 steps · 2:08</text>
 </svg>
 </div>
 </div>
@@ -172,8 +172,8 @@
 <section class="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-5 flex gap-3">
 <span class="text-amber-400 text-2xl flex-shrink-0">🗺️</span>
 <div>
-<div class="text-amber-400 font-semibold text-sm mb-1">Leia antes: o que é hoje vs o que é roadmap</div>
-<p class="text-neutral-300 text-sm">Este módulo cobre os casos difíceis. Alguns já funcionam no <code class="text-blue-300">capture.mjs</code>; outros ainda exigem dirigir o agent-browser na mão e estão no backlog. Cada tópico marca claramente o status.</p>
+<div class="text-amber-400 font-semibold text-sm mb-1">Read first: what it is today vs. what’s on the roadmap</div>
+<p class="text-neutral-300 text-sm">This module covers the tricky cases. Some already work in the <code class="text-blue-300">capture.mjs</code>; others still require manually driving agent-browser and are in the backlog. Each topic clearly marks its status.</p>
 </div>
 </section>
 <!-- TÓPICO 1 -->
@@ -182,28 +182,28 @@
 <div class="flex items-start space-x-4">
 <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">1</div>
 <div>
-<h2 class="text-xl font-bold flex items-center gap-2">📜 Scroll antes do screenshot <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">roadmap</span></h2>
-<p class="text-neutral-400 mt-2">Páginas longas exigem <code class="text-blue-400">scrollIntoView</code> na seção antes de capturar. Hoje, feito na mão.</p>
+<h2 class="text-xl font-bold flex items-center gap-2">📜 Scroll before the screenshot <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">roadmap</span></h2>
+<p class="text-neutral-400 mt-2">Long pages require <code class="text-blue-400">scrollIntoView</code> in the section before capturing. Today, done manually.</p>
 </div>
 </div>
 </div>
 <div class="p-6 space-y-6">
 <div class="rounded-xl bg-gradient-to-br from-blue-900/30 to-dark-700/50 border border-blue-500/30 p-5">
-<div class="text-xs font-semibold text-blue-400 uppercase tracking-widest mb-2">O problema</div>
-<p class="text-neutral-200 font-medium">O <code class="text-blue-300">capture.mjs</code> não rola a página. Nas telas do inemaVOX, foi preciso dirigir o agent-browser na mão, fazendo <code class="text-blue-300">scrollIntoView</code> por seção antes de cada screenshot.</p>
+<div class="text-xs font-semibold text-blue-400 uppercase tracking-widest mb-2">The problem</div>
+<p class="text-neutral-200 font-medium">O <code class="text-blue-300">capture.mjs</code> doesn't scroll the page. On inemaVOX screens, it was necessary to drive agent-browser manually, making <code class="text-blue-300">scrollIntoView</code> per section before each screenshot.</p>
 </div>
 <div class="rounded-xl border border-blue-500/30 bg-blue-500/10 p-4">
-<div class="text-blue-400 font-semibold text-sm mb-3">📊 A solução planejada (backlog nº 1)</div>
+<div class="text-blue-400 font-semibold text-sm mb-3">📊 The planned solution (backlog #1)</div>
 <div class="grid sm:grid-cols-2 gap-4 text-sm">
-<div class="bg-dark-700/60 rounded-lg p-4"><div class="text-blue-400 font-bold mb-1">Ação scroll / scrollTo</div><div class="text-neutral-300">Adicionar ao capture.mjs uma ação de scroll por passo.</div></div>
-<div class="bg-dark-700/60 rounded-lg p-4"><div class="text-blue-400 font-bold mb-1">scrollIntoView({block})</div><div class="text-neutral-300">Rolar até o alvo antes do screenshot. As bboxes (viewport-relative) batem com o shot daquele scroll.</div></div>
+<div class="bg-dark-700/60 rounded-lg p-4"><div class="text-blue-400 font-bold mb-1">Scroll / scrollTo action</div><div class="text-neutral-300">Add a scroll action for each step to capture.mjs.</div></div>
+<div class="bg-dark-700/60 rounded-lg p-4"><div class="text-blue-400 font-bold mb-1">scrollIntoView({block})</div><div class="text-neutral-300">Scroll to the target before the screenshot. The bboxes (viewport-relative) match the shot at that scroll position.</div></div>
 </div>
 </div>
 <div class="rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 flex gap-3">
 <span class="text-blue-400 text-xl flex-shrink-0">💡</span>
 <div>
-<div class="text-blue-400 font-semibold text-sm mb-1">É o item que mais economiza trabalho manual</div>
-<p class="text-neutral-400 text-sm">Por isso é a prioridade nº 1 do backlog. Enquanto não chega, rolar na mão antes de medir/capturar funciona — só dá mais trabalho.</p>
+<div class="text-blue-400 font-semibold text-sm mb-1">It's the item that saves the most manual work</div>
+<p class="text-neutral-400 text-sm">That’s why it’s backlog priority #1. Until it arrives, scrolling manually before measuring/capturing works—it just takes more effort.</p>
 </div>
 </div>
 </div>
@@ -214,32 +214,32 @@
 <div class="flex items-start space-x-4">
 <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">2</div>
 <div>
-<h2 class="text-xl font-bold flex items-center gap-2">⚛️ Inputs controlados por React/Vue <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">parcial</span></h2>
-<p class="text-neutral-400 mt-2">Setar <code class="text-blue-400">.value</code> mostra o texto mas não dispara o estado — botões ficam disabled.</p>
+<h2 class="text-xl font-bold flex items-center gap-2">⚛️ React/Vue-controlled inputs <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">partial</span></h2>
+<p class="text-neutral-400 mt-2">Set <code class="text-blue-400">.value</code> shows the text but doesn’t trigger the state—buttons stay disabled.</p>
 </div>
 </div>
 </div>
 <div class="p-6 space-y-6">
 <div class="grid sm:grid-cols-2 gap-4">
 <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4">
-<div class="text-red-400 font-semibold text-sm mb-3">✗ Não faça</div>
+<div class="text-red-400 font-semibold text-sm mb-3">✗ Don't</div>
 <ul class="space-y-2 text-sm text-neutral-300">
-<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> <code class="text-red-300 bg-dark-700 px-1 rounded text-xs">el.value = "768"</code> via eval puro</li>
-<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> O React não percebe → botão segue disabled</li>
-<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> O screenshot sai com o controle inativo</li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> <code class="text-red-300 bg-dark-700 px-1 rounded text-xs">el.value = "768"</code> via plain eval</li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> React doesn't notice → button remains disabled</li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> The screenshot shows the control inactive</li>
 </ul>
 </div>
 <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
-<div class="text-emerald-400 font-semibold text-sm mb-3">✓ Faça</div>
+<div class="text-emerald-400 font-semibold text-sm mb-3">✓ Do</div>
 <ul class="space-y-2 text-sm text-neutral-300">
-<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">setValue</code> dispara <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">input</code>+<code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">change</code></li>
-<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Ideal (roadmap): <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">fill</code> nativo do Playwright</li>
-<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Conferir que o botão habilitou no shot</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">setValue</code> triggers <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">input</code>+<code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">change</code></li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Ideal (roadmap): <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">fill</code> native to Playwright</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Check that the button is enabled in the shot</li>
 </ul>
 </div>
 </div>
 <div>
-<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">setValue dispara os eventos (trecho do capture.mjs)</div>
+<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">setValue triggers the events (excerpt from capture.mjs)</div>
 <div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
 <div><span class="text-neutral-300">el.value = </span><span class="text-yellow-300">"768"</span><span class="text-neutral-300">;</span></div>
 <div><span class="text-neutral-300">el.dispatchEvent(</span><span class="text-blue-400">new</span> <span class="text-cyan-400">Event</span><span class="text-neutral-300">(</span><span class="text-yellow-300">'input'</span><span class="text-neutral-300">,{bubbles:</span><span class="text-orange-400">true</span><span class="text-neutral-300">}));</span></div>
@@ -249,8 +249,8 @@
 <div class="rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 flex gap-3">
 <span class="text-blue-400 text-xl flex-shrink-0">💡</span>
 <div>
-<div class="text-blue-400 font-semibold text-sm mb-1">Backlog nº 2: usar o fill nativo</div>
-<p class="text-neutral-400 text-sm">O ideal é o <code class="text-blue-300">capture.mjs</code> chamar <code class="text-blue-300">agent-browser fill @ref</code> (fill nativo do Playwright) em vez de setar <code class="text-blue-300">.value</code> — simula digitação real e dispara o estado de forma confiável.</p>
+<div class="text-blue-400 font-semibold text-sm mb-1">Backlog #2: use native fill</div>
+<p class="text-neutral-400 text-sm">The ideal is the <code class="text-blue-300">capture.mjs</code> call <code class="text-blue-300">agent-browser fill @ref</code> (Playwright’s native fill) instead of setting <code class="text-blue-300">.value</code> — simulates real typing and reliably triggers the state.</p>
 </div>
 </div>
 </div>
@@ -261,8 +261,8 @@
 <div class="flex items-start space-x-4">
 <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">3</div>
 <div>
-<h2 class="text-xl font-bold flex items-center gap-2">⏱️ Esperar CONDIÇÃO, não tempo fixo <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">roadmap</span></h2>
-<p class="text-neutral-400 mt-2">Hoje o capture usa <code class="text-blue-400">wait</code> (ms). O ideal é um <code class="text-blue-400">waitFor</code> de texto/seletor.</p>
+<h2 class="text-xl font-bold flex items-center gap-2">⏱️ Wait for a CONDITION, not a fixed amount of time <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">roadmap</span></h2>
+<p class="text-neutral-400 mt-2">Today, capture uses <code class="text-blue-400">wait</code> (ms). Ideally, a <code class="text-blue-400">waitFor</code> text/selector.</p>
 </div>
 </div>
 </div>
@@ -271,23 +271,23 @@
 <table class="w-full text-sm">
 <thead>
 <tr class="bg-dark-700/60 border-b border-dark-600">
-<th class="text-left p-3 text-neutral-400 font-semibold">Abordagem</th>
-<th class="text-center p-3 text-blue-400 font-semibold">wait (ms) — hoje</th>
+<th class="text-left p-3 text-neutral-400 font-semibold">Approach</th>
+<th class="text-center p-3 text-blue-400 font-semibold">wait (ms) — today</th>
 <th class="text-center p-3 text-neutral-400 font-semibold">waitFor — roadmap</th>
 </tr>
 </thead>
 <tbody class="divide-y divide-dark-600">
-<tr class="hover:bg-dark-700/30"><td class="p-3 text-neutral-300">Critério</td><td class="p-3 text-center text-amber-400">tempo fixo</td><td class="p-3 text-center text-emerald-400">condição real</td></tr>
-<tr class="hover:bg-dark-700/30"><td class="p-3 text-neutral-300">Geração lenta</td><td class="p-3 text-center text-amber-400">chuta a folga</td><td class="p-3 text-center text-emerald-400">espera o &lt;img&gt;</td></tr>
-<tr class="hover:bg-dark-700/30"><td class="p-3 text-neutral-300">Risco</td><td class="p-3 text-center text-red-400">cedo demais / lento</td><td class="p-3 text-center text-emerald-400">sai na hora certa</td></tr>
+<tr class="hover:bg-dark-700/30"><td class="p-3 text-neutral-300">Criterion</td><td class="p-3 text-center text-amber-400">fixed timing</td><td class="p-3 text-center text-emerald-400">real condition</td></tr>
+<tr class="hover:bg-dark-700/30"><td class="p-3 text-neutral-300">Slow generation</td><td class="p-3 text-center text-amber-400">guess the margin</td><td class="p-3 text-center text-emerald-400">waits for the &lt;img&gt;</td></tr>
+<tr class="hover:bg-dark-700/30"><td class="p-3 text-neutral-300">Risk</td><td class="p-3 text-center text-red-400">too early / slow</td><td class="p-3 text-center text-emerald-400">happens at the right time</td></tr>
 </tbody>
 </table>
 </div>
 <div class="rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 flex gap-3">
 <span class="text-blue-400 text-xl flex-shrink-0">💡</span>
 <div>
-<div class="text-blue-400 font-semibold text-sm mb-1">Geração demorada: poll por um &lt;img&gt; real</div>
-<p class="text-neutral-400 text-sm">O flux2-klein levou ~2,5 min no POC. Antes do screenshot do resultado, faça poll por um <code class="text-blue-300">&lt;img&gt;</code> de fato carregado no painel — não confie só no relógio. Trocar <code class="text-blue-300">wait</code> por <code class="text-blue-300">waitFor</code> é o backlog nº 3.</p>
+<div class="text-blue-400 font-semibold text-sm mb-1">Slow generation: poll a real &lt;img&gt;</div>
+<p class="text-neutral-400 text-sm">flux2-klein took ~2.5 min in the POC. Before the result screenshot, poll for a <code class="text-blue-300">&lt;img&gt;</code> actually loaded in the panel — don’t rely on the clock alone. Changing <code class="text-blue-300">wait</code> by <code class="text-blue-300">waitFor</code> is backlog item #3.</p>
 </div>
 </div>
 </div>
@@ -298,39 +298,39 @@
 <div class="flex items-start space-x-4">
 <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">4</div>
 <div>
-<h2 class="text-xl font-bold flex items-center gap-2">🔄 Fluxos assíncronos multi-estado <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">feito na mão</span></h2>
-<p class="text-neutral-400 mt-2">Analisar → aprovar → dublar → concluído: capturados como sub-passos nomeados, com poll de conclusão.</p>
+<h2 class="text-xl font-bold flex items-center gap-2">🔄 Multi-state asynchronous flows <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">handmade</span></h2>
+<p class="text-neutral-400 mt-2">Analyze → approve → dub → complete: captured as named sub-steps, with completion polling.</p>
 </div>
 </div>
 </div>
 <div class="p-6 space-y-6">
 <div>
-<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-4">O pipeline do inemaVOX</div>
+<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-4">The inemaVOX pipeline</div>
 <div class="relative pl-8 space-y-0">
 <div class="absolute left-3 top-2 bottom-2 w-0.5 bg-blue-500/30"></div>
 <div class="relative pb-5">
 <div class="absolute -left-5 w-4 h-4 rounded-full bg-blue-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">1</span></div>
-<div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600"><div class="font-semibold text-blue-400 text-sm">Analisar</div><p class="text-neutral-400 text-sm mt-1">Dispara o processamento; o status muda. Captura o estado "analisando".</p></div>
+<div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600"><div class="font-semibold text-blue-400 text-sm">Analyze</div><p class="text-neutral-400 text-sm mt-1">Start processing; the status changes. Capture the "analyzing" state.</p></div>
 </div>
 <div class="relative pb-5">
 <div class="absolute -left-5 w-4 h-4 rounded-full bg-amber-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">2</span></div>
-<div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600"><div class="font-semibold text-amber-400 text-sm">Aprovar (waiting_approval)</div><p class="text-neutral-400 text-sm mt-1">O fluxo para até a aprovação. Captura o estado de espera e a ação de aprovar.</p></div>
+<div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600"><div class="font-semibold text-amber-400 text-sm">Approve (waiting_approval)</div><p class="text-neutral-400 text-sm mt-1">The flow pauses for approval. It captures the waiting state and the approval action.</p></div>
 </div>
 <div class="relative pb-5">
 <div class="absolute -left-5 w-4 h-4 rounded-full bg-blue-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">3</span></div>
-<div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600"><div class="font-semibold text-blue-400 text-sm">Dublar</div><p class="text-neutral-400 text-sm mt-1">Processo longo; poll de conclusão entre as capturas.</p></div>
+<div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600"><div class="font-semibold text-blue-400 text-sm">Dub</div><p class="text-neutral-400 text-sm mt-1">Long process; poll for completion between captures.</p></div>
 </div>
 <div class="relative">
 <div class="absolute -left-5 w-4 h-4 rounded-full bg-cyan-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">4</span></div>
-<div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600"><div class="font-semibold text-cyan-400 text-sm">Concluído</div><p class="text-neutral-400 text-sm mt-1">Resultado final, com zoom. Encerra o walkthrough antes da CTA.</p></div>
+<div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600"><div class="font-semibold text-cyan-400 text-sm">Completed</div><p class="text-neutral-400 text-sm mt-1">Final result, zoomed in. Ends the walkthrough before the CTA.</p></div>
 </div>
 </div>
 </div>
 <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4 flex gap-3">
 <span class="text-red-400 text-xl flex-shrink-0">⚠️</span>
 <div>
-<div class="text-red-400 font-semibold text-sm mb-1">O poll foi script à mão</div>
-<p class="text-neutral-400 text-sm">No POC, o poll de conclusão (<code class="text-red-300">poll-job*.sh</code>) foi feito fora do capture.mjs. Embuti-lo como sub-passos nomeados com poll é o backlog nº 4.</p>
+<div class="text-red-400 font-semibold text-sm mb-1">The poll was a hand-written script</div>
+<p class="text-neutral-400 text-sm">In the POC, the completion poll (<code class="text-red-300">poll-job*.sh</code>) was built outside capture.mjs. Embedding it as named substeps with polling is backlog item #4.</p>
 </div>
 </div>
 </div>
@@ -341,31 +341,31 @@
 <div class="flex items-start space-x-4">
 <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">5</div>
 <div>
-<h2 class="text-xl font-bold flex items-center gap-2">⏸️ Estados como waiting_approval</h2>
-<p class="text-neutral-400 mt-2">Estados disparados por evento (não por tempo) precisam de um poll de status — não de um <code class="text-blue-400">wait</code> fixo.</p>
+<h2 class="text-xl font-bold flex items-center gap-2">⏸️ States like waiting_approval</h2>
+<p class="text-neutral-400 mt-2">Event-triggered states (not time-triggered) need a status poll — not a <code class="text-blue-400">wait</code> fixed.</p>
 </div>
 </div>
 </div>
 <div class="p-6 space-y-6">
 <div class="rounded-xl bg-gradient-to-br from-blue-900/30 to-dark-700/50 border border-blue-500/30 p-5">
-<div class="text-xs font-semibold text-blue-400 uppercase tracking-widest mb-2">Por que tempo fixo não resolve</div>
-<p class="text-neutral-200 font-medium">Um <code class="text-blue-300">waiting_approval</code> muda quando alguém aprova — não quando o relógio bate. Esperar X ms pode capturar antes da hora (ou tarde demais).</p>
+<div class="text-xs font-semibold text-blue-400 uppercase tracking-widest mb-2">Why fixed timing doesn’t work</div>
+<p class="text-neutral-200 font-medium">One <code class="text-blue-300">waiting_approval</code> changes when someone approves—not when the clock strikes. Waiting X ms may capture too early (or too late).</p>
 </div>
 <div>
-<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Poll de status (conceito)</div>
+<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Status polling (concept)</div>
 <div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
-<div class="text-neutral-500 text-xs mb-2">// repetir até o status sair de "waiting_approval"</div>
+<div class="text-neutral-500 text-xs mb-2">// repeat until the status is no longer "waiting_approval"</div>
 <div><span class="text-blue-400">while</span> <span class="text-neutral-300">(status === </span><span class="text-yellow-300">"waiting_approval"</span><span class="text-neutral-300">) {</span></div>
-<div class="ml-4"><span class="text-neutral-300">status = </span><span class="text-cyan-400">readStatus</span><span class="text-neutral-300">();  </span><span class="text-neutral-500">// eval no DOM / API</span></div>
+<div class="ml-4"><span class="text-neutral-300">status = </span><span class="text-cyan-400">readStatus</span><span class="text-neutral-300">();  </span><span class="text-neutral-500">// eval in the DOM / API</span></div>
 <div class="ml-4"><span class="text-cyan-400">sleep</span><span class="text-neutral-300">(</span><span class="text-orange-400">2000</span><span class="text-neutral-300">);</span></div>
-<div><span class="text-neutral-300">}</span> <span class="text-neutral-500">// → então captura o próximo estado</span></div>
+<div><span class="text-neutral-300">}</span> <span class="text-neutral-500">// → then capture the next state</span></div>
 </div>
 </div>
 <div class="rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 flex gap-3">
 <span class="text-blue-400 text-xl flex-shrink-0">💡</span>
 <div>
-<div class="text-blue-400 font-semibold text-sm mb-1">É o que liga este tópico ao waitFor</div>
-<p class="text-neutral-400 text-sm">O <code class="text-blue-300">waiting_approval</code> é o caso de uso que justifica o <code class="text-blue-300">waitFor</code> do tópico 3: esperar uma condição (status mudou) em vez de um tempo.</p>
+<div class="text-blue-400 font-semibold text-sm mb-1">It's what connects this topic to waitFor</div>
+<p class="text-neutral-400 text-sm">O <code class="text-blue-300">waiting_approval</code> is the use case that justifies the <code class="text-blue-300">waitFor</code> of topic 3: wait for a condition (status changed) instead of a duration.</p>
 </div>
 </div>
 </div>
@@ -376,37 +376,37 @@
 <div class="flex items-start space-x-4">
 <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">6</div>
 <div>
-<h2 class="text-xl font-bold flex items-center gap-2">⚠️ Armadilhas de captura</h2>
-<p class="text-neutral-400 mt-2">Os erros que mais custam tempo — aplique antes de renderizar. Detalhe em <code class="text-blue-400">gotchas.md</code>.</p>
+<h2 class="text-xl font-bold flex items-center gap-2">⚠️ Capture pitfalls</h2>
+<p class="text-neutral-400 mt-2">The mistakes that cost the most time—address them before rendering. Details in <code class="text-blue-400">gotchas.md</code>.</p>
 </div>
 </div>
 </div>
 <div class="p-6 space-y-6">
 <div class="grid sm:grid-cols-2 gap-4">
 <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4">
-<div class="text-red-400 font-semibold text-sm mb-3">✗ Armadilhas de captura</div>
+<div class="text-red-400 font-semibold text-sm mb-3">✗ Capture pitfalls</div>
 <ul class="space-y-2 text-sm text-neutral-300">
-<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Viewport inconsistente → cursor erra o alvo</li>
-<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Refs @eN deslocam após mudança de DOM</li>
-<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> <code class="text-red-300 bg-dark-700 px-1 rounded text-xs">eval --json</code> aninhado: data URL em <code class="text-red-300 bg-dark-700 px-1 rounded text-xs">data.result</code></li>
-<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Screenshot estourando os limites do canvas</li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Inconsistent viewport → cursor misses the target</li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> @eN refs shift after DOM changes</li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> <code class="text-red-300 bg-dark-700 px-1 rounded text-xs">eval --json</code> nested: data URL in <code class="text-red-300 bg-dark-700 px-1 rounded text-xs">data.result</code></li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Screenshot exceeding the canvas boundaries</li>
 </ul>
 </div>
 <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
-<div class="text-emerald-400 font-semibold text-sm mb-3">✓ Correções</div>
+<div class="text-emerald-400 font-semibold text-sm mb-3">✓ Fixes</div>
 <ul class="space-y-2 text-sm text-neutral-300">
-<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Mesmo viewport para bbox e shot; recapturar tudo</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Same viewport for bbox and shot; recapture everything</li>
 <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> CSS selectors / {tag,text} + re-snapshot</li>
-<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Ler <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">data.result</code>; decodificar base64 se salvar</li>
-<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Viewport 1280×800 → print x320..1600, y148..948</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Read <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">data.result</code>; decode base64 if saving</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Viewport 1280×800 → screenshot x320..1600, y148..948</li>
 </ul>
 </div>
 </div>
 <div class="rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 flex gap-3">
 <span class="text-blue-400 text-xl flex-shrink-0">💡</span>
 <div>
-<div class="text-blue-400 font-semibold text-sm mb-1">Salvar o resultado gerado</div>
-<p class="text-neutral-400 text-sm">Se o app gera um arquivo (ex.: imagem), pegue o <code class="text-blue-300">src</code> (data: URL) via eval — que vem em <code class="text-blue-300">data.result</code> — e decodifique base64 para PNG, ou clique no botão de download.</p>
+<div class="text-blue-400 font-semibold text-sm mb-1">Save the generated result</div>
+<p class="text-neutral-400 text-sm">If the app generates a file (e.g., an image), get the <code class="text-blue-300">src</code> (data: URL) via eval—which comes in <code class="text-blue-300">data.result</code> — and decode base64 to PNG, or click the download button.</p>
 </div>
 </div>
 </div>
@@ -417,74 +417,74 @@
 <div class="flex items-start space-x-4">
 <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">7</div>
 <div>
-<h2 class="text-xl font-bold flex items-center gap-2">🗺️ O que já funciona vs o que é roadmap</h2>
-<p class="text-neutral-400 mt-2">A fronteira honesta da skill: o que o capture.mjs faz hoje e o que ainda exige a mão.</p>
+<h2 class="text-xl font-bold flex items-center gap-2">🗺️ What already works vs. what's on the roadmap</h2>
+<p class="text-neutral-400 mt-2">The skill's honest boundary: what capture.mjs does today and what still requires manual work.</p>
 </div>
 </div>
 </div>
 <div class="p-6 space-y-6">
 <div class="grid sm:grid-cols-2 gap-4">
 <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
-<div class="text-emerald-400 font-semibold text-sm mb-3">✓ Funciona hoje (v1)</div>
+<div class="text-emerald-400 font-semibold text-sm mb-3">✓ Works today (v1)</div>
 <ul class="space-y-2 text-sm text-neutral-300">
 <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> actions.json: fill, click, clickText, setValue, wait</li>
-<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Bboxes via getBoundingClientRect → steps.json</li>
-<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> 1 shot por estado + moldura + cursor + zoom + CTA</li>
-<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Páginas longas e multi-estado, dirigindo na mão</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Bounding boxes via getBoundingClientRect → steps.json</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> 1 shot per state + frame + cursor + zoom + CTA</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Long, multi-state pages, driven manually</li>
 </ul>
 </div>
 <div class="rounded-xl border border-amber-500/30 bg-amber-500/10 p-4">
 <div class="text-amber-400 font-semibold text-sm mb-3">⏳ Roadmap / backlog</div>
 <ul class="space-y-2 text-sm text-neutral-300">
-<li class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">1.</span> Scroll/scrollIntoView no capture.mjs</li>
-<li class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">2.</span> fill nativo do Playwright para inputs React</li>
-<li class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">3.</span> waitFor (condição) em vez de wait fixo</li>
-<li class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">4.</span> Poll multi-estado embutido · 5. 9:16 · 6. v3 gravação</li>
+<li class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">1.</span> Scroll/scrollIntoView in capture.mjs</li>
+<li class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">2.</span> Playwright's native fill for React inputs</li>
+<li class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">3.</span> waitFor (condition) instead of a fixed wait</li>
+<li class="flex items-start gap-2"><span class="text-amber-400 mt-0.5">4.</span> Embedded multi-state polling · 5. 9:16 · 6. v3 recording</li>
 </ul>
 </div>
 </div>
 <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4 flex gap-3">
 <span class="text-red-400 text-xl flex-shrink-0">⚠️</span>
 <div>
-<div class="text-red-400 font-semibold text-sm mb-1">Limites conhecidos (seja honesto com o usuário)</div>
-<p class="text-neutral-400 text-sm">Estado dinâmico vira print estático (movimento real seria v3, gravar a tela). App com login precisa de credenciais de teste. O formato natural é 16:9 — 9:16 exigiria reenquadre.</p>
+<div class="text-red-400 font-semibold text-sm mb-1">Known limitations (be honest with the user)</div>
+<p class="text-neutral-400 text-sm">Dynamic state becomes a static screenshot (for real motion, use v3 and record the screen). Apps with login require test credentials. The natural format is 16:9 — 9:16 would require reframing.</p>
 </div>
 </div>
 <!-- RESUMO FINAL -->
 <div class="rounded-xl bg-gradient-to-br from-blue-900/30 to-dark-700/50 border border-blue-500/30 p-5">
-<h3 class="text-lg font-bold mb-3 flex items-center gap-2">🎯 Resumo do módulo</h3>
+<h3 class="text-lg font-bold mb-3 flex items-center gap-2">🎯 Module summary</h3>
 <ul class="space-y-2">
-<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> Páginas longas: scrollIntoView na mão hoje (scroll = backlog nº 1)</li>
-<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> Inputs React: use setValue (dispara input/change); fill nativo é nº 2</li>
-<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> Esperar condição (waitFor) &gt; tempo fixo; poll por &lt;img&gt; real (nº 3)</li>
-<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> Multi-estado (analisar→aprovar→dublar→concluído) com poll (nº 4)</li>
-<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> Aplique os gotchas antes de renderizar; marque sempre o que é roadmap</li>
+<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> Long pages: manual scrollIntoView for now (scroll = backlog item #1)</li>
+<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> React inputs: use setValue (triggers input/change); native fill is #2</li>
+<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> Wait for a condition (waitFor) &gt; fixed time; poll for the actual &lt;img&gt; (no. 3)</li>
+<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> Multi-state (analyze→approve→dub→done) with polling (no. 4)</li>
+<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> Apply the gotchas before rendering; always mark what’s on the roadmap</li>
 </ul>
 </div>
 <!-- fim da trilha -->
 <div class="bg-dark-700/50 rounded-xl border border-blue-500/20 p-5">
-<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Continua na Trilha 3</div>
+<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Continues in Track 3</div>
 <div class="flex items-start gap-3">
 <div class="w-10 h-10 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center flex-shrink-0 text-purple-400 font-bold">T3</div>
 <div>
-<div class="font-semibold text-neutral-200">🎬 Composição &amp; Render</div>
-<div class="text-sm text-neutral-400 mt-1">Com o steps.json em mãos, a T3 monta o vídeo: moldura, cursor, zoom, narração Kokoro e o render HyperFrames até o MP4.</div>
+<div class="font-semibold text-neutral-200">🎬 Composition &amp; Render</div>
+<div class="text-sm text-neutral-400 mt-1">With steps.json ready, T3 builds the video: frame, cursor, zoom, Kokoro narration, and HyperFrames rendering to MP4.</div>
 </div>
 </div>
-<a class="mt-4 flex items-center justify-start gap-2 text-purple-400 hover:text-purple-300 text-sm font-medium transition-colors" href="../trilha3/index.html">Ir para a Trilha 3 →</a>
+<a class="mt-4 flex items-center justify-start gap-2 text-purple-400 hover:text-purple-300 text-sm font-medium transition-colors" href="../trilha3/index.html">Go to Track 3 →</a>
 </div>
 </div>
 <!-- CTAs -->
 <div class="p-6 pt-0 flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-2-3.html">← Módulo 2.3</a>
-<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="../trilha3/index.html">Trilha 3: Composição &amp; Render →</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-2-3.html">← Module 2.3</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="../trilha3/index.html">Track 3: Composition &amp; Rendering →</a>
 </div>
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-4">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p class="mb-1">Conteúdo do <a class="text-sky-400 hover:text-sky-300 font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
-<p>Vídeo Demonstrativo — Trilha 2: Captura do app real · Módulo 2.4 · 2026</p>
+<p class="mb-1">Content of the <a class="text-sky-400 hover:text-sky-300 font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+<p>Demo Video — Track 2: Capturing the Real App · Module 2.4 · 2026</p>
 </div>
 </footer>
 <script>

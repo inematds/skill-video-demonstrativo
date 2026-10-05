@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="pt-BR">
+<html class="dark" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Módulo 2.3 — Coordenadas, seletores &amp; bounding boxes | Vídeo Demonstrativo · INEMA.CLUB</title>
+<title>Module 2.3 — Coordinates, selectors &amp; bounding boxes | Demonstrative Video · INEMA.CLUB</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
@@ -68,21 +68,21 @@
     }
   </style>
 <link href="https://inematds.github.io/skill-video-demonstrativo/curso/trilha2/modulo-2-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skill-video-demonstrativo/en/curso/trilha2/modulo-2-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skill-video-demonstrativo/es/curso/trilha2/modulo-2-3.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-2-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha2/modulo-2-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha2/modulo-2-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/modulo-2-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-2-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/modulo-2-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- NAV -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">🖱️</span><span class="font-bold text-lg hidden sm:inline">Demonstrativo</span>
+<span class="text-2xl">🖱️</span><span class="font-bold text-lg hidden sm:inline">Demonstration</span>
 </a>
 <span class="text-neutral-600">|</span>
 <a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
-<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
-<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Captura</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentals</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Capture</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Render</span></a>
 <button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
 <svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
@@ -95,11 +95,11 @@
 <!-- BREADCRUMB -->
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
 <nav class="flex items-center space-x-2 text-sm text-neutral-500">
-<a class="hover:text-blue-400 transition-colors" href="../../index.html">Início</a>
+<a class="hover:text-blue-400 transition-colors" href="../../index.html">Start</a>
 <span>/</span>
-<a class="hover:text-blue-400 transition-colors" href="index.html">Trilha 2 — Captura</a>
+<a class="hover:text-blue-400 transition-colors" href="index.html">Track 2 — Capture</a>
 <span>/</span>
-<span class="text-blue-400 font-medium">Módulo 2.3</span>
+<span class="text-blue-400 font-medium">Module 2.3</span>
 </nav>
 </div>
 <!-- HEADER -->
@@ -107,19 +107,19 @@
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="grid lg:grid-cols-2 gap-8 items-center">
 <div>
-<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MÓDULO 2.3</span>
-<h1 class="text-3xl sm:text-4xl font-bold mb-4">🎯 Coordenadas, seletores &amp; bounding boxes</h1>
-<p class="text-lg text-neutral-400 max-w-xl">O detalhe que dá ar profissional: a bbox real vira a mira do cursor no canvas. Aqui você aprende o mapeamento de coordenadas, seletores robustos e a região de zoom/destaque.</p>
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">MODULE 2.3</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🎯 Coordinates, selectors &amp; bounding boxes</h1>
+<p class="text-lg text-neutral-400 max-w-xl">The detail that gives it a professional feel: the real bbox becomes the cursor's target on the canvas. Here you learn coordinate mapping, robust selectors, and the zoom/highlight region.</p>
 <div class="grid grid-cols-4 gap-3 mt-6">
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">7</div><div class="text-xs text-neutral-400">Tópicos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~30</div><div class="text-xs text-neutral-400">Minutos</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Inter.</div><div class="text-xs text-neutral-400">Nível</div></div>
-<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Precisão</div><div class="text-xs text-neutral-400">Tipo</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">7</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~30</div><div class="text-xs text-neutral-400">Minutes</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Inter.</div><div class="text-xs text-neutral-400">Level</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Accuracy</div><div class="text-xs text-neutral-400">Type</div></div>
 </div>
 </div>
 <!-- SVG FUTURISTA — bbox no viewport → centro mapeado no canvas -->
 <div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4">
-<svg aria-label="Diagrama do mapeamento de coordenadas: a bounding box no viewport vira o centro mirado pelo cursor dentro do canvas do vídeo" class="w-full h-auto" role="img" viewbox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+<svg aria-label="Coordinate mapping diagram: the bounding box in the viewport becomes the point the cursor aims at inside the video canvas" class="w-full h-auto" role="img" viewbox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <lineargradient id="m23-bg" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" style="stop-color:#0e1622"></stop><stop offset="100%" style="stop-color:#0e1b26"></stop></lineargradient>
 <filter height="140%" id="m23-glow" width="140%" x="-20%" y="-20%"><fegaussianblur result="blur" stddeviation="3"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -129,7 +129,7 @@
 <line x1="0" x2="400" y1="80" y2="80"></line><line x1="0" x2="400" y1="160" y2="160"></line>
 <line x1="200" x2="200" y1="0" y2="240"></line>
 </g>
-<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="200" y="24">bbox → centro → cursor</text>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="12" font-weight="800" text-anchor="middle" x="200" y="24">bbox → center → cursor</text>
 <!-- viewport (esq) -->
 <text fill="#38bdf8" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="100" y="44">VIEWPORT 1280×800</text>
 <rect fill="#0a1422" height="120" rx="6" stroke="#38bdf8" stroke-width="1.3" width="140" x="30" y="52"></rect>
@@ -151,8 +151,8 @@
 <rect fill="none" height="32" rx="5" stroke="#fbbf24" stroke-width="1.4" width="88" x="258" y="96"></rect>
 <!-- cursor mira o centro -->
 <polygon fill="#fff" points="302,108 302,124 306,120 310,126 313,124 309,119 314,119" stroke="#3b82f6" stroke-width="0.6"></polygon>
-<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="6.5" text-anchor="middle" x="302" y="146">ponta no centro</text>
-<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="200" y="196">a bbox real = mira do cursor, do destaque e do zoom</text>
+<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="6.5" text-anchor="middle" x="302" y="146">tip at center</text>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="200" y="196">the real bbox = the target for the cursor, highlight, and zoom</text>
 <circle class="m23-anim-pulse" cx="20" cy="20" fill="#38bdf8" opacity="0.6" r="2"></circle>
 <circle class="m23-anim-pulse" cx="380" cy="220" fill="#60a5fa" opacity="0.6" r="2"></circle>
 </svg>
@@ -167,29 +167,29 @@
 <div class="flex items-start space-x-4">
 <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">1</div>
 <div>
-<h2 class="text-xl font-bold flex items-center gap-2">📍 Coordenadas viewport-relative</h2>
-<p class="text-neutral-400 mt-2">As bboxes vêm relativas ao viewport. No vídeo, viram coordenadas do canvas somando o offset da janela.</p>
+<h2 class="text-xl font-bold flex items-center gap-2">📍 Viewport-relative coordinates</h2>
+<p class="text-neutral-400 mt-2">The bboxes are relative to the viewport. In the video, they become canvas coordinates by adding the window offset.</p>
 </div>
 </div>
 </div>
 <div class="p-6 space-y-6">
 <div class="rounded-xl bg-gradient-to-br from-blue-900/30 to-dark-700/50 border border-blue-500/30 p-5">
-<div class="text-xs font-semibold text-blue-400 uppercase tracking-widest mb-2">Conceito Principal</div>
-<p class="text-neutral-200 font-medium">A captura roda num viewport fixo (ex.: 1280×800). Toda bbox vem nesse espaço. No canvas 1920×1080, o screenshot é desenhado dentro da janela e cada ponto é mapeado.</p>
+<div class="text-xs font-semibold text-blue-400 uppercase tracking-widest mb-2">Main Concept</div>
+<p class="text-neutral-200 font-medium">The capture runs in a fixed viewport (e.g., 1280×800). Every bbox comes from this space. On the 1920×1080 canvas, the screenshot is drawn inside the window and each point is mapped.</p>
 </div>
 <div>
-<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">O mapeamento (ponto do shot → canvas)</div>
+<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">The mapping (point in the shot → canvas)</div>
 <div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
 <div class="text-neutral-500 text-xs mb-2">// WIN_L = (1920 - VW) / 2 · SHOT_T = WIN_T + TITLE_H</div>
 <div><span class="text-cyan-400">canvasX</span> <span class="text-neutral-300">=</span> <span class="text-blue-400">WIN_L</span> <span class="text-neutral-300">+</span> <span class="text-orange-400">sx</span><span class="text-neutral-300">;</span></div>
 <div><span class="text-cyan-400">canvasY</span> <span class="text-neutral-300">=</span> <span class="text-blue-400">SHOT_T</span> <span class="text-neutral-300">+</span> <span class="text-orange-400">sy</span><span class="text-neutral-300">;</span></div>
-<div class="text-neutral-500 text-xs mt-2">// o centro da bbox mapeada = para onde o cursor vai</div>
+<div class="text-neutral-500 text-xs mt-2">// the center of the mapped bbox = where the cursor goes</div>
 </div>
 </div>
 <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
-<div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-blue-400 text-lg mb-1">📐</div><div class="text-xs font-semibold text-neutral-200">WIN_L</div><div class="text-xs text-neutral-500">centraliza X</div></div>
-<div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-blue-400 text-lg mb-1">📏</div><div class="text-xs font-semibold text-neutral-200">SHOT_T</div><div class="text-xs text-neutral-500">topo + título</div></div>
-<div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-blue-400 text-lg mb-1">🎯</div><div class="text-xs font-semibold text-neutral-200">centro</div><div class="text-xs text-neutral-500">mira do cursor</div></div>
+<div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-blue-400 text-lg mb-1">📐</div><div class="text-xs font-semibold text-neutral-200">WIN_L</div><div class="text-xs text-neutral-500">center X</div></div>
+<div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-blue-400 text-lg mb-1">📏</div><div class="text-xs font-semibold text-neutral-200">SHOT_T</div><div class="text-xs text-neutral-500">top + title</div></div>
+<div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-blue-400 text-lg mb-1">🎯</div><div class="text-xs font-semibold text-neutral-200">center</div><div class="text-xs text-neutral-500">cursor target</div></div>
 </div>
 </div>
 </section>
@@ -199,14 +199,14 @@
 <div class="flex items-start space-x-4">
 <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">2</div>
 <div>
-<h2 class="text-xl font-bold flex items-center gap-2">📐 Capturar a bbox de cada alvo</h2>
-<p class="text-neutral-400 mt-2">Para cada passo com <code class="text-blue-400">target</code>, o capture.mjs lê o rect e arredonda para <code class="text-blue-400">{x,y,w,h}</code>.</p>
+<h2 class="text-xl font-bold flex items-center gap-2">📐 Capture the bbox for each target</h2>
+<p class="text-neutral-400 mt-2">For each step with <code class="text-blue-400">target</code>, capture.mjs reads the rect and rounds to <code class="text-blue-400">{x,y,w,h}</code>.</p>
 </div>
 </div>
 </div>
 <div class="p-6 space-y-6">
 <div>
-<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Como o capture lê a bbox (trecho real)</div>
+<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">How capture reads the bbox (real excerpt)</div>
 <div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
 <div><span class="text-blue-400">const</span> <span class="text-cyan-400">box</span> <span class="text-neutral-300">=</span> <span class="text-cyan-400">evalJSON</span><span class="text-neutral-300">(`(()=&gt;{</span></div>
 <div class="ml-4"><span class="text-neutral-300">const el = </span><span class="text-yellow-300">finder(target)</span><span class="text-neutral-300">;</span></div>
@@ -220,8 +220,8 @@
 <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4 flex gap-3">
 <span class="text-red-400 text-xl flex-shrink-0">⚠️</span>
 <div>
-<div class="text-red-400 font-semibold text-sm mb-1">Alvo não encontrado = bbox null</div>
-<p class="text-neutral-400 text-sm">Se o seletor não bate, o capture grava <code class="text-red-300">target: null</code> e imprime <code class="text-red-300">! alvo não encontrado no passo X</code>. É o sinal claro de seletor errado — corrija antes de renderizar.</p>
+<div class="text-red-400 font-semibold text-sm mb-1">Target not found = bbox null</div>
+<p class="text-neutral-400 text-sm">If the selector doesn’t match, capture records <code class="text-red-300">target: null</code> and prints <code class="text-red-300">! alvo não encontrado no passo X</code>. It's a clear sign the selector is wrong — fix it before rendering.</p>
 </div>
 </div>
 </div>
@@ -232,37 +232,37 @@
 <div class="flex items-start space-x-4">
 <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">3</div>
 <div>
-<h2 class="text-xl font-bold flex items-center gap-2">🧷 Seletores robustos</h2>
-<p class="text-neutral-400 mt-2">data-testid, role e texto visível sobrevivem à mudança de estado. Os refs <code class="text-blue-400">@eN</code> não.</p>
+<h2 class="text-xl font-bold flex items-center gap-2">🧷 Robust selectors</h2>
+<p class="text-neutral-400 mt-2">data-testid, role, and visible text survive state changes. The refs <code class="text-blue-400">@eN</code> no.</p>
 </div>
 </div>
 </div>
 <div class="p-6 space-y-6">
 <div class="grid sm:grid-cols-2 gap-4">
 <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
-<div class="text-emerald-400 font-semibold text-sm mb-3">✓ Seletores estáveis</div>
+<div class="text-emerald-400 font-semibold text-sm mb-3">✓ Stable selectors</div>
 <ul class="space-y-2 text-sm text-neutral-300">
 <li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">[data-testid="gerar"]</code></li>
-<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">role</code> + nome acessível</li>
-<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Texto visível: <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">{tag:"button",text:"Gerar"}</code></li>
-<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Atributos: <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">input[name=height]</code></li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">role</code> + accessible name</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Visible text: <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">{tag:"button",text:"Gerar"}</code></li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Attributes: <code class="text-emerald-300 bg-dark-700 px-1 rounded text-xs">input[name=height]</code></li>
 </ul>
 </div>
 <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4">
-<div class="text-red-400 font-semibold text-sm mb-3">✗ Seletores frágeis</div>
+<div class="text-red-400 font-semibold text-sm mb-3">✗ Fragile selectors</div>
 <ul class="space-y-2 text-sm text-neutral-300">
-<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Refs <code class="text-red-300">@eN</code> em telas que mudam</li>
-<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Classes geradas (CSS-in-JS) que mudam no build</li>
-<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> nth-child posicional num layout dinâmico</li>
-<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Texto com acento/espaço que não bate exato</li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Refs <code class="text-red-300">@eN</code> on screens that change</li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Generated classes (CSS-in-JS) that change during the build</li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> positional nth-child in a dynamic layout</li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Text with accent/space that doesn't match exactly</li>
 </ul>
 </div>
 </div>
 <div class="rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 flex gap-3">
 <span class="text-blue-400 text-xl flex-shrink-0">💡</span>
 <div>
-<div class="text-blue-400 font-semibold text-sm mb-1">Refs deslocam depois de "Gerar"</div>
-<p class="text-neutral-400 text-sm">No POC, ao surgir o link "baixar PNG", todos os refs deslocaram. Por isso, em estado mutável, use CSS selectors ou <code class="text-blue-300">{tag,text}</code> — e re-snapshot quando o DOM muda muito.</p>
+<div class="text-blue-400 font-semibold text-sm mb-1">Refs shift after "Generate"</div>
+<p class="text-neutral-400 text-sm">In the POC, when the "download PNG" link appeared, all the refs shifted. So, in a mutable state, use CSS selectors or <code class="text-blue-300">{tag,text}</code> — and take a new snapshot when the DOM changes significantly.</p>
 </div>
 </div>
 </div>
@@ -273,35 +273,35 @@
 <div class="flex items-start space-x-4">
 <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">4</div>
 <div>
-<h2 class="text-xl font-bold flex items-center gap-2">🎯 O cursor mira o centro da box</h2>
-<p class="text-neutral-400 mt-2">O cursor é um SVG global com o hotspot na ponta. O tween compensa o offset para a ponta cair no centro.</p>
+<h2 class="text-xl font-bold flex items-center gap-2">🎯 The cursor aims at the center of the box</h2>
+<p class="text-neutral-400 mt-2">The cursor is a global SVG with the hotspot at its tip. The tween compensates for the offset so the tip lands in the center.</p>
 </div>
 </div>
 </div>
 <div class="p-6 space-y-6">
 <div>
-<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-4">Mecânica do cursor</div>
+<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-4">Cursor mechanics</div>
 <div class="relative pl-8 space-y-0">
 <div class="absolute left-3 top-2 bottom-2 w-0.5 bg-blue-500/30"></div>
 <div class="relative pb-5">
 <div class="absolute -left-5 w-4 h-4 rounded-full bg-blue-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">1</span></div>
 <div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600">
-<div class="font-semibold text-blue-400 text-sm">Cursor é global, não por cena</div>
-<p class="text-neutral-400 text-sm mt-1">Um único <code class="text-blue-300">#cursor</code> animado na timeline principal — desliza continuamente enquanto os screenshots trocam.</p>
+<div class="font-semibold text-blue-400 text-sm">Cursor is global, not per scene</div>
+<p class="text-neutral-400 text-sm mt-1">A single <code class="text-blue-300">#cursor</code> animated on the main timeline — moves continuously as the screenshots change.</p>
 </div>
 </div>
 <div class="relative pb-5">
 <div class="absolute -left-5 w-4 h-4 rounded-full bg-blue-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">2</span></div>
 <div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600">
-<div class="font-semibold text-blue-400 text-sm">Hotspot na ponta</div>
-<p class="text-neutral-400 text-sm mt-1">A ponta fica em ~(6,3) dentro do SVG de 42px. O tween usa <code class="text-blue-300">x = alvoX - 6</code>, <code class="text-blue-300">y = alvoY - 3</code>.</p>
+<div class="font-semibold text-blue-400 text-sm">Hotspot at the end</div>
+<p class="text-neutral-400 text-sm mt-1">The pointer sits at ~(6,3) inside the 42px SVG. The tween uses <code class="text-blue-300">x = alvoX - 6</code>, <code class="text-blue-300">y = alvoY - 3</code>.</p>
 </div>
 </div>
 <div class="relative">
 <div class="absolute -left-5 w-4 h-4 rounded-full bg-cyan-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">3</span></div>
 <div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600">
-<div class="font-semibold text-cyan-400 text-sm">Clique = pulse + ripple</div>
-<p class="text-neutral-400 text-sm mt-1"><code class="text-blue-300">scale:.82</code> yoyo + um <code class="text-blue-300">#ripple</code> âmbar que expande no alvo no instante do clique.</p>
+<div class="font-semibold text-cyan-400 text-sm">Click = pulse + ripple</div>
+<p class="text-neutral-400 text-sm mt-1"><code class="text-blue-300">scale:.82</code> yoyo + one <code class="text-blue-300">#ripple</code> amber that expands over the target at the moment of the click.</p>
 </div>
 </div>
 </div>
@@ -309,8 +309,8 @@
 <div class="rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 flex gap-3">
 <span class="text-blue-400 text-xl flex-shrink-0">💡</span>
 <div>
-<div class="text-blue-400 font-semibold text-sm mb-1">Easing curvo evita o robótico</div>
-<p class="text-neutral-400 text-sm">O movimento usa <code class="text-blue-300">duration:.7, ease:"power3.inOut"</code>, começando ~0,35s após a cena aparecer. O cursor chega ao alvo antes da explicação principal.</p>
+<div class="text-blue-400 font-semibold text-sm mb-1">Curved easing avoids a robotic feel</div>
+<p class="text-neutral-400 text-sm">The movement uses <code class="text-blue-300">duration:.7, ease:"power3.inOut"</code>, starting ~0.35s after the scene appears. The cursor reaches the target before the main explanation.</p>
 </div>
 </div>
 </div>
@@ -321,24 +321,24 @@
 <div class="flex items-start space-x-4">
 <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">5</div>
 <div>
-<h2 class="text-xl font-bold flex items-center gap-2">🔍 Região de zoom / destaque</h2>
-<p class="text-neutral-400 mt-2">A mesma bbox posiciona o anel de destaque e o push-in do zoom. Uma coordenada certa serve aos três efeitos.</p>
+<h2 class="text-xl font-bold flex items-center gap-2">🔍 Zoom / highlight region</h2>
+<p class="text-neutral-400 mt-2">The same bbox positions the highlight ring and the zoom push-in. One correct coordinate serves all three effects.</p>
 </div>
 </div>
 </div>
 <div class="p-6 space-y-6">
 <div class="rounded-xl border border-blue-500/30 bg-blue-500/10 p-4">
-<div class="text-blue-400 font-semibold text-sm mb-3">📊 Três usos da mesma bbox</div>
+<div class="text-blue-400 font-semibold text-sm mb-3">📊 Three uses for the same bbox</div>
 <div class="grid sm:grid-cols-3 gap-3 text-sm">
-<div class="bg-dark-700/60 rounded-lg p-3"><div class="text-blue-400 font-bold mb-1">Cursor</div><div class="text-neutral-400">A ponta cai no centro da box.</div></div>
-<div class="bg-dark-700/60 rounded-lg p-3"><div class="text-blue-400 font-bold mb-1">Destaque (.hlbox)</div><div class="text-neutral-400">Anel âmbar com glow, ~6px de folga, posicionado na box.</div></div>
-<div class="bg-dark-700/60 rounded-lg p-3"><div class="text-blue-400 font-bold mb-1">Zoom</div><div class="text-neutral-400"><code class="text-blue-300">transformOrigin</code> no centro do alvo.</div></div>
+<div class="bg-dark-700/60 rounded-lg p-3"><div class="text-blue-400 font-bold mb-1">Cursor</div><div class="text-neutral-400">The pointer lands at the center of the box.</div></div>
+<div class="bg-dark-700/60 rounded-lg p-3"><div class="text-blue-400 font-bold mb-1">Highlight (.hlbox)</div><div class="text-neutral-400">Amber ring with a glow, ~6px clearance, positioned over the box.</div></div>
+<div class="bg-dark-700/60 rounded-lg p-3"><div class="text-blue-400 font-bold mb-1">Zoom</div><div class="text-neutral-400"><code class="text-blue-300">transformOrigin</code> in the center of the target.</div></div>
 </div>
 </div>
 <div>
-<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Zoom no resultado (zoom:true)</div>
+<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Zoom on the result (zoom:true)</div>
 <div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
-<div class="text-neutral-500 text-xs mb-2">// push-in cinematográfico no "tcharam"</div>
+<div class="text-neutral-500 text-xs mb-2">// cinematic push-in on the "ta-da"</div>
 <div><span class="text-cyan-400">gsap</span><span class="text-neutral-300">.</span><span class="text-cyan-400">to</span><span class="text-neutral-300">(img, {</span> <span class="text-blue-300">scale</span><span class="text-neutral-300">:</span> <span class="text-orange-400">1.12</span><span class="text-neutral-300">,</span></div>
 <div class="ml-4"><span class="text-blue-300">transformOrigin</span><span class="text-neutral-300">:</span> <span class="text-yellow-300">`${cx}px ${cy}px`</span><span class="text-neutral-300">,</span> <span class="text-blue-300">duration</span><span class="text-neutral-300">: narrDur });</span></div>
 </div>
@@ -346,8 +346,8 @@
 <div class="rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 flex gap-3">
 <span class="text-blue-400 text-xl flex-shrink-0">💡</span>
 <div>
-<div class="text-blue-400 font-semibold text-sm mb-1">Destaque foca sem cobrir</div>
-<p class="text-neutral-400 text-sm">O <code class="text-blue-300">.hlbox</code> é só <code class="text-blue-300">box-shadow</code> (anel + glow): entra com <code class="text-blue-300">back.out</code> e pulsa, focando o olhar no controle ativo sem tapar nada.</p>
+<div class="text-blue-400 font-semibold text-sm mb-1">Highlight focuses without covering</div>
+<p class="text-neutral-400 text-sm">O <code class="text-blue-300">.hlbox</code> is just <code class="text-blue-300">box-shadow</code> (ring + glow): comes in with <code class="text-blue-300">back.out</code> and pulses, drawing the eye to the active control without covering anything.</p>
 </div>
 </div>
 </div>
@@ -358,8 +358,8 @@
 <div class="flex items-start space-x-4">
 <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">6</div>
 <div>
-<h2 class="text-xl font-bold flex items-center gap-2">📜 Lidar com alvo fora da tela</h2>
-<p class="text-neutral-400 mt-2">Se o alvo está abaixo da dobra, role até ele antes de capturar e medir — e faça as duas coisas após o mesmo scroll.</p>
+<h2 class="text-xl font-bold flex items-center gap-2">📜 Handle a target that’s off-screen</h2>
+<p class="text-neutral-400 mt-2">If the target is below the fold, scroll to it before capturing and measuring—and do both after the same scroll.</p>
 </div>
 </div>
 </div>
@@ -367,15 +367,15 @@
 <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4 flex gap-3">
 <span class="text-red-400 text-xl flex-shrink-0">⚠️</span>
 <div>
-<div class="text-red-400 font-semibold text-sm mb-1">Scroll ainda é manual</div>
-<p class="text-neutral-400 text-sm">O capture.mjs hoje não rola a página. Em telas longas, dirija o agent-browser na mão (<code class="text-red-300">scrollIntoView</code>) antes do screenshot. Adicionar <code class="text-red-300">scroll</code>/<code class="text-red-300">scrollTo</code> é o item nº 1 do backlog.</p>
+<div class="text-red-400 font-semibold text-sm mb-1">Scrolling is still manual</div>
+<p class="text-neutral-400 text-sm">capture.mjs doesn't scroll the page today. On long screens, control agent-browser manually (<code class="text-red-300">scrollIntoView</code>) before the screenshot. Add <code class="text-red-300">scroll</code>/<code class="text-red-300">scrollTo</code> is backlog item #1.</p>
 </div>
 </div>
 <div class="rounded-xl bg-blue-500/10 border border-blue-500/30 p-4 flex gap-3">
 <span class="text-blue-400 text-xl flex-shrink-0">💡</span>
 <div>
-<div class="text-blue-400 font-semibold text-sm mb-1">As bboxes são viewport-relative</div>
-<p class="text-neutral-400 text-sm">Como a bbox é medida no viewport atual, ela bate com o screenshot daquele scroll — desde que o shot e a medição saiam <strong>depois</strong> do mesmo <code class="text-blue-300">scrollIntoView</code>.</p>
+<div class="text-blue-400 font-semibold text-sm mb-1">The bboxes are viewport-relative</div>
+<p class="text-neutral-400 text-sm">Because the bbox is measured in the current viewport, it matches the screenshot from that scroll position — as long as the screenshot and measurement are taken <strong>after</strong> of the same <code class="text-blue-300">scrollIntoView</code>.</p>
 </div>
 </div>
 </div>
@@ -386,75 +386,75 @@
 <div class="flex items-start space-x-4">
 <div class="w-12 h-12 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold text-lg">7</div>
 <div>
-<h2 class="text-xl font-bold flex items-center gap-2">✅ Conferir que pegou o elemento certo</h2>
-<p class="text-neutral-400 mt-2">Compare a bbox com o screenshot antes de renderizar. O capture imprime cada bbox no log para conferência rápida.</p>
+<h2 class="text-xl font-bold flex items-center gap-2">✅ Check that you selected the right element</h2>
+<p class="text-neutral-400 mt-2">Compare the bbox with the screenshot before rendering. Capture prints each bbox in the log for a quick check.</p>
 </div>
 </div>
 </div>
 <div class="p-6 space-y-6">
 <div>
-<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Log do capture.mjs (conferência)</div>
+<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">capture.mjs log (verification)</div>
 <div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
-<div class="text-neutral-500">&gt; viewport 1280x800; abrindo http://localhost:8000/</div>
+<div class="text-neutral-500">&gt; viewport 1280x800; opening http://localhost:8000/</div>
 <div><span class="text-emerald-400">[00]</span> home: shot=00-home.png target=—</div>
 <div><span class="text-emerald-400">[01]</span> prompt: shot=01-prompt.png target=129,252 482x96</div>
 <div><span class="text-emerald-400">[02]</span> size: shot=02-size.png target=179,501 44x26</div>
-<div class="text-amber-400">  ! alvo não encontrado no passo height</div>
+<div class="text-amber-400">  ! target not found in height step</div>
 </div>
 </div>
 <div class="grid sm:grid-cols-2 gap-4">
 <div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
-<div class="text-emerald-400 font-semibold text-sm mb-3">✓ Conferir na captura</div>
+<div class="text-emerald-400 font-semibold text-sm mb-3">✓ Check the capture</div>
 <ul class="space-y-2 text-sm text-neutral-300">
-<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Bbox cai sobre o controle visível no shot</li>
-<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Nenhum aviso de "alvo não encontrado"</li>
-<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> w/h plausíveis (não 0×0 nem a tela inteira)</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Bounding box falls over the visible control in the shot</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> No "target not found" warning</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> plausible w/h (not 0×0 or the entire screen)</li>
 </ul>
 </div>
 <div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4">
-<div class="text-red-400 font-semibold text-sm mb-3">✗ Sinais de problema</div>
+<div class="text-red-400 font-semibold text-sm mb-3">✗ Warning signs</div>
 <ul class="space-y-2 text-sm text-neutral-300">
-<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> target=— onde devia haver bbox</li>
-<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Bbox sobre o elemento errado</li>
-<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Coordenadas fora dos limites do shot</li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> target=— where there should have been a bbox</li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Bounding box over the wrong element</li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Coordinates outside the shot bounds</li>
 </ul>
 </div>
 </div>
 <!-- RESUMO FINAL -->
 <div class="rounded-xl bg-gradient-to-br from-blue-900/30 to-dark-700/50 border border-blue-500/30 p-5">
-<h3 class="text-lg font-bold mb-3 flex items-center gap-2">🎯 Resumo do módulo</h3>
+<h3 class="text-lg font-bold mb-3 flex items-center gap-2">🎯 Module summary</h3>
 <ul class="space-y-2">
-<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> bbox viewport-relative → canvasX = WIN_L + sx, canvasY = SHOT_T + sy</li>
-<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> capture lê getBoundingClientRect; alvo sem match = bbox null + aviso</li>
-<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> prefira data-testid / role / texto visível a refs @eN</li>
-<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> cursor global com hotspot na ponta; clique = pulse + ripple</li>
-<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> a mesma bbox serve cursor, destaque e zoom; confira no log antes de renderizar</li>
+<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> viewport-relative bbox → canvasX = WIN_L + sx, canvasY = SHOT_T + sy</li>
+<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> capture reads getBoundingClientRect; no target match = bbox null + warning</li>
+<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> prefer data-testid / role / visible text over refs @eN</li>
+<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> global cursor with hotspot at the tip; click = pulse + ripple</li>
+<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-blue-400 mt-0.5">✓</span> the same bbox is used for the cursor, highlight, and zoom; check the log before rendering</li>
 </ul>
 </div>
 <!-- próximo módulo -->
 <div class="bg-dark-700/50 rounded-xl border border-blue-500/20 p-5">
-<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Próximo módulo</div>
+<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Next module</div>
 <div class="flex items-start gap-3">
 <div class="w-10 h-10 rounded-full bg-blue-500/20 border border-blue-500/30 flex items-center justify-center flex-shrink-0 text-blue-400 font-bold">2.4</div>
 <div>
-<div class="font-semibold text-neutral-200">⏳ Páginas longas, inputs React &amp; multi-estado</div>
-<div class="text-sm text-neutral-400 mt-1">Os casos difíceis das demos reais — e o que já funciona vs o que é roadmap.</div>
+<div class="font-semibold text-neutral-200">⏳ Long pages, React inputs &amp; multi-state</div>
+<div class="text-sm text-neutral-400 mt-1">The tricky cases in real demos—and what already works vs. what’s on the roadmap.</div>
 </div>
 </div>
-<a class="mt-4 flex items-center justify-start gap-2 text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors" href="modulo-2-4.html">Ir para o módulo 2.4 →</a>
+<a class="mt-4 flex items-center justify-start gap-2 text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors" href="modulo-2-4.html">Go to module 2.4 →</a>
 </div>
 </div>
 <!-- CTAs -->
 <div class="p-6 pt-0 flex flex-col sm:flex-row gap-4">
-<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-2-2.html">← Módulo 2.2</a>
-<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-4.html">Próximo Módulo: 2.4 Multi-estado →</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-2-2.html">← Module 2.2</a>
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="modulo-2-4.html">Next Module: 2.4 Multi-state →</a>
 </div>
 </section>
 </main>
 <footer class="border-t border-dark-600 py-8 mt-4">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
-<p class="mb-1">Conteúdo do <a class="text-sky-400 hover:text-sky-300 font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
-<p>Vídeo Demonstrativo — Trilha 2: Captura do app real · Módulo 2.3 · 2026</p>
+<p class="mb-1">Content of the <a class="text-sky-400 hover:text-sky-300 font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+<p>Demo Video — Track 2: Capturing the Real App · Module 2.3 · 2026</p>
 </div>
 </footer>
 <script>

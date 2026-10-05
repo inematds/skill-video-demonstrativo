@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="pt-BR">
+<html class="dark" lang="en">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Módulo 3.3 — Render no HyperFrames | Vídeo Demonstrativo</title>
+<title>Module 3.3 — Rendering in HyperFrames | Demonstrative Video</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = {
@@ -61,23 +61,23 @@
     }
   </style>
 <link href="https://inematds.github.io/skill-video-demonstrativo/curso/trilha3/modulo-3-3.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skill-video-demonstrativo/en/curso/trilha3/modulo-3-3.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skill-video-demonstrativo/es/curso/trilha3/modulo-3-3.html" hreflang="es" rel="alternate"/></head>
-<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="modulo-3-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">PT</a><a href="../../en/curso/trilha3/modulo-3-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="../../es/curso/trilha3/modulo-3-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/modulo-3-3.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-3-3.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha3/modulo-3-3.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
 <!-- NAV -->
 <nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex justify-between items-center h-14">
 <div class="flex items-center space-x-4">
 <a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
-<span class="text-2xl">🖱️</span><span class="font-bold text-lg hidden sm:inline">Demonstrativo</span>
+<span class="text-2xl">🖱️</span><span class="font-bold text-lg hidden sm:inline">Demonstration</span>
 </a>
 <span class="text-neutral-600">|</span>
 <a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
 </div>
 <div class="flex items-center space-x-1 sm:space-x-2">
-<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
-<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Captura</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentals</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Capture</span></a>
 <a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10" href="index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Render</span></a>
-<button aria-label="Alternar tema" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<button aria-label="Switch theme" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
 <svg class="w-4 h-4 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
 <svg class="w-4 h-4 text-neutral-300 hidden" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
 </button>
@@ -88,11 +88,11 @@
 <!-- BREADCRUMB -->
 <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
 <nav class="flex items-center space-x-2 text-sm text-neutral-500">
-<a class="hover:text-purple-400 transition-colors" href="../../index.html">Início</a>
+<a class="hover:text-purple-400 transition-colors" href="../../index.html">Start</a>
 <span>/</span>
-<a class="hover:text-purple-400 transition-colors" href="index.html">Trilha 3 — Composição &amp; Render</a>
+<a class="hover:text-purple-400 transition-colors" href="index.html">Track 3 — Composition &amp; Rendering</a>
 <span>/</span>
-<span class="text-purple-400 font-medium">Módulo 3.3</span>
+<span class="text-purple-400 font-medium">Module 3.3</span>
 </nav>
 </div>
 <!-- HEADER -->
@@ -100,24 +100,24 @@
 <div class="grid lg:grid-cols-2 gap-8 items-center">
 <div>
 <div class="inline-flex items-center space-x-2 bg-purple-500/20 border border-purple-500/30 rounded-full px-4 py-1.5 mb-4">
-<span class="text-purple-400 text-xs font-semibold uppercase tracking-widest">MÓDULO 3.3</span>
+<span class="text-purple-400 text-xs font-semibold uppercase tracking-widest">MODULE 3.3</span>
 </div>
 <h1 class="text-2xl sm:text-3xl font-extrabold text-neutral-100 mb-3 leading-tight">
-          🎞️ Render no HyperFrames
+          🎞️ Render in HyperFrames
         </h1>
 <p class="text-neutral-400 text-lg mb-6">
-          A reta final: montar o projeto, rodar captura e composição, validar com <code class="bg-dark-700 text-purple-400 px-1.5 py-0.5 rounded text-sm font-mono">lint</code> e <code class="bg-dark-700 text-purple-400 px-1.5 py-0.5 rounded text-sm font-mono">inspect</code>, renderizar em alta — e entender o que é <em>roadmap</em>.
+          The final stretch: set up the project, run the capture and composition, validate with <code class="bg-dark-700 text-purple-400 px-1.5 py-0.5 rounded text-sm font-mono">lint</code> e <code class="bg-dark-700 text-purple-400 px-1.5 py-0.5 rounded text-sm font-mono">inspect</code>, render at high resolution — and understand what <em>roadmap</em>.
         </p>
 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-<div class="bg-dark-800 border border-dark-600 rounded-xl p-3 text-center"><div class="text-2xl font-bold text-purple-400">7</div><div class="text-xs text-neutral-500 mt-1">Tópicos</div></div>
-<div class="bg-dark-800 border border-dark-600 rounded-xl p-3 text-center"><div class="text-2xl font-bold text-purple-400">30</div><div class="text-xs text-neutral-500 mt-1">Minutos</div></div>
-<div class="bg-dark-800 border border-dark-600 rounded-xl p-3 text-center"><div class="text-2xl font-bold text-purple-400">Avançado</div><div class="text-xs text-neutral-500 mt-1">Nível</div></div>
-<div class="bg-dark-800 border border-dark-600 rounded-xl p-3 text-center"><div class="text-2xl font-bold text-purple-400">Prático</div><div class="text-xs text-neutral-500 mt-1">Tipo</div></div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-3 text-center"><div class="text-2xl font-bold text-purple-400">7</div><div class="text-xs text-neutral-500 mt-1">Topics</div></div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-3 text-center"><div class="text-2xl font-bold text-purple-400">30</div><div class="text-xs text-neutral-500 mt-1">Minutes</div></div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-3 text-center"><div class="text-2xl font-bold text-purple-400">Advanced</div><div class="text-xs text-neutral-500 mt-1">Level</div></div>
+<div class="bg-dark-800 border border-dark-600 rounded-xl p-3 text-center"><div class="text-2xl font-bold text-purple-400">Practical</div><div class="text-xs text-neutral-500 mt-1">Type</div></div>
 </div>
 </div>
 <!-- SVG futurista: pipeline init -> capture -> build -> lint/inspect -> render MP4 -->
 <div class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4">
-<svg aria-label="Pipeline de render: init do projeto, capture gera shots e steps, build-demo gera o index, lint e inspect validam, e o render produz o MP4 dezesseis por nove em alta qualidade" class="w-full h-auto" role="img" viewbox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
+<svg aria-label="Render pipeline: project init, capture generates shots and steps, build-demo generates the index, lint and inspect validate, and render produces the high-quality sixteen-by-nine MP4" class="w-full h-auto" role="img" viewbox="0 0 420 300" xmlns="http://www.w3.org/2000/svg">
 <defs>
 <lineargradient id="m33-bg" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#1a1230"></stop><stop offset="100%" stop-color="#0e1b26"></stop></lineargradient>
 <filter height="160%" id="m33-glow" width="160%" x="-30%" y="-30%"><fegaussianblur result="blur" stddeviation="1.8"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
@@ -147,7 +147,7 @@
 <!-- step 4 lint/inspect -->
 <rect fill="#0e1b26" filter="url(#m33-glow)" height="36" rx="8" stroke="#38bdf8" stroke-width="1.5" width="160" x="30" y="192"></rect>
 <text fill="#38bdf8" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="110" y="210">lint + inspect</text>
-<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="7" text-anchor="middle" x="110" y="222">0 erros · 0 problemas</text>
+<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="7" text-anchor="middle" x="110" y="222">0 errors · 0 issues</text>
 <!-- step 5 render output (direita) -->
 <rect fill="#0d1321" filter="url(#m33-glow)" height="80" rx="12" stroke="#FFC300" stroke-width="2" width="160" x="230" y="110"></rect>
 <text fill="#FFC300" font-family="Inter,sans-serif" font-size="13" font-weight="800" text-anchor="middle" x="310" y="138">render --quality high</text>
@@ -156,8 +156,8 @@
 <path class="m33-flow" d="M190,210 Q260,210 280,190" fill="none" marker-end="url(#m33-ah)" stroke="#FFC300" stroke-dasharray="5 4" stroke-width="1.6"></path>
 <!-- roadmap badge -->
 <rect fill="#1a1230" height="44" opacity="0.85" rx="10" stroke="#a855f7" stroke-dasharray="4 3" stroke-width="1" width="160" x="230" y="216"></rect>
-<text fill="#c084fc" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="310" y="234">ROADMAP (futuro)</text>
-<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="7" text-anchor="middle" x="310" y="250">9:16 · v3 record · cursor em curva</text>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="310" y="234">ROADMAP (future)</text>
+<text fill="#9ca3af" font-family="Inter,sans-serif" font-size="7" text-anchor="middle" x="310" y="250">9:16 · v3 record · curved cursor</text>
 </svg>
 </div>
 </div>
@@ -171,19 +171,19 @@
 <div class="w-12 h-12 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center flex-shrink-0"><span class="text-purple-400 font-bold text-lg">1</span></div>
 <div>
 <h2 class="text-xl sm:text-2xl font-bold text-neutral-100">🚀 npx hyperframes init &lt;nome&gt;</h2>
-<p class="text-neutral-400 mt-1">O ponto de partida: criar um projeto HyperFrames isolado onde o vídeo será montado e renderizado.</p>
+<p class="text-neutral-400 mt-1">The starting point: create an isolated HyperFrames project where the video will be assembled and rendered.</p>
 </div>
 </div>
 <div class="bg-dark-900 border border-dark-600 rounded-xl p-4 mb-5 overflow-x-auto">
 <div class="flex items-center space-x-2 mb-3">
 <div class="w-3 h-3 rounded-full bg-red-500 opacity-60"></div><div class="w-3 h-3 rounded-full bg-yellow-500 opacity-60"></div><div class="w-3 h-3 rounded-full bg-emerald-500 opacity-60"></div>
-<span class="text-neutral-500 text-xs ml-2 font-mono">criar o projeto</span>
+<span class="text-neutral-500 text-xs ml-2 font-mono">create the project</span>
 </div>
 <pre class="text-xs font-mono text-neutral-300 leading-relaxed"><code>npx hyperframes init &lt;nome&gt; --example blank --non-interactive</code></pre>
 </div>
 <div class="bg-gradient-to-r from-purple-900/30 to-dark-800 border border-purple-500/30 rounded-xl p-5 mb-5">
-<div class="flex items-center space-x-2 mb-2"><span class="text-purple-400 text-lg">💡</span><span class="text-purple-400 font-semibold text-sm uppercase tracking-wide">Pré-requisitos</span></div>
-<p class="text-neutral-200 text-sm leading-relaxed">Node 22+ e FFmpeg; o Chrome do HyperFrames (<code class="text-purple-400 font-mono">npx hyperframes browser ensure</code>); Kokoro (<code class="text-purple-400 font-mono">pip install kokoro-onnx soundfile</code>) e o <code class="text-purple-400 font-mono">agent-browser</code> no PATH. O app-alvo precisa estar no ar (ex.: <code class="text-purple-400 font-mono">localhost:8000</code>).</p>
+<div class="flex items-center space-x-2 mb-2"><span class="text-purple-400 text-lg">💡</span><span class="text-purple-400 font-semibold text-sm uppercase tracking-wide">Prerequisites</span></div>
+<p class="text-neutral-200 text-sm leading-relaxed">Node 22+ and FFmpeg; HyperFrames' Chrome (<code class="text-purple-400 font-mono">npx hyperframes browser ensure</code>); Kokoro (<code class="text-purple-400 font-mono">pip install kokoro-onnx soundfile</code>) e o <code class="text-purple-400 font-mono">agent-browser</code> on the PATH. The target app needs to be running (e.g., <code class="text-purple-400 font-mono">localhost:8000</code>).</p>
 </div>
 </div>
 </section>
@@ -193,14 +193,14 @@
 <div class="flex items-start space-x-4 mb-4">
 <div class="w-12 h-12 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center flex-shrink-0"><span class="text-purple-400 font-bold text-lg">2</span></div>
 <div>
-<h2 class="text-xl sm:text-2xl font-bold text-neutral-100">📦 Copiar scripts + assets/fonts</h2>
-<p class="text-neutral-400 mt-1">A skill é auto-contida: você copia os scripts e as fontes para o projeto e está pronto para rodar.</p>
+<h2 class="text-xl sm:text-2xl font-bold text-neutral-100">📦 Copy scripts + assets/fonts</h2>
+<p class="text-neutral-400 mt-1">The skill is self-contained: you copy the scripts and fonts into the project, and you’re ready to run.</p>
 </div>
 </div>
 <div class="bg-dark-900 border border-dark-600 rounded-xl p-4 mb-5 overflow-x-auto">
 <div class="flex items-center space-x-2 mb-3">
 <div class="w-3 h-3 rounded-full bg-red-500 opacity-60"></div><div class="w-3 h-3 rounded-full bg-yellow-500 opacity-60"></div><div class="w-3 h-3 rounded-full bg-emerald-500 opacity-60"></div>
-<span class="text-neutral-500 text-xs ml-2 font-mono">o que copiar para o projeto</span>
+<span class="text-neutral-500 text-xs ml-2 font-mono">what to copy into the project</span>
 </div>
 <pre class="text-xs font-mono text-neutral-300 leading-relaxed"><code>capture.mjs                       <span class="text-neutral-500">← dirige o agent-browser</span>
 composition-template.mjs  →  build-demo.mjs   <span class="text-neutral-500">← renomear</span>
@@ -211,8 +211,8 @@ node fetch-fonts.mjs              <span class="text-neutral-500">← baixa as fo
 </div>
 <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-4">
 <div class="flex items-start space-x-3"><span class="text-blue-400 text-lg flex-shrink-0">📊</span><div>
-<div class="text-blue-400 font-semibold text-sm mb-1">Auto-contida</div>
-<p class="text-neutral-300 text-sm">A skill traz as próprias fontes e house style. Não depende de nenhum outro projeto, repositório ou skill para funcionar — gera tudo do zero em qualquer projeto.</p>
+<div class="text-blue-400 font-semibold text-sm mb-1">Self-contained</div>
+<p class="text-neutral-300 text-sm">The skill includes its own fonts and house style. It doesn’t depend on any other project, repository, or skill to work—it generates everything from scratch in any project.</p>
 </div></div>
 </div>
 </div>
@@ -224,27 +224,27 @@ node fetch-fonts.mjs              <span class="text-neutral-500">← baixa as fo
 <div class="w-12 h-12 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center flex-shrink-0"><span class="text-purple-400 font-bold text-lg">3</span></div>
 <div>
 <h2 class="text-xl sm:text-2xl font-bold text-neutral-100">📸 node capture.mjs actions.json</h2>
-<p class="text-neutral-400 mt-1">A captura gera os shots e o steps.json — o elo com a Trilha 2 e a entrada da composição.</p>
+<p class="text-neutral-400 mt-1">The capture generates the shots and steps.json—the link to Track 2 and the composition input.</p>
 </div>
 </div>
 <div class="bg-dark-900 border border-dark-600 rounded-xl p-4 mb-5 overflow-x-auto">
 <div class="flex items-center space-x-2 mb-3">
 <div class="w-3 h-3 rounded-full bg-red-500 opacity-60"></div><div class="w-3 h-3 rounded-full bg-yellow-500 opacity-60"></div><div class="w-3 h-3 rounded-full bg-emerald-500 opacity-60"></div>
-<span class="text-neutral-500 text-xs ml-2 font-mono">captura + narração</span>
+<span class="text-neutral-500 text-xs ml-2 font-mono">capture + narration</span>
 </div>
 <pre class="text-xs font-mono text-neutral-300 leading-relaxed"><code>node capture.mjs actions.json     <span class="text-neutral-500"># -&gt; assets/shots/*.png + steps.json</span>
 bash narration-template.sh        <span class="text-neutral-500"># -&gt; assets/audio/sN.wav (voz pf_dora)</span></code></pre>
 </div>
 <div class="bg-primary/10 border border-primary/40 rounded-xl p-4 mb-5">
 <div class="flex items-start space-x-3"><span class="text-primary text-lg flex-shrink-0">⚡</span><div>
-<div class="text-primary font-semibold text-sm mb-1">Viewport fixo é sagrado</div>
-<p class="text-neutral-300 text-sm">As bounding boxes e os screenshots têm que sair do MESMO viewport (largura ≤ ~1280 para caber no 16:9) — senão o cursor erra o alvo. Tipos de ação: <code class="font-mono text-primary">fill</code>, <code class="font-mono text-primary">click</code>, <code class="font-mono text-primary">clickText</code>, <code class="font-mono text-primary">setValue</code>, <code class="font-mono text-primary">wait</code>.</p>
+<div class="text-primary font-semibold text-sm mb-1">A fixed viewport is sacred</div>
+<p class="text-neutral-300 text-sm">The bounding boxes and screenshots must come from the SAME viewport (width ≤ ~1280 to fit in 16:9)—otherwise the cursor misses its target. Action types: <code class="font-mono text-primary">fill</code>, <code class="font-mono text-primary">click</code>, <code class="font-mono text-primary">clickText</code>, <code class="font-mono text-primary">setValue</code>, <code class="font-mono text-primary">wait</code>.</p>
 </div></div>
 </div>
 <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-4">
 <div class="flex items-start space-x-3"><span class="text-blue-400 text-lg flex-shrink-0">📊</span><div>
-<div class="text-blue-400 font-semibold text-sm mb-1">Captura manual quando o app é imprevisível</div>
-<p class="text-neutral-300 text-sm">Para login ou estados dinâmicos, dá para dirigir o agent-browser na mão (snapshot, fill, screenshot, e pegar a bbox via eval) e montar o steps.json — o resultado é o mesmo.</p>
+<div class="text-blue-400 font-semibold text-sm mb-1">Manual capture when the app is unpredictable</div>
+<p class="text-neutral-300 text-sm">For login or dynamic states, you can drive agent-browser manually (snapshot, fill, screenshot, and get the bbox via eval) and build the steps.json—the result is the same.</p>
 </div></div>
 </div>
 </div>
@@ -256,7 +256,7 @@ bash narration-template.sh        <span class="text-neutral-500"># -&gt; assets/
 <div class="w-12 h-12 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center flex-shrink-0"><span class="text-purple-400 font-bold text-lg">4</span></div>
 <div>
 <h2 class="text-xl sm:text-2xl font-bold text-neutral-100">🧱 build-demo + lint + inspect</h2>
-<p class="text-neutral-400 mt-1">Gere o index.html e valide antes de gastar tempo de render — lint e inspect são baratos.</p>
+<p class="text-neutral-400 mt-1">Generate index.html and validate it before spending time rendering — lint and inspect are cheap.</p>
 </div>
 </div>
 <div class="relative pl-6 mb-6">
@@ -265,21 +265,21 @@ bash narration-template.sh        <span class="text-neutral-500"># -&gt; assets/
 <div class="absolute -left-5 top-1 w-3 h-3 rounded-full bg-purple-500 border-2 border-dark-800"></div>
 <div class="bg-dark-700 border border-purple-500/20 rounded-xl p-4">
 <div class="flex items-center space-x-2 mb-2"><code class="text-purple-400 font-mono text-sm font-semibold">node build-demo.mjs</code></div>
-<p class="text-neutral-300 text-sm">Lê o steps.json, mede os WAVs e escreve o <code class="font-mono text-purple-300">index.html</code> (16:9).</p>
+<p class="text-neutral-300 text-sm">Reads steps.json, measures the WAVs, and writes the <code class="font-mono text-purple-300">index.html</code> (16:9).</p>
 </div>
 </div>
 <div class="relative mb-6">
 <div class="absolute -left-5 top-1 w-3 h-3 rounded-full bg-cyan-500 border-2 border-dark-800"></div>
 <div class="bg-dark-700 border border-cyan-500/20 rounded-xl p-4">
-<div class="flex items-center space-x-2 mb-2"><code class="text-cyan-400 font-mono text-sm font-semibold">npx hyperframes lint</code><span class="bg-cyan-500/10 text-cyan-300 text-xs px-2 py-0.5 rounded-full border border-cyan-500/20">0 erros</span></div>
-<p class="text-neutral-300 text-sm">Pega fontes via CDN, animação no <code class="font-mono text-cyan-300">.clip</code> errado e regras quebradas do framework.</p>
+<div class="flex items-center space-x-2 mb-2"><code class="text-cyan-400 font-mono text-sm font-semibold">npx hyperframes lint</code><span class="bg-cyan-500/10 text-cyan-300 text-xs px-2 py-0.5 rounded-full border border-cyan-500/20">0 errors</span></div>
+<p class="text-neutral-300 text-sm">Fetches fonts via CDN, animation in <code class="font-mono text-cyan-300">.clip</code> wrong and framework rules broken.</p>
 </div>
 </div>
 <div class="relative">
 <div class="absolute -left-5 top-1 w-3 h-3 rounded-full bg-purple-400 border-2 border-dark-800"></div>
 <div class="bg-dark-700 border border-purple-500/20 rounded-xl p-4">
-<div class="flex items-center space-x-2 mb-2"><code class="text-purple-400 font-mono text-sm font-semibold">npx hyperframes inspect --samples 14</code><span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full border border-primary/40">0 problemas</span></div>
-<p class="text-neutral-300 text-sm">Amostra frames e detecta problemas de layout (crop, off-canvas sem <code class="font-mono text-purple-300">data-layout-ignore</code>).</p>
+<div class="flex items-center space-x-2 mb-2"><code class="text-purple-400 font-mono text-sm font-semibold">npx hyperframes inspect --samples 14</code><span class="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full border border-primary/40">0 issues</span></div>
+<p class="text-neutral-300 text-sm">Samples frames and detects layout issues (crop, off-canvas without <code class="font-mono text-purple-300">data-layout-ignore</code>).</p>
 </div>
 </div>
 </div>
@@ -292,7 +292,7 @@ bash narration-template.sh        <span class="text-neutral-500"># -&gt; assets/
 <div class="w-12 h-12 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center flex-shrink-0"><span class="text-purple-400 font-bold text-lg">5</span></div>
 <div>
 <h2 class="text-xl sm:text-2xl font-bold text-neutral-100">🎬 render --quality high</h2>
-<p class="text-neutral-400 mt-1">Draft primeiro para conferir, depois alta qualidade — sempre validando frames e locução com o usuário.</p>
+<p class="text-neutral-400 mt-1">Start with a draft to review, then render in high quality—always validating frames and narration with the user.</p>
 </div>
 </div>
 <div class="bg-dark-900 border border-dark-600 rounded-xl p-4 mb-5 overflow-x-auto">
@@ -311,8 +311,8 @@ npx hyperframes render --quality <span class="text-purple-400">high</span> --fps
 </div>
 <div class="bg-red-900/20 border border-red-500/30 rounded-xl p-4">
 <div class="flex items-start space-x-3"><span class="text-red-400 text-lg flex-shrink-0">🚨</span><div>
-<div class="text-red-400 font-semibold text-sm mb-1">Você não escuta o áudio</div>
-<p class="text-neutral-300 text-sm">Sempre confira frames com o usuário e peça que ele valide a locução antes do render final — não dá para ouvir o áudio do seu lado.</p>
+<div class="text-red-400 font-semibold text-sm mb-1">You don’t listen to the audio</div>
+<p class="text-neutral-300 text-sm">Always review the frames with the user and ask them to validate the voice-over before the final render—you can’t listen to the audio on your end.</p>
 </div></div>
 </div>
 </div>
@@ -323,34 +323,34 @@ npx hyperframes render --quality <span class="text-purple-400">high</span> --fps
 <div class="flex items-start space-x-4 mb-4">
 <div class="w-12 h-12 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center flex-shrink-0"><span class="text-purple-400 font-bold text-lg">6</span></div>
 <div>
-<h2 class="text-xl sm:text-2xl font-bold text-neutral-100">🧯 Gotchas finais</h2>
-<p class="text-neutral-400 mt-1">As regras de ouro não-negociáveis que evitam horas de depuração no inspect.</p>
+<h2 class="text-xl sm:text-2xl font-bold text-neutral-100">🧯 Final gotchas</h2>
+<p class="text-neutral-400 mt-1">The non-negotiable golden rules that save hours of debugging in the inspector.</p>
 </div>
 </div>
 <div class="grid sm:grid-cols-2 gap-4 mb-5">
 <div class="bg-emerald-900/20 border border-emerald-500/30 rounded-xl p-4">
-<div class="text-emerald-400 font-semibold text-sm mb-3 flex items-center space-x-2"><span>✓</span><span>FAZER</span></div>
+<div class="text-emerald-400 font-semibold text-sm mb-3 flex items-center space-x-2"><span>✓</span><span>DO</span></div>
 <ul class="space-y-2 text-sm text-neutral-300">
-<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Capturar antes, animar depois (render determinístico)</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Manter o viewport fixo = espaço das coordenadas</span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Animar o <code class="font-mono text-emerald-300">.scene-inner</code>, nunca o <code class="font-mono text-emerald-300">.clip</code></span></li>
-<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Decorativos e moldura com <code class="font-mono text-emerald-300">data-layout-ignore</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Capture first, animate after (deterministic render)</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Keep the viewport fixed = coordinate space</span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Animate the <code class="font-mono text-emerald-300">.scene-inner</code>, never the <code class="font-mono text-emerald-300">.clip</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-emerald-400 mt-0.5">✓</span><span>Decorative elements and frame with <code class="font-mono text-emerald-300">data-layout-ignore</code></span></li>
 </ul>
 </div>
 <div class="bg-red-900/20 border border-red-500/30 rounded-xl p-4">
-<div class="text-red-400 font-semibold text-sm mb-3 flex items-center space-x-2"><span>✗</span><span>NÃO FAZER</span></div>
+<div class="text-red-400 font-semibold text-sm mb-3 flex items-center space-x-2"><span>✗</span><span>DO NOT</span></div>
 <ul class="space-y-2 text-sm text-neutral-300">
-<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Carregar o site ao vivo dentro do vídeo (sem fetch no render)</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Usar fontes de CDN — só as locais de <code class="font-mono text-red-300">assets/fonts/</code></span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Digitar um <code class="font-mono text-red-300">AUDIO[]</code> manual — o timing é medido</span></li>
-<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Editar o <code class="font-mono text-red-300">index.html</code> à mão</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Load the live site inside the video (no fetch during rendering)</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Use CDN fonts — only the local ones from <code class="font-mono text-red-300">assets/fonts/</code></span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Type a <code class="font-mono text-red-300">AUDIO[]</code> manual—the timing is measured</span></li>
+<li class="flex items-start space-x-2"><span class="text-red-400 mt-0.5">✗</span><span>Edit the <code class="font-mono text-red-300">index.html</code> by hand</span></li>
 </ul>
 </div>
 </div>
 <div class="bg-blue-900/20 border border-blue-500/30 rounded-xl p-4">
 <div class="flex items-start space-x-3"><span class="text-blue-400 text-lg flex-shrink-0">📊</span><div>
-<div class="text-blue-400 font-semibold text-sm mb-1">Limites conhecidos (seja honesto)</div>
-<p class="text-neutral-300 text-sm">Estado dinâmico (animações, vídeo, dados ao vivo) vira print estático. App com login precisa de credenciais de teste (ou capture só telas públicas). O formato natural é 16:9 — telas de app são landscape.</p>
+<div class="text-blue-400 font-semibold text-sm mb-1">Known limitations (be honest)</div>
+<p class="text-neutral-300 text-sm">Dynamic state (animations, video, live data) becomes a static screenshot. Apps with login require test credentials (or capture only public screens). The natural format is 16:9 — app screens are landscape.</p>
 </div></div>
 </div>
 </div>
@@ -361,41 +361,41 @@ npx hyperframes render --quality <span class="text-purple-400">high</span> --fps
 <div class="flex items-start space-x-4 mb-4">
 <div class="w-12 h-12 rounded-full bg-purple-500/20 border border-purple-500/30 flex items-center justify-center flex-shrink-0"><span class="text-purple-400 font-bold text-lg">7</span></div>
 <div>
-<h2 class="text-xl sm:text-2xl font-bold text-neutral-100">🗺️ Roadmap (futuro)</h2>
-<p class="text-neutral-400 mt-1">O que a skill <strong>ainda não faz</strong> — itens de evolução, marcados claramente como futuro.</p>
+<h2 class="text-xl sm:text-2xl font-bold text-neutral-100">🗺️ Roadmap (future)</h2>
+<p class="text-neutral-400 mt-1">What the skill <strong>doesn't do that yet</strong> — evolution items, clearly marked as future work.</p>
 </div>
 </div>
 <div class="bg-purple-900/20 border border-purple-500/30 border-dashed rounded-xl p-5 mb-5">
-<div class="flex items-center space-x-2 mb-3"><span class="text-purple-400 text-lg">🔮</span><span class="text-purple-400 font-semibold text-sm uppercase tracking-wide">Não implementado — backlog</span></div>
+<div class="flex items-center space-x-2 mb-3"><span class="text-purple-400 text-lg">🔮</span><span class="text-purple-400 font-semibold text-sm uppercase tracking-wide">Not implemented — backlog</span></div>
 <ul class="space-y-3 text-sm text-neutral-300">
-<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">①</span><span><strong>Scroll na captura</strong> — páginas longas hoje exigem dirigir o agent-browser na mão; a ideia é uma ação <code class="font-mono text-purple-300">scroll</code> + <code class="font-mono text-purple-300">scrollIntoView</code> por passo.</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">②</span><span><strong>Inputs controlados por React/Vue</strong> — usar o <code class="font-mono text-purple-300">fill</code> nativo do Playwright em vez de setar <code class="font-mono text-purple-300">.value</code>.</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">③</span><span><strong>Esperar condição</strong> (<code class="font-mono text-purple-300">waitFor</code>) em vez de tempo fixo, para fluxos assíncronos.</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">④</span><span><strong>9:16 / Shorts</strong> — telas de app são landscape; exigiria reenquadre (zoom/pan na região ativa).</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">⑤</span><span><strong>v3 — gravação de tela real</strong> (<code class="font-mono text-purple-300">agent-browser record</code>) com narração/zoom por cima, para apps com muito movimento.</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">⑥</span><span><strong>Polimento de cursor</strong> — caminho em curva (não linear) e "digitação" (typewriter) ao preencher campos.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">①</span><span><strong>Scroll during capture</strong> — long pages today require manually driving agent-browser; the idea is one action <code class="font-mono text-purple-300">scroll</code> + <code class="font-mono text-purple-300">scrollIntoView</code> per step.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">②</span><span><strong>Inputs controlled by React/Vue</strong> — use the <code class="font-mono text-purple-300">fill</code> native to Playwright instead of setting <code class="font-mono text-purple-300">.value</code>.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">③</span><span><strong>Wait for a condition</strong> (<code class="font-mono text-purple-300">waitFor</code>) instead of a fixed time, for asynchronous flows.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">④</span><span><strong>9:16 / Shorts</strong> — app screens are landscape; this would require reframing (zoom/pan on the active region).</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">⑤</span><span><strong>v3 — real screen recording</strong> (<code class="font-mono text-purple-300">agent-browser record</code>) with narration/zoom overlaid, for apps with lots of movement.</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">⑥</span><span><strong>Cursor polish</strong> — curved path (nonlinear) and "typing" (typewriter) when filling in fields.</span></li>
 </ul>
 </div>
 <div class="bg-primary/10 border border-primary/40 rounded-xl p-4 mb-5">
 <div class="flex items-start space-x-3"><span class="text-primary text-lg flex-shrink-0">⚡</span><div>
-<div class="text-primary font-semibold text-sm mb-1">Hoje (v1, default)</div>
-<p class="text-neutral-300 text-sm">Screenshots estáticos + cursor/zoom animados, 16:9, narração local. Tudo acima é roadmap — não prometa o que a skill ainda não entrega.</p>
+<div class="text-primary font-semibold text-sm mb-1">Today (v1, default)</div>
+<p class="text-neutral-300 text-sm">Static screenshots + animated cursor/zoom, 16:9, local narration. Everything above is on the roadmap—don’t promise what the skill doesn’t deliver yet.</p>
 </div></div>
 </div>
 <!-- RESUMO FINAL -->
 <div class="bg-gradient-to-br from-purple-900/30 to-dark-800 border border-purple-500/30 rounded-xl p-6">
-<h3 class="text-lg font-bold text-neutral-100 mb-4">🎯 O que você aprendeu</h3>
+<h3 class="text-lg font-bold text-neutral-100 mb-4">🎯 What you learned</h3>
 <ul class="space-y-2 text-sm text-neutral-300 mb-6">
-<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">✓</span><span>init do projeto + copiar scripts e assets/fonts da skill auto-contida</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">✓</span><span>capture.mjs gera shots + steps.json; narração gera os WAVs</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">✓</span><span>build-demo.mjs gera o index.html; lint + inspect validam (0/0)</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">✓</span><span>render draft → high; conferir frames e validar a locução</span></li>
-<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">✓</span><span>gotchas não-negociáveis e o que é roadmap (9:16, v3, cursor em curva)</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">✓</span><span>project init + copy the skill's self-contained scripts and assets/fonts</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">✓</span><span>capture.mjs generates shots + steps.json; narration generates the WAVs</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">✓</span><span>build-demo.mjs generates index.html; lint + inspect validate (0/0)</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">✓</span><span>render draft → high; check frames and validate the voice-over</span></li>
+<li class="flex items-start space-x-2"><span class="text-purple-400 mt-0.5">✓</span><span>non-negotiable gotchas and what's on the roadmap (9:16, v3, curved cursor)</span></li>
 </ul>
-<p class="text-neutral-400 text-sm mb-4"><strong class="text-neutral-200">Você concluiu a Trilha 3.</strong> Da captura ao MP4 narrado com CTA do INEMA.CLUB — o walkthrough completo.</p>
+<p class="text-neutral-400 text-sm mb-4"><strong class="text-neutral-200">You completed Track 3.</strong> From capture to narrated MP4 with an INEMA.CLUB CTA — the complete walkthrough.</p>
 <div class="flex flex-col sm:flex-row gap-3">
-<a class="flex-1 text-center px-5 py-2.5 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-3-2.html">← Módulo 3.2: Narração &amp; composição</a>
-<a class="flex-1 text-center px-5 py-2.5 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="index.html">Voltar para a Trilha 3 →</a>
+<a class="flex-1 text-center px-5 py-2.5 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="modulo-3-2.html">← Module 3.2: Narration &amp; composition</a>
+<a class="flex-1 text-center px-5 py-2.5 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="index.html">Back to Track 3 →</a>
 </div>
 </div>
 </div>
@@ -408,19 +408,19 @@ npx hyperframes render --quality <span class="text-purple-400">high</span> --fps
 <div class="flex items-center space-x-3">
 <span class="text-2xl">🖱️</span>
 <div>
-<div class="font-bold text-neutral-200">Vídeo Demonstrativo</div>
-<div class="text-xs text-neutral-500">Walkthroughs de app com Claude Code</div>
+<div class="font-bold text-neutral-200">Demo Video</div>
+<div class="text-xs text-neutral-500">App walkthroughs with Claude Code</div>
 </div>
 </div>
 <div class="flex items-center space-x-4 text-sm text-neutral-500">
-<a class="hover:text-purple-400 transition-colors" href="../../index.html">Início</a>
+<a class="hover:text-purple-400 transition-colors" href="../../index.html">Start</a>
 <span>·</span>
-<a class="hover:text-purple-400 transition-colors" href="index.html">Trilha 3</a>
+<a class="hover:text-purple-400 transition-colors" href="index.html">Track 3</a>
 <span>·</span>
 <a class="text-sky-400 hover:text-sky-300 transition-colors" href="https://inema.club" target="_blank">INEMA.CLUB</a>
 </div>
 </div>
-<p class="text-center text-xs text-neutral-500 mt-6">Conteúdo do INEMA.CLUB · Vídeo Demonstrativo — Trilha 3: Composição &amp; Render · 2026</p>
+<p class="text-center text-xs text-neutral-500 mt-6">INEMA.CLUB content · Demonstration Video — Track 3: Composition &amp; Rendering · 2026</p>
 </div>
 </footer>
 <script>

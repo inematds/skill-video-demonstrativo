@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Module 1.1 — Demonstrative vs. Explanatory | Demonstrative Video · INEMA.CLUB</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-200 { color: #1f2937; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    /* acento emerald */
+    html:not(.dark) .text-emerald-400 { color: #059669; }
+    html:not(.dark) .text-emerald-300 { color: #059669; }
+    html:not(.dark) .bg-emerald-500\/20 { background-color: rgba(5,150,105,0.12); }
+    html:not(.dark) .bg-emerald-500\/10 { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); }
+    html:not(.dark) .border-emerald-500\/20 { border-color: rgba(5,150,105,0.18); }
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    /* outras trilhas (nav) */
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .text-yellow-300 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+    html:not(.dark) .text-red-400 { color: #dc2626; }
+    html:not(.dark) .bg-red-500\/10 { background-color: rgba(220,38,38,0.08); }
+    html:not(.dark) .border-red-500\/30 { border-color: rgba(220,38,38,0.25); }
+    html:not(.dark) .text-blue-300 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+    html:not(.dark) .text-cyan-400 { color: #0891b2; }
+    html:not(.dark) .text-cyan-300 { color: #0891b2; }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+    @keyframes m11-flow { 0% { stroke-dashoffset: 120; } 100% { stroke-dashoffset: 0; } }
+    @keyframes m11-pulse { 0%,100% { opacity:.4 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .m11-anim-flow { animation: m11-flow 2.5s linear infinite; }
+      .m11-anim-pulse { animation: m11-pulse 2.8s ease-in-out infinite; }
+      .m11-anim-pulse:nth-child(2) { animation-delay: .4s; }
+      .m11-anim-pulse:nth-child(3) { animation-delay: .8s; }
+    }
+  </style>
+<link href="https://inematds.github.io/skill-video-demonstrativo/curso/trilha1/modulo-1-1.html" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skill-video-demonstrativo/en/curso/trilha1/modulo-1-1.html" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skill-video-demonstrativo/es/curso/trilha1/modulo-1-1.html" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha1/modulo-1-1.html" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="modulo-1-1.html" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha1/modulo-1-1.html" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<!-- NAV -->
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🖱️</span><span class="font-bold text-lg hidden sm:inline">Demonstration</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-emerald-400 bg-emerald-500/10" href="index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentals</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Capture</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Render</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- BREADCRUMB -->
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+<nav class="flex items-center space-x-2 text-sm text-neutral-500">
+<a class="hover:text-emerald-400 transition-colors" href="../../index.html">Start</a>
+<span>/</span>
+<a class="hover:text-emerald-400 transition-colors" href="index.html">Track 1 — Fundamentals</a>
+<span>/</span>
+<span class="text-emerald-400 font-medium">Module 1.1</span>
+</nav>
+</div>
+<!-- HEADER -->
+<header class="bg-gradient-to-br from-emerald-900/30 via-dark-800 to-dark-800 py-10 border-b border-dark-600 mt-4">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-8 items-center">
+<div>
+<span class="inline-block px-3 py-1 bg-emerald-500/20 text-emerald-400 text-xs font-semibold rounded-full mb-4">MODULE 1.1</span>
+<h1 class="text-2xl sm:text-3xl font-bold mb-4">🎯 Demo vs. Explainer</h1>
+<p class="text-lg text-neutral-400 max-w-xl">The golden rule of this module: <strong>show the app, don’t explain the concept</strong>. The skill <code class="text-emerald-400">video-demonstrativo</code> navigates a real web application and turns it into a narrated walkthrough — unlike its sibling <code class="text-emerald-400">video-explicativo</code>, which animates concepts.</p>
+<div class="grid grid-cols-4 gap-3 mt-6">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">7</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">~30</div><div class="text-xs text-neutral-400">Minutes</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Basic</div><div class="text-xs text-neutral-400">Level</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-emerald-400">Theory</div><div class="text-xs text-neutral-400">Type</div></div>
+</div>
+</div>
+<!-- SVG FUTURISTA -->
+<div class="rounded-2xl border border-emerald-500/30 bg-dark-900/40 p-3 sm:p-4">
+<svg aria-label="Comparison between a demo video, which shows an app's real screen inside a browser frame, and an explainer video, which uses motion graphics to illustrate a concept" class="w-full h-auto" role="img" viewbox="0 0 400 240" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="m11-bg-grad" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" style="stop-color:#0e2018"></stop><stop offset="100%" style="stop-color:#0e1b26"></stop></lineargradient>
+<filter height="140%" id="m11-glow" width="140%" x="-20%" y="-20%"><fegaussianblur result="blur" stddeviation="3"></fegaussianblur><femerge><femergenode in="blur"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+</defs>
+<rect fill="url(#m11-bg-grad)" height="240" rx="12" width="400"></rect>
+<g opacity="0.5" stroke="#1a3b2a" stroke-width="0.5">
+<line x1="0" x2="400" y1="60" y2="60"></line><line x1="0" x2="400" y1="120" y2="120"></line><line x1="0" x2="400" y1="180" y2="180"></line>
+<line x1="200" x2="200" y1="0" y2="240"></line>
+</g>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="13" font-weight="800" text-anchor="middle" x="200" y="24">TWO SISTER SKILLS</text>
+<!-- Lado demonstrativo (esq) -->
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="100" y="48">🖱️ DEMONSTRATION</text>
+<rect fill="#0b1a13" filter="url(#m11-glow)" height="98" rx="8" stroke="#34d399" stroke-width="1.5" width="144" x="28" y="62"></rect>
+<!-- moldura navegador -->
+<rect fill="#16271d" height="16" rx="8" width="144" x="28" y="62"></rect>
+<circle cx="40" cy="70" fill="#34d399" r="2.5"></circle><circle cx="49" cy="70" fill="#6ee7b7" opacity="0.6" r="2.5"></circle><circle cx="58" cy="70" fill="#6ee7b7" opacity="0.4" r="2.5"></circle>
+<rect fill="#0e2018" height="8" rx="4" width="96" x="68" y="66"></rect>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="5.5" text-anchor="middle" x="116" y="72.5">localhost:8000</text>
+<!-- conteúdo app -->
+<rect fill="#1f3b2c" height="10" rx="3" width="120" x="40" y="88"></rect>
+<rect fill="#16271d" height="8" rx="3" width="80" x="40" y="104"></rect>
+<rect fill="#0e2018" height="22" rx="4" stroke="#34d399" stroke-width="1" width="120" x="40" y="118"></rect>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="7" text-anchor="middle" x="100" y="132">real app screen</text>
+<!-- cursor -->
+<path d="M132 128 L132 142 L136 138 L139 144 L142 142 L139 137 L144 137 Z" fill="#fff" stroke="#34d399" stroke-width="0.8"></path>
+<text class="m11-anim-pulse" fill="#34d399" font-family="Inter,sans-serif" font-size="7.5" text-anchor="middle" x="100" y="176">shows the app being used</text>
+<!-- Lado explicativo (dir) -->
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="10" font-weight="700" text-anchor="middle" x="300" y="48">🎬 EXPLAINER</text>
+<rect fill="#0b1722" filter="url(#m11-glow)" height="98" rx="8" stroke="#38bdf8" stroke-width="1.5" width="144" x="228" y="62"></rect>
+<circle class="m11-anim-pulse" cx="300" cy="100" fill="none" r="22" stroke="#38bdf8" stroke-width="2"></circle>
+<circle cx="300" cy="100" fill="#0e1b26" r="10" stroke="#38bdf8" stroke-width="1.5"></circle>
+<path class="m11-anim-flow" d="M260 130 Q300 110 340 130" fill="none" stroke="#38bdf8" stroke-dasharray="5,4" stroke-width="1.5"></path>
+<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="7" text-anchor="middle" x="300" y="148">motion graphics</text>
+<text class="m11-anim-pulse" fill="#38bdf8" font-family="Inter,sans-serif" font-size="7.5" text-anchor="middle" x="300" y="176">explain a concept</text>
+<!-- caixa inferior -->
+<rect fill="#091a12" height="32" opacity="0.9" rx="6" stroke="#34d399" stroke-width="1" width="300" x="50" y="196"></rect>
+<text fill="#34d399" font-family="Inter,sans-serif" font-size="9" font-weight="700" text-anchor="middle" x="200" y="210">🎯 Has a screen? → demo</text>
+<text fill="#6ee7b7" font-family="Inter,sans-serif" font-size="8" text-anchor="middle" x="200" y="222">Is it a concept without an interface? → explainer</text>
+</svg>
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+<!-- TÓPICO 1 -->
+<section class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden" id="topico-1">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">1</div>
+<div>
+<h2 class="text-xl font-bold flex items-center gap-2">🎬 What is a walkthrough</h2>
+<p class="text-neutral-400 mt-2">A walkthrough — or demo video — goes through a real web application, screen by screen, showing the app in use: opening, clicking, filling in fields, generating, seeing the result. Nothing is drawn; everything is captured from the actual screen.</p>
+</div>
+</div>
+</div>
+<div class="p-6 space-y-6">
+<div class="rounded-xl bg-gradient-to-br from-emerald-900/30 to-dark-700/50 border border-emerald-500/30 p-5">
+<div class="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-2">Main Concept</div>
+<p class="text-neutral-200 font-medium">A walkthrough answers "<em>how do I use this?</em>" showing the response in the interface itself. Instead of describing buttons and fields, it appears to interact with them—with a cursor that lands exactly on the control and narration explaining each step.</p>
+<p class="text-neutral-400 text-sm mt-3">In practice: 5 to 8 steps plus the final CTA make a video about 35 to 50 seconds long. The typical arc is <code class="text-emerald-300">abrir o app → ação 1 → ação 2 → … → resultado → CTA</code>.</p>
+</div>
+<div>
+<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Anatomy of a step in the script (STEPS.md)</div>
+<div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
+<div class="text-neutral-500 text-xs mb-3"># each step = one action + one narration sentence</div>
+<div><span class="text-emerald-400">Step 1</span> <span class="text-neutral-500">(intro)</span> — app home screen</div>
+<div class="ml-4 text-neutral-300">narration: "This is INEMA’s image generator."</div>
+<div class="mt-2"><span class="text-emerald-400">Step 2</span> — write the prompt</div>
+<div class="ml-4 text-neutral-300">narration: "We write what we want to generate."</div>
+<div class="mt-2"><span class="text-emerald-400">Step 3</span> — click Generate</div>
+<div class="ml-4 text-neutral-300">narration: "And we click Generate."</div>
+<div class="mt-2"><span class="text-cyan-400">Final step</span> <span class="text-neutral-500">(zoom)</span> — the result</div>
+<div class="ml-4 text-neutral-300">narration: "Done: the image appears in seconds."</div>
+</div>
+</div>
+<div class="rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-4 flex gap-3">
+<span class="text-emerald-400 text-xl flex-shrink-0">💡</span>
+<div>
+<div class="text-emerald-400 font-semibold text-sm mb-1">The first step introduces, the last celebrates</div>
+<p class="text-neutral-400 text-sm">The opening step is usually the home screen (marked <code class="text-emerald-300">intro:true</code>) to present the app. The last content step is usually the result (<code class="text-emerald-300">zoom:true</code>), with a gentle zoom that highlights the result.</p>
+</div>
+</div>
+<div>
+<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Key concepts</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">🖥️</div><div class="text-xs font-semibold text-neutral-200">Real app</div><div class="text-xs text-neutral-500">Real screen</div></div>
+<div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">👣</div><div class="text-xs font-semibold text-neutral-200">Step by step</div><div class="text-xs text-neutral-500">5–8 steps</div></div>
+<div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">🗣️</div><div class="text-xs font-semibold text-neutral-200">Narrated</div><div class="text-xs text-neutral-500">1 sentence/step</div></div>
+<div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">⏱️</div><div class="text-xs font-semibold text-neutral-200">~35–50s</div><div class="text-xs text-neutral-500">Typical duration</div></div>
+</div>
+</div>
+</div>
+</section>
+<!-- TÓPICO 2 -->
+<section class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden" id="topico-2">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">2</div>
+<div>
+<h2 class="text-xl font-bold flex items-center gap-2">⚖️ Demonstrative vs. explanatory</h2>
+<p class="text-neutral-400 mt-2">These are two sibling skills with the same rendering engine (HyperFrames) and the same CTA, but opposite purposes. One showcases a real app; the other explains an abstract concept with animated scenes.</p>
+</div>
+</div>
+</div>
+<div class="p-6 space-y-6">
+<div>
+<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-4">The two skills side by side</div>
+<div class="overflow-x-auto rounded-xl border border-dark-600">
+<table class="w-full text-sm">
+<thead>
+<tr class="bg-dark-700/60 border-b border-dark-600">
+<th class="text-left p-3 text-neutral-400 font-semibold">Aspect</th>
+<th class="text-center p-3 text-emerald-400 font-semibold">🖱️ video-demonstrativo</th>
+<th class="text-center p-3 text-blue-400 font-semibold">🎬 video-explicativo</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-dark-600">
+<tr class="hover:bg-dark-700/30"><td class="p-3 text-neutral-300">Objective</td><td class="p-3 text-center text-emerald-400 font-semibold">Show an app in use</td><td class="p-3 text-center text-neutral-400">Explain a concept</td></tr>
+<tr class="hover:bg-dark-700/30"><td class="p-3 text-neutral-300">Visual</td><td class="p-3 text-center text-emerald-400 font-semibold">Real screenshots</td><td class="p-3 text-center text-neutral-400">Animated motion graphics</td></tr>
+<tr class="hover:bg-dark-700/30"><td class="p-3 text-neutral-300">Input</td><td class="p-3 text-center text-emerald-400 font-semibold">App link / localhost</td><td class="p-3 text-center text-neutral-400">One subject / topic</td></tr>
+<tr class="hover:bg-dark-700/30"><td class="p-3 text-neutral-300">Capture</td><td class="p-3 text-center text-emerald-400 font-semibold">agent-browser navigates the app</td><td class="p-3 text-center text-neutral-400">No capture</td></tr>
+<tr class="hover:bg-dark-700/30"><td class="p-3 text-neutral-300">Format</td><td class="p-3 text-center text-emerald-400 font-semibold">16:9 (landscape screens)</td><td class="p-3 text-center text-neutral-400">16:9 e 9:16</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="grid sm:grid-cols-2 gap-4">
+<div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
+<div class="text-emerald-400 font-semibold text-sm mb-3">✓ It's demonstrative when...</div>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> There’s an app/site with a navigable screen</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Did the user provide a link or localhost</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Want to show how a feature works in practice</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> The focus is the product, not the idea behind it</li>
+</ul>
+</div>
+<div class="rounded-xl border border-blue-500/30 bg-blue-500/10 p-4">
+<div class="text-blue-400 font-semibold text-sm mb-3">🎬 It’s an explainer when...</div>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">→</span> The topic is abstract, with no interface to show</li>
+<li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">→</span> You want to illustrate with diagrams and animations</li>
+<li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">→</span> Need a vertical version (Shorts/Reels)</li>
+<li class="flex items-start gap-2"><span class="text-blue-400 mt-0.5">→</span> The focus is educating viewers about a concept</li>
+</ul>
+</div>
+</div>
+<div class="rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-4 flex gap-3">
+<span class="text-emerald-400 text-xl flex-shrink-0">💡</span>
+<div>
+<div class="text-emerald-400 font-semibold text-sm mb-1">Same DNA, opposite purposes</div>
+<p class="text-neutral-400 text-sm">Both end with the INEMA.CLUB CTA and use local TTS + HyperFrames. The difference is where the visuals come from: <strong>captured screen</strong> (demonstrative) versus <strong>drawn scene</strong> (explanatory).</p>
+</div>
+</div>
+</div>
+</section>
+<!-- TÓPICO 3 -->
+<section class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden" id="topico-3">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">3</div>
+<div>
+<h2 class="text-xl font-bold flex items-center gap-2">🤔 When to use each one</h2>
+<p class="text-neutral-400 mt-2">There’s a one-question test that determines the skill in seconds — and clears up any doubt before you even start the script.</p>
+</div>
+</div>
+</div>
+<div class="p-6 space-y-6">
+<div class="rounded-xl bg-gradient-to-br from-emerald-900/30 to-dark-700/50 border border-emerald-500/30 p-5">
+<div class="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-2">The one-question test</div>
+<p class="text-neutral-200 font-medium text-lg">"<strong>Is there a screen to show?</strong>"</p>
+<p class="text-neutral-400 text-sm mt-3">If the answer is yes—there’s an app, a localhost, or a navigable URL—it’s <span class="text-emerald-400 font-semibold">demonstrative</span>. If there's no interface, just an idea to illustrate, it's <span class="text-blue-400 font-semibold">explanatory</span>.</p>
+</div>
+<div>
+<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-4">Decision tree</div>
+<div class="relative pl-8 space-y-0">
+<div class="absolute left-3 top-2 bottom-2 w-0.5 bg-emerald-500/30"></div>
+<div class="relative pb-5">
+<div class="absolute -left-5 w-4 h-4 rounded-full bg-emerald-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">1</span></div>
+<div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600">
+<div class="font-semibold text-emerald-400 text-sm">Did the user provide a link or localhost?</div>
+<p class="text-neutral-400 text-sm mt-1">If so, that’s the strongest sign it’s a demo. The skill’s own entry is the app link.</p>
+</div>
+</div>
+<div class="relative pb-5">
+<div class="absolute -left-5 w-4 h-4 rounded-full bg-emerald-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">2</span></div>
+<div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600">
+<div class="font-semibold text-emerald-400 text-sm">Does the request say "demo," "walkthrough," or "show how to use"?</div>
+<p class="text-neutral-400 text-sm mt-1">Demo verbs (“show,” “record the screen,” “step by step using”) point to the demo flow.</p>
+</div>
+</div>
+<div class="relative pb-5">
+<div class="absolute -left-5 w-4 h-4 rounded-full bg-blue-500 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">3</span></div>
+<div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600">
+<div class="font-semibold text-blue-400 text-sm">Is the request "explain X," "video about Y," with no app?</div>
+<p class="text-neutral-400 text-sm mt-1">That’s explanatory—the content will be motion graphics, not a screen recording.</p>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -left-5 w-4 h-4 rounded-full bg-emerald-400 border-2 border-dark-800 flex items-center justify-center"><span class="text-xs text-white font-bold">✓</span></div>
+<div class="bg-dark-700/40 rounded-lg p-4 border border-dark-600">
+<div class="font-semibold text-emerald-400 text-sm">If in doubt, ask: "is there an app live?"</div>
+<p class="text-neutral-400 text-sm mt-1">A single question to the user resolves ambiguous cases at no cost.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-4 flex gap-3">
+<span class="text-emerald-400 text-xl flex-shrink-0">💡</span>
+<div>
+<div class="text-emerald-400 font-semibold text-sm mb-1">App needs to be live</div>
+<p class="text-neutral-400 text-sm">Demonstration requires the app to be accessible during capture (e.g., <code class="text-emerald-300">localhost:8000</code> running). If the app isn't live, there's nothing to navigate — confirm this before promising the video.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- TÓPICO 4 -->
+<section class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden" id="topico-4">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">4</div>
+<div>
+<h2 class="text-xl font-bold flex items-center gap-2">📋 Use cases</h2>
+<p class="text-neutral-400 mt-2">A walkthrough shines whenever the goal is to show a product in action. Four situations cover most requests.</p>
+</div>
+</div>
+</div>
+<div class="p-6 space-y-6">
+<div>
+<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-4">Four classic use cases</div>
+<div class="grid sm:grid-cols-2 gap-4">
+<div class="bg-dark-700/40 rounded-xl border border-dark-600 p-4">
+<div class="text-2xl mb-3">🚪</div>
+<div class="font-semibold text-neutral-200 text-sm mb-2">Product onboarding</div>
+<p class="text-neutral-400 text-xs">A new user sees the app's first steps: sign-up, main screen, first valuable action. It reduces friction for someone who's just arrived.</p>
+</div>
+<div class="bg-dark-700/40 rounded-xl border border-dark-600 p-4">
+<div class="text-2xl mb-3">✨</div>
+<div class="font-semibold text-neutral-200 text-sm mb-2">Feature tutorial</div>
+<p class="text-neutral-400 text-xs">Demonstrates a specific feature end to end — useful when a new feature needs a quick “how it works.”</p>
+</div>
+<div class="bg-dark-700/40 rounded-xl border border-dark-600 p-4">
+<div class="text-2xl mb-3">🚀</div>
+<div class="font-semibold text-neutral-200 text-sm mb-2">Launch</div>
+<p class="text-neutral-400 text-xs">An announcement video that shows the real product in action at launch, with the INEMA.CLUB CTA at the end.</p>
+</div>
+<div class="bg-dark-700/40 rounded-xl border border-dark-600 p-4">
+<div class="text-2xl mb-3">🛟</div>
+<div class="font-semibold text-neutral-200 text-sm mb-2">Support</div>
+<p class="text-neutral-400 text-xs">Answers “how do I do X?” with a short video showing the exact path on screen—ready to attach to a support ticket or help center.</p>
+</div>
+</div>
+</div>
+<div class="rounded-xl border border-blue-500/30 bg-blue-500/10 p-4">
+<div class="text-blue-400 font-semibold text-sm mb-3">📊 Validated in real apps</div>
+<div class="grid sm:grid-cols-2 gap-3 text-sm">
+<div class="bg-dark-700/60 rounded-lg p-3">
+<div class="text-emerald-400 font-bold mb-1">Simple app</div>
+<div class="text-neutral-400 text-xs">Image generation — 7-step flow, ~42s. The skill’s first POC.</div>
+</div>
+<div class="bg-dark-700/60 rounded-lg p-3">
+<div class="text-emerald-400 font-bold mb-1">Complex app</div>
+<div class="text-neutral-400 text-xs">AI dubbing suite—a 14-step tutorial, 2:08, with React-controlled input and an asynchronous multi-state workflow.</div>
+</div>
+</div>
+</div>
+<div class="rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-4 flex gap-3">
+<span class="text-emerald-400 text-xl flex-shrink-0">💡</span>
+<div>
+<div class="text-emerald-400 font-semibold text-sm mb-1">The more concrete the use case, the better the script</div>
+<p class="text-neutral-400 text-sm">Knowing whether it’s onboarding, a feature, a launch, or support helps you choose which steps go into the video—and which “result” deserves the final zoom.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- TÓPICO 5 -->
+<section class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden" id="topico-5">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">5</div>
+<div>
+<h2 class="text-xl font-bold flex items-center gap-2">🖱️ What the skill provides</h2>
+<p class="text-neutral-400 mt-2">Four elements turn static screenshots into a video that looks like a professional screen recording: a browser frame, an animated cursor, highlights/zoom, and narration.</p>
+</div>
+</div>
+</div>
+<div class="p-6 space-y-6">
+<div class="rounded-xl bg-gradient-to-br from-emerald-900/30 to-dark-700/50 border border-emerald-500/30 p-5">
+<div class="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-2">Main Concept</div>
+<p class="text-neutral-200 font-medium">Real screenshots go inside a browser frame (bar + URL) to look like a real window. On top, a global animated cursor aims at the real bounding box of each control, clicks with a pulse + ripple, and the result gets a gentle zoom. TTS narration ties it all together.</p>
+</div>
+<div>
+<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-4">The four elements</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">🪟</div><div class="text-xs font-semibold text-neutral-200">Frame</div><div class="text-xs text-neutral-500">Bar + URL</div></div>
+<div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">🖱️</div><div class="text-xs font-semibold text-neutral-200">Cursor</div><div class="text-xs text-neutral-500">Aim at the actual box</div></div>
+<div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">🔍</div><div class="text-xs font-semibold text-neutral-200">Highlight/zoom</div><div class="text-xs text-neutral-500">In the result</div></div>
+<div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg mb-1">🗣️</div><div class="text-xs font-semibold text-neutral-200">Narration</div><div class="text-xs text-neutral-500">PT-BR TTS</div></div>
+</div>
+</div>
+<div class="grid sm:grid-cols-2 gap-4">
+<div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
+<div class="text-emerald-400 font-semibold text-sm mb-3">✓ What the skill does</div>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Cursor lands exactly on the control (real box, not by eye)</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Click becomes a visible pulse + ripple</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> A smooth zoom highlights the final result</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Timing syncs with WAVs measured by ffprobe</li>
+</ul>
+</div>
+<div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4">
+<div class="text-red-400 font-semibold text-sm mb-3">✗ What the skill does NOT do (honest limitations)</div>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Dynamic state (video, live data) becomes a static screenshot</li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Doesn't load the live site inside the video</li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> App with login requires test credentials</li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Real movement only in v3 mode (roadmap, not implemented yet)</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- TÓPICO 6 -->
+<section class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden" id="topico-6">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">6</div>
+<div>
+<h2 class="text-xl font-bold flex items-center gap-2">📐 Output format</h2>
+<p class="text-neutral-400 mt-2">The output is an MP4 in 16:9, narrated in PT-BR and ending with the INEMA.CLUB CTA. The landscape format isn’t aesthetic—it’s technical: app screens are wide.</p>
+</div>
+</div>
+</div>
+<div class="p-6 space-y-6">
+<div>
+<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-4">The output in numbers</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+<div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg font-bold mb-1">16:9</div><div class="text-xs font-semibold text-neutral-200">Aspect ratio</div><div class="text-xs text-neutral-500">1920×1080</div></div>
+<div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg font-bold mb-1">MP4</div><div class="text-xs font-semibold text-neutral-200">Container</div><div class="text-xs text-neutral-500">via FFmpeg</div></div>
+<div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg font-bold mb-1">30</div><div class="text-xs font-semibold text-neutral-200">FPS</div><div class="text-xs text-neutral-500">render high</div></div>
+<div class="bg-dark-700/50 rounded-lg p-3 border border-dark-600 text-center"><div class="text-emerald-400 text-lg font-bold mb-1">PT-BR</div><div class="text-xs font-semibold text-neutral-200">Narration</div><div class="text-xs text-neutral-500">Local Kokoro</div></div>
+</div>
+</div>
+<div class="rounded-xl bg-gradient-to-br from-emerald-900/30 to-dark-700/50 border border-emerald-500/30 p-5">
+<div class="text-xs font-semibold text-emerald-400 uppercase tracking-widest mb-2">The final CTA (default)</div>
+<p class="text-neutral-200 font-medium">Every output ends on the same scene: "CONTINUE AT" + <strong>INEMA.CLUB</strong> (INEMA in cream, .CLUB in amber with glow) + <code class="text-emerald-300">🌐 inema.club</code>. The narration ends with "This is content from INEMA dot CLUB. Visit: inema dot club." It’s already included in the composition template.</p>
+</div>
+<div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4 flex gap-3">
+<span class="text-red-400 text-xl flex-shrink-0">⚠️</span>
+<div>
+<div class="text-red-400 font-semibold text-sm mb-1">9:16 isn't the natural format</div>
+<p class="text-neutral-400 text-sm">Because app screens are landscape, the template generates 16:9. A vertical version would require cropping/reframing the active region — it's on the roadmap, not part of the standard workflow. Don't promise Shorts for a walkthrough without aligning on the reframing.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- TÓPICO 7 -->
+<section class="bg-dark-800 rounded-2xl border border-emerald-500/30 overflow-hidden" id="topico-7">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-start space-x-4">
+<div class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-lg">7</div>
+<div>
+<h2 class="text-xl font-bold flex items-center gap-2">🔗 The input is the link</h2>
+<p class="text-neutral-400 mt-2">Unlike skills that start with a brief or script, a demo starts literally with the app link—and it needs to be accessible.</p>
+</div>
+</div>
+</div>
+<div class="p-6 space-y-6">
+<div>
+<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">The starting point</div>
+<div class="bg-dark-900 rounded-xl border border-dark-600 p-4 font-mono text-sm overflow-x-auto">
+<div class="text-neutral-500 text-xs mb-3"># everything starts with an accessible link</div>
+<div><span class="text-emerald-400">Public URL</span> <span class="text-neutral-500">→</span> <span class="text-cyan-300">https://app.exemplo.com</span></div>
+<div><span class="text-emerald-400">Localhost </span> <span class="text-neutral-500">→</span> <span class="text-cyan-300">http://localhost:8000/</span></div>
+<br/>
+<div class="text-neutral-500 text-xs"># agent-browser opens in a fixed viewport</div>
+<div><span class="text-neutral-300">agent-browser set viewport 1280 800</span></div>
+<div><span class="text-neutral-300">agent-browser open http://localhost:8000/</span></div>
+</div>
+</div>
+<div class="grid sm:grid-cols-2 gap-4">
+<div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
+<div class="text-emerald-400 font-semibold text-sm mb-3">✓ Input requirements</div>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> The app is live and responding</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> The target screen is reachable from the URL</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Test credentials are available if login is required</li>
+<li class="flex items-start gap-2"><span class="text-emerald-400 mt-0.5">✓</span> Width fits in 16:9 (≤ ~1280)</li>
+</ul>
+</div>
+<div class="rounded-xl border border-red-500/30 bg-red-500/10 p-4">
+<div class="text-red-400 font-semibold text-sm mb-3">✗ When input gets stuck</div>
+<ul class="space-y-2 text-sm text-neutral-300">
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> App offline — there’s nothing to navigate</li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Login without credentials (capture public screens only)</li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> Screen depends on live data that disappears</li>
+<li class="flex items-start gap-2"><span class="text-red-400 mt-0.5">✗</span> URL inaccessible from the capturing machine</li>
+</ul>
+</div>
+</div>
+<div class="rounded-xl bg-emerald-500/10 border border-emerald-500/30 p-4 flex gap-3">
+<span class="text-emerald-400 text-xl flex-shrink-0">💡</span>
+<div>
+<div class="text-emerald-400 font-semibold text-sm mb-1">Confirm the link before any script</div>
+<p class="text-neutral-400 text-sm">The first practical step is to make sure the link opens and the target journey is navigable. Without that, the rest of the pipeline (capture, narration, render) has nothing to work with.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- RESUMO DO MÓDULO -->
+<section class="rounded-2xl bg-gradient-to-br from-emerald-900/40 via-dark-800 to-dark-800 border border-emerald-500/30 p-8">
+<h2 class="text-2xl font-bold mb-6 text-emerald-400">📋 Module 1.1 summary</h2>
+<div class="grid sm:grid-cols-2 gap-6 mb-8">
+<div>
+<div class="text-sm font-semibold text-neutral-400 mb-3">What you learned</div>
+<ul class="space-y-2">
+<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-emerald-400 mt-0.5">✓</span> Walkthrough = real app navigated step by step, with narration</li>
+<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-emerald-400 mt-0.5">✓</span> Demonstration SHOWS the app; explanatory EXPLAINS a concept</li>
+<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-emerald-400 mt-0.5">✓</span> 1-question test: "is there a screen to show?"</li>
+<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-emerald-400 mt-0.5">✓</span> Use cases: onboarding, feature, launch, support</li>
+<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-emerald-400 mt-0.5">✓</span> Output: frame + cursor + zoom + narration</li>
+<li class="flex items-start gap-2 text-sm text-neutral-200"><span class="text-emerald-400 mt-0.5">✓</span> 16:9 output, narrated, with CTA; input is the app link</li>
+</ul>
+</div>
+<div class="bg-dark-700/50 rounded-xl border border-emerald-500/20 p-5">
+<div class="text-xs font-semibold text-neutral-500 uppercase tracking-widest mb-3">Next module</div>
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center flex-shrink-0 text-emerald-400 font-bold text-xs">1.2</div>
+<div>
+<div class="font-semibold text-neutral-200">🧠 Capture first, animate later</div>
+<div class="text-sm text-neutral-400 mt-1">The principle behind the skill: why rendering is deterministic, why you capture real screens first, and how the fixed viewport becomes the cursor’s coordinate space.</div>
+</div>
+</div>
+<a class="mt-4 flex items-center justify-start gap-2 text-emerald-400 hover:text-emerald-300 text-sm font-medium transition-colors" href="modulo-1-2.html">Go to module 1.2 →</a>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="index.html">← Back to Track 1</a>
+<a class="flex-1 text-center px-6 py-3 bg-emerald-600 text-white rounded-lg font-semibold hover:bg-emerald-500 transition-colors" href="modulo-1-2.html">Next Module: 1.2 Capture first →</a>
+</div>
+</section>
+</main>
+<footer class="border-t border-dark-600 py-8 mt-4">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p class="mb-1">Content of the <a class="text-sky-400 hover:text-sky-300 font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+<p>Demo Video — Track 1: Fundamentals · Module 1.1 · 2026</p>
+</div>
+</footer>
+<script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const di = document.getElementById('theme-toggle-dark-icon');
+    const li = document.getElementById('theme-toggle-light-icon');
+    const root = document.documentElement;
+    if (localStorage.getItem('theme') === 'light') { di.classList.remove('hidden'); root.classList.remove('dark'); } else { li.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', () => {
+      di.classList.toggle('hidden'); li.classList.toggle('hidden'); root.classList.toggle('dark');
+      localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

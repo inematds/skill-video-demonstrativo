@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Track 2 — Capture the real app | Demonstration Video · INEMA.CLUB</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    .modal.hidden { display: none; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    /* acento blue */
+    html:not(.dark) .text-blue-400 { color: #2563eb; }
+    html:not(.dark) .bg-blue-500\/20 { background-color: rgba(37,99,235,0.12); }
+    html:not(.dark) .bg-blue-500\/10 { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .border-blue-500\/30 { border-color: rgba(37,99,235,0.25); }
+    html:not(.dark) .hover\:bg-blue-500\/30:hover { background-color: rgba(37,99,235,0.18); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) .group:hover .group-hover\:text-blue-400 { color: #2563eb; }
+    /* outras trilhas (nav) */
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+    @keyframes pipe-flow { 0%,100% { opacity:.4 } 50% { opacity:1 } }
+    @media (prefers-reduced-motion: no-preference) {
+      .pipe-a { animation: pipe-flow 2.4s ease-in-out infinite; }
+      .pipe-a:nth-child(2){animation-delay:.3s} .pipe-a:nth-child(3){animation-delay:.6s} .pipe-a:nth-child(4){animation-delay:.9s} .pipe-a:nth-child(5){animation-delay:1.2s}
+    }
+  </style>
+<link href="https://inematds.github.io/skill-video-demonstrativo/curso/trilha2/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skill-video-demonstrativo/en/curso/trilha2/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skill-video-demonstrativo/es/curso/trilha2/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha2/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="./" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">EN</a><a href="../../../es/curso/trilha2/" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🖱️</span><span class="font-bold text-lg hidden sm:inline">Demonstration</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentals</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-blue-400 bg-blue-500/10" href="index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Capture</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-purple-400 hover:bg-purple-500/10 transition-colors" href="../trilha3/index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Render</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-blue-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-semibold rounded-full mb-4">TRACK 2</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🎥 Capture of the real app</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">The workflow that actually drives the app. From the link, agent-browser (with Playwright under the hood) opens the app in a fixed viewport, performs each step, captures the real screens, and measures each target’s bounding box—generating the <code class="text-blue-400">shots PNG</code> + o <code class="text-blue-400">steps.json</code> that feed the render.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">4</div><div class="text-xs text-neutral-400">Modules</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~28</div><div class="text-xs text-neutral-400">Topics</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">~2h</div><div class="text-xs text-neutral-400">Duration</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-blue-400">Practical</div><div class="text-xs text-neutral-400">Level</div></div>
+</div>
+<!-- Hero SVG: actions.json → agent-browser navega → shots + steps.json (bboxes) -->
+<div class="rounded-2xl border border-blue-500/30 bg-dark-900/40 p-3 sm:p-4 mt-8 overflow-hidden">
+<svg aria-label="Capture flow: actions.json describes the URL, viewport, and steps; agent-browser navigates the actual app and generates the PNG screenshots and steps.json with the bounding boxes" class="w-full h-auto" role="img" viewbox="0 0 1000 220">
+<defs>
+<lineargradient id="m2-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#60a5fa"></stop><stop offset="1" stop-color="#3b82f6"></stop></lineargradient>
+<lineargradient id="m2-cyan" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#38bdf8"></stop><stop offset="1" stop-color="#0ea5e9"></stop></lineargradient>
+<filter height="180%" id="m2-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="3"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="32" id="m2-grid" patternunits="userSpaceOnUse" width="32"><circle cx="1.3" cy="1.3" fill="#3b82f6" opacity="0.10" r="1.3"></circle></pattern>
+<marker id="m2-ah" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#60a5fa"></path></marker>
+<marker id="m2-ah2" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#m2-grid)" height="220" width="1000" x="0" y="0"></rect>
+<!-- Input: actions.json -->
+<g class="pipe-a" filter="url(#m2-glow)">
+<rect fill="#0e1622" height="68" rx="10" stroke="url(#m2-grad)" stroke-width="2" width="180" x="24" y="76"></rect>
+<text fill="#60a5fa" font-family="Inter,sans-serif" font-size="15" font-weight="800" text-anchor="middle" x="114" y="103">actions.json</text>
+<text fill="#93c5fd" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="114" y="121">URL + viewport</text>
+<text fill="#93c5fd" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="114" y="136">steps + targets</text>
+</g>
+<path d="M204,110 L300,110" fill="none" marker-end="url(#m2-ah)" stroke="#60a5fa" stroke-width="1.8"></path>
+<!-- Center: agent-browser / Playwright -->
+<g filter="url(#m2-glow)">
+<rect fill="#0e1622" height="92" rx="14" stroke="url(#m2-cyan)" stroke-width="2.5" width="220" x="305" y="64"></rect>
+</g>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="16" font-weight="800" text-anchor="middle" x="415" y="96">agent-browser</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="415" y="116">Playwright · fixed viewport</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="12" text-anchor="middle" x="415" y="135">click · fill · screenshot</text>
+<!-- mini browser glyph -->
+<g class="pipe-a" filter="url(#m2-glow)">
+<rect fill="#0e1b26" height="14" rx="4" stroke="#38bdf8" stroke-width="1.2" width="86" x="372" y="40"></rect>
+<circle cx="380" cy="47" fill="#f87171" r="2"></circle><circle cx="388" cy="47" fill="#fbbf24" r="2"></circle><circle cx="396" cy="47" fill="#34d399" r="2"></circle>
+</g>
+<!-- arrows to outputs -->
+<path d="M525,100 Q600,100 600,58" fill="none" marker-end="url(#m2-ah2)" stroke="#38bdf8" stroke-width="1.8"></path>
+<path d="M525,120 Q600,120 600,160" fill="none" marker-end="url(#m2-ah2)" stroke="#38bdf8" stroke-width="1.8"></path>
+<!-- Output: shots PNG -->
+<g class="pipe-a" filter="url(#m2-glow)">
+<rect fill="#0e1b26" height="64" rx="10" stroke="#38bdf8" stroke-width="2" width="180" x="605" y="26"></rect>
+<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="695" y="53">shots/*.png</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="695" y="72">1 real screen per state</text>
+</g>
+<!-- Output: steps.json -->
+<g class="pipe-a" filter="url(#m2-glow)">
+<rect fill="#0e1b26" height="64" rx="10" stroke="#38bdf8" stroke-width="2" width="180" x="605" y="130"></rect>
+<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="695" y="157">steps.json</text>
+<text fill="#7dd3fc" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="695" y="176">bboxes + captions</text>
+</g>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="885" y="100">real app</text>
+<text fill="#9ad6ff" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle" x="885" y="120">no API key</text>
+</svg>
+<p class="text-center text-xs text-neutral-500 mt-2">Capture — actions.json → agent-browser navigates the actual app → PNG shots + steps.json with bounding boxes</p>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- MAPA DA TRILHA -->
+<section class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Trail map</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-1">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.1</span><span class="text-xs text-neutral-500">~30 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">🌐 Drive the app</h3>
+<p class="text-xs text-neutral-400">agent-browser in practice</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-2">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.2</span><span class="text-xs text-neutral-500">~30 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">🗺️ The actions.json</h3>
+<p class="text-xs text-neutral-400">URL, viewport, and steps</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-3">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.3</span><span class="text-xs text-neutral-500">~30 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">🎯 Coordinates &amp; bboxes</h3>
+<p class="text-xs text-neutral-400">the cursor lands in the right spot</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-blue-500/30 p-5 transition-all" href="#modulo-2-4">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold text-sm">2.4</span><span class="text-xs text-neutral-500">~30 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-blue-400 transition-colors">⏳ React &amp; multi-state</h3>
+<p class="text-xs text-neutral-400">what's on the roadmap</p>
+</a>
+</div>
+</section>
+<h2 class="text-2xl font-bold mb-6">Detailed content</h2>
+<!-- MÓDULO 2.1 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-2-1">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.1</span><span class="text-xs text-neutral-500">~30 min</span></div>
+<h3 class="text-2xl font-bold mb-2">🌐 Drive the app with agent-browser</h3>
+<p class="text-neutral-400 text-sm">agent-browser (with Playwright under the hood) opens the actual app in a fixed viewport, navigates to the URL, finds elements, performs actions, and takes screenshots — it captures the real screens used in the video.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🤖</span><div><span class="font-medium">What agent-browser is</span><span class="text-neutral-500 text-sm ml-2">- Playwright from the command line</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">It's a browsing skill that controls a real browser (using Playwright under the hood) through simple commands: <code>open</code>, <code>snapshot</code>, <code>fill</code>, <code>click</code>, <code>screenshot</code>, <code>eval</code>.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">It's the capture engine. Without it, there are no real screens—and real screens are what set this skill apart from generic motion graphics.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">agent-browser, Playwright, target app running (e.g., <code>localhost:8000</code>), without an API key.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">🔗</span><div><span class="font-medium">Open a session and navigate to the URL</span><span class="text-neutral-500 text-sm ml-2">- set viewport + open</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">You set the viewport (<code>agent-browser set viewport 1280 800</code>) and opens the URL (<code>agent-browser open http://localhost:8000/</code>). The session stays alive between commands.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Order matters: viewport BEFORE opening, so the bounding boxes come from the same space as the screenshots.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm"><code>set viewport</code>, <code>open</code>, persistent session, fixed viewport.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">📑</span><div><span class="font-medium">@ref references and snapshot</span><span class="text-neutral-500 text-sm ml-2">- discover the elements</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm"><code>agent-browser snapshot -i</code> lists the interactive elements and assigns refs (<code>@e1</code>, <code>@e2</code>…) that you use to target actions.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">The refs <strong>change</strong> after navigation or a new DOM. Take a new snapshot after major changes and prefer stable selectors when the state changes.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm"><code>snapshot -i</code>, @eN refs, volatile refs, re-snapshot.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🖱️</span><div><span class="font-medium">Actions: click, fill, scroll, screenshot</span><span class="text-neutral-500 text-sm ml-2">- the basic vocabulary</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm"><code>fill</code> fills in a field, <code>click</code> click, <code>screenshot</code> saves the screen, <code>eval</code> runs JS. Scrolling is currently done manually (a roadmap item in capture.mjs).</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">These are the building blocks of each demo step. Each action changes the screen state—and each state becomes a screenshot.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm"><code>fill</code>, <code>click</code>, <code>screenshot</code>, <code>eval</code>, manual scrolling (roadmap).</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">📸</span><div><span class="font-medium">Capture the screen screenshot</span><span class="text-neutral-500 text-sm ml-2">- 1 per state</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">After each action, <code>agent-browser screenshot assets/shots/01-prompt.png</code> records the real screen in that state as a PNG.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">It's the golden rule: "capture first, animate later"—the render is deterministic, so no live sites, just real screenshots.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">1 shot per state, <code>assets/shots/NN-id.png</code>, capture first/animate later.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">📐</span><div><span class="font-medium">Measure the bounding box</span><span class="text-neutral-500 text-sm ml-2">- getBoundingClientRect</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Via <code>eval</code>, you read the <code>getBoundingClientRect()</code> of the target and stores <code>{x,y,w,h}</code>. It's the exact box the cursor will aim for in the video.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">The actual bbox is what makes the cursor land in the center of the button, not "eyeballed." It's the detail that makes it look professional.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm"><code>getBoundingClientRect</code>, <code>{x,y,w,h}</code>, cursor target, <code>eval --json</code>.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">7</span>
+<span class="text-lg">🖼️</span><div><span class="font-medium">The fixed viewport is sacred</span><span class="text-neutral-500 text-sm ml-2">- and why it matters</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The capture viewport (e.g., 1280×800) is the <strong>coordinate space</strong> of all bboxes and screenshots. Width ≤ ~1280 to fit the 16:9 canvas.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">An inconsistent viewport makes the cursor miss the target. If you recapture, recapture everything at the same viewport size.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">fixed viewport, coordinate space, ≤ ~1280 wide, recapture everything.</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-1')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-1.html">View Full</a>
+</div>
+</div>
+<!-- MÓDULO 2.2 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-2-2">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.2</span><span class="text-xs text-neutral-500">~30 min</span></div>
+<h3 class="text-2xl font-bold mb-2">🗺️ The actions.json</h3>
+<p class="text-neutral-400 text-sm">The entry file for the <code class="text-blue-400">capture.mjs</code>: describes the URL, viewport, and list of steps with their selectors and narration. Run <code class="text-blue-400">node capture.mjs actions.json</code> generates the PNG shots + the steps.json.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🧱</span><div><span class="font-medium">actions.json structure</span><span class="text-neutral-500 text-sm ml-2">- the file skeleton</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">One JSON with <code>url</code>, <code>viewport</code>, <code>window</code>, <code>eyebrow</code>, <code>ctaNarration</code>, <code>ctaCaption</code> and the array <code>steps</code>. It's the script that capture.mjs runs.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">It's the automated (recommended) way to capture: one file describes the entire demo from start to finish.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm"><code>url</code>, <code>viewport</code>, <code>window</code>, <code>steps[]</code>, embedded CTA.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">📺</span><div><span class="font-medium">URL + viewport</span><span class="text-neutral-500 text-sm ml-2">- where and at what size</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm"><code>"url": "http://localhost:8000/"</code> e <code>"viewport": [1280, 800]</code>. capture.mjs does <code>set viewport</code> e <code>open</code> exactly with these values.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">The viewport defined here is the coordinate space for the bounding boxes. Change it here and it changes throughout the video.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm"><code>url</code>, <code>viewport [W,H]</code>, coordinate space, ≤ ~1280.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">📋</span><div><span class="font-medium">The list of steps</span><span class="text-neutral-500 text-sm ml-2">- steps[] in order</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Each item in <code>steps</code> has <code>id</code>, optional <code>do</code>, <code>target</code>, flags (<code>intro</code>, <code>click</code>, <code>zoom</code>), <code>caption</code> e <code>narration</code>. The capture runs in order.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">5–8 steps + CTA ≈ 35–50s. The 1st is usually the home screen (<code>intro:true</code>) and the last one the result (<code>zoom:true</code>).</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">open→actions→result→CTA arc, <code>intro</code>, <code>zoom</code>, 5–8 steps.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">⚙️</span><div><span class="font-medium">The do:{type} field</span><span class="text-neutral-500 text-sm ml-2">- fill / click / clickText / setValue / wait</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The action to perform before the screenshot: <code>fill</code> (CSS selector), <code>click</code>, <code>clickText</code> ({tag,text}), <code>setValue</code> (triggers input/change) and <code>wait</code> (ms).</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Without <code>do</code>, the step only takes a screenshot of the current state. Choosing the right type avoids capturing the wrong screen.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm"><code>fill</code>, <code>click</code>, <code>clickText</code>, <code>setValue</code>, <code>wait</code>.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🎯</span><div><span class="font-medium">The target / selector for each step</span><span class="text-neutral-500 text-sm ml-2">- target = what the cursor points at</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm"><code>target</code> is a CSS selector (string) or <code>{tag,text}</code>. capture.mjs reads the target's bbox — that's where the cursor goes in the video.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">O <code>do</code> e o <code>target</code> can be different elements: you can fill in one field and target another button.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm"><code>target</code>, CSS selector, <code>{tag,text}</code>, target bbox.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🗣️</span><div><span class="font-medium">Narration text per step</span><span class="text-neutral-500 text-sm ml-2">- 1 sentence, expanded for speech</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Each step carries <code>caption</code> (on-screen caption) and <code>narration</code> (the speech). Numbers and acronyms are expanded: "512" → "five hundred twelve".</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">The narration goes into steps.json, and from there Kokoro generates the WAVs. Phonetic text = natural voice.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm"><code>caption</code>, <code>narration</code>, expand numbers/acronyms, 1 sentence per step.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">7</span>
+<span class="text-lg">📦</span><div><span class="font-medium">The output: steps.json + PNG shots</span><span class="text-neutral-500 text-sm ml-2">- what feeds the render</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">capture.mjs generates <code>assets/shots/NN-id.png</code> e o <code>steps.json</code> (screens + bboxes + flags + captions + narration)—everything ready for the composition-template.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">steps.json is the bridge between capture (T2) and render (T3). It’s the contract between the two halves of the pipeline.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm"><code>steps.json</code>, <code>shots/*.png</code>, capture→render contract.</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-2')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-2.html">View Full</a>
+</div>
+</div>
+<!-- MÓDULO 2.3 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-2-3">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.3</span><span class="text-xs text-neutral-500">~30 min</span></div>
+<h3 class="text-2xl font-bold mb-2">🎯 Coordinates, selectors &amp; bounding boxes</h3>
+<p class="text-neutral-400 text-sm">What makes the cursor land exactly on the control: viewport-relative bounding boxes, robust selectors, targeting the center of the box, the zoom region, and how to check that it selected the right element.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">📍</span><div><span class="font-medium">Viewport-relative coordinates</span><span class="text-neutral-500 text-sm ml-2">- the same shot space</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The bboxes are relative to the viewport (the window’s top-left corner). In the video, they become <code>canvasX = WIN_L + sx</code>, <code>canvasY = SHOT_T + sy</code>.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">It's the mapping that places the cursor over the right element in the screenshot within the browser frame.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">viewport-relative, <code>WIN_L</code>, <code>SHOT_T</code>, coordinate mapping.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">📐</span><div><span class="font-medium">Capture the bounding box of each target</span><span class="text-neutral-500 text-sm ml-2">- {x,y,w,h} per step</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">For each step with <code>target</code>, capture.mjs reads <code>getBoundingClientRect()</code> and rounds to <code>{x,y,w,h}</code> in steps.json.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">If the target isn’t found, the bbox is <code>null</code> and capture warns — that's the sign of a wrong selector.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm"><code>getBoundingClientRect</code>, <code>{x,y,w,h}</code>, null target = warning.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">🧷</span><div><span class="font-medium">Robust selectors</span><span class="text-neutral-500 text-sm ml-2">- data-testid, role, visible text</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Prefer <code>data-testid</code>, <code>role</code> or visible text (<code>{tag,text}</code>) instead of refs <code>@eN</code> — which shift when the DOM changes.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">After you click "Generate," a download link appears and the refs shift. Stable selectors survive state changes.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm"><code>data-testid</code>, <code>role</code>, <code>{tag,text}</code>, avoid @eN in mutable state.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🎯</span><div><span class="font-medium">The cursor targets the center of the box</span><span class="text-neutral-500 text-sm ml-2">- hotspot at the tip</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The cursor is an SVG with the hotspot at its tip (~6,3 inside 42px). The tween uses <code>x = alvoX - 6</code> so the tip lands in the center of the bbox.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Aiming for the center of the box (not the edge) is what makes the click feel precise and professional.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">hotspot at the tip, bbox center, cursor tween.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🔍</span><div><span class="font-medium">Zoom/highlight region</span><span class="text-neutral-500 text-sm ml-2">- focus on the active control</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">The bbox also positions the highlight (amber ring with glow) and, in the step <code>zoom:true</code>, the push-in with <code>transformOrigin</code> in the center of the target.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Highlight and zoom reuse the same cursor coordinates—a correct bbox works for all three effects.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">highlight (.hlbox), <code>zoom:true</code>, <code>transformOrigin</code> on the target.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">📜</span><div><span class="font-medium">Target offscreen</span><span class="text-neutral-500 text-sm ml-2">- scroll before measuring</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">If the target is below the fold, you need to scroll to it before taking the screenshot and measuring the bbox (currently done manually; capture.mjs doesn’t scroll yet).</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Because bboxes are viewport-relative, they match the screenshot from that scroll position — but only if the screenshot and measurement are taken after the same scroll.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm"><code>scrollIntoView</code>, target below the fold, scrolling = capture.mjs roadmap.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">7</span>
+<span class="text-lg">✅</span><div><span class="font-medium">Check the right element</span><span class="text-neutral-500 text-sm ml-2">- validate the capture</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Compare the bbox with the screenshot: the <code>{x,y,w,h}</code> should land on the visible control. capture.mjs prints each bbox in the log for a quick check.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Picking the wrong element only shows up in the render. Checking the capture saves a whole rerender cycle.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">check bbox against shot, capture log, validate before rendering.</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-3')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-3.html">View Full</a>
+</div>
+</div>
+<!-- MÓDULO 2.4 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-2-4">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-blue-400 font-bold">2.4</span><span class="text-xs text-neutral-500">~30 min</span></div>
+<h3 class="text-2xl font-bold mb-2">⏳ Long pages, React inputs &amp; multi-state</h3>
+<p class="text-neutral-400 text-sm">The tricky cases in real demos: scrolling long pages, handling React/Vue-controlled inputs, waiting for a condition instead of a fixed time, and capturing asynchronous multi-state flows. Here it’s clear what already works and what’s on the roadmap.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">📜</span><div><span class="font-medium">Scroll before the screenshot</span><span class="text-neutral-500 text-sm ml-2">- long pages (roadmap)</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">On long pages, you need to <code>scrollIntoView</code> in the section before capturing. Today, this is done by manually driving agent-browser—capture.mjs still can’t scroll.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">That was exactly the case with inemaVOX. It’s backlog item no. 1: add an action <code>scroll</code>/<code>scrollTo</code> to capture.mjs.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm"><code>scrollIntoView</code>, long page, manual capture for now, scrolling is on the roadmap.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">⚛️</span><div><span class="font-medium">Inputs controlled by React/Vue</span><span class="text-neutral-500 text-sm ml-2">- use the native fill</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Set <code>.value</code> via eval shows the text but doesn't trigger the framework state — the buttons remain disabled. Use the <code>fill</code> native to Playwright.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">O <code>setValue</code> from capture.mjs triggers <code>input</code>+<code>change</code> and helps, but the ideal approach (roadmap item nº 2) is the <code>fill @ref</code> native.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">controlled input, don't set <code>.value</code>, <code>setValue</code> triggers events, <code>fill</code> native (roadmap).</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">⏱️</span><div><span class="font-medium">Wait for a CONDITION, not a fixed amount of time</span><span class="text-neutral-500 text-sm ml-2">- waitFor (roadmap)</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Today, capture uses <code>wait</code> (ms) to spare. Ideally, a <code>waitFor</code> text/selector — wait for the real condition instead of hoping the timing works.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Slow generation (flux2-klein took ~2.5 min in the POC) needs polling for a <code>&lt;img&gt;</code> real before the result screenshot.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm"><code>wait</code> ms (today), <code>waitFor</code> (roadmap #3), polling by element.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🔄</span><div><span class="font-medium">Asynchronous multi-state flows</span><span class="text-neutral-500 text-sm ml-2">- analyze → approve → dub</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Long pipelines (analyze → approve → dub → complete) are captured as named substeps, with completion polling between them.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Tested the skill in inemaVOX: 14 steps, 2:08. Polling was done with a handwritten script; embedding it is roadmap item #4.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">named substeps, completion polling, 14-step demo.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">⏸️</span><div><span class="font-medium">States such as waiting_approval</span><span class="text-neutral-500 text-sm ml-2">- wait for user action</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Some flows stop in waiting states (e.g., <code>waiting_approval</code>) until someone approves. The capture needs to recognize this state and continue.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">One <code>wait</code> a fixed time doesn’t solve it: the state changes when there’s approval, not when the clock strikes. Hence the need for <code>waitFor</code>.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm"><code>waiting_approval</code>, event-triggered state, status polling.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">⚠️</span><div><span class="font-medium">Capture pitfalls</span><span class="text-neutral-500 text-sm ml-2">- gotchas.md</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Refs that shift, <code>eval --json</code> nested (data URL in <code>data.result</code>), screenshot within the canvas limits, inconsistent viewport.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">These are the mistakes that cost the most time. Applying these fixes BEFORE rendering avoids re-renders over minor details.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">volatile refs, <code>data.result</code>, canvas limits, gotchas.md.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-blue-500/20 text-blue-400 text-sm font-bold flex items-center justify-center flex-shrink-0">7</span>
+<span class="text-lg">🗺️</span><div><span class="font-medium">What works already vs. the roadmap</span><span class="text-neutral-500 text-sm ml-2">- be honest</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-blue-400 font-semibold">What it is:</span><p class="text-neutral-300 text-sm">Works today: actions.json with fill/click/clickText/setValue/wait, bboxes, steps.json. Roadmap: scroll, native fill, waitFor, built-in multi-state polling, 9:16, v3.</p></div>
+<div><span class="text-blue-400 font-semibold">Why learn:</span><p class="text-neutral-300 text-sm">Knowing the boundary avoids promising what the skill doesn’t do yet—and shows where you still need to operate agent-browser manually.</p></div>
+<div><span class="text-blue-400 font-semibold">Key concepts:</span><p class="text-neutral-300 text-sm">current v1, backlog, scroll/fill/waitFor/poll, v3 screen recording.</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-2-4')">View in Modal</button>
+<a class="px-4 py-2 text-sm bg-blue-600 hover:bg-blue-500 text-white rounded-lg transition-colors" href="modulo-2-4.html">View Full</a>
+</div>
+</div>
+<!-- NAV TRILHA -->
+<div class="flex flex-col sm:flex-row gap-4 mt-10">
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../trilha1/index.html">← Track 1: Fundamentals</a>
+<a class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors" href="../trilha3/index.html">Track 3: Composition &amp; Rendering →</a>
+</div>
+</main>
+<!-- MODAIS -->
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-1" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.1</span><span class="font-semibold">Drive the app with agent-browser</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-2-1.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-2" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.2</span><span class="font-semibold">The actions.json</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-2-2.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-3" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.3</span><span class="font-semibold">Coordinates, selectors &amp; bounding boxes</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-2-3.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-2-4" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-blue-400 font-bold">2.4</span><span class="font-semibold">Long pages, React inputs &amp; multi-state</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-2-4.html"></iframe>
+</div>
+</div>
+<footer class="border-t border-dark-600 py-8 mt-8">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p class="mb-1">Content of the <a class="text-sky-400 hover:text-sky-300 font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+<p>Demo Video — Track 2: Capturing the Actual App · 2026</p>
+</div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    function openModal(id){ const m=document.getElementById(id); if(m){ m.classList.remove('hidden'); document.body.style.overflow='hidden'; } }
+    function closeModal(){ document.querySelectorAll('.modal').forEach(m=>m.classList.add('hidden')); document.body.style.overflow='auto'; }
+    document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+    const themeToggle=document.getElementById('theme-toggle');
+    const di=document.getElementById('theme-toggle-dark-icon'), li=document.getElementById('theme-toggle-light-icon');
+    const root=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){ di.classList.remove('hidden'); root.classList.remove('dark'); } else { li.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', ()=>{ di.classList.toggle('hidden'); li.classList.toggle('hidden'); root.classList.toggle('dark'); localStorage.setItem('theme', root.classList.contains('dark')?'dark':'light'); });
+  </script>
+</body>
+</html>

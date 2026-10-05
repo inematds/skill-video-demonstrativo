@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pista 3 — Composición &amp; Render | Video demostrativo · INEMA.CLUB</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = { darkMode: 'class', theme: { extend: { colors: {
+      primary: '#FACC15', dark: { 900: '#111827', 800: '#1f2937', 700: '#374151', 600: '#4b5563' } } } } }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .dark body { background-color: #111827; }
+    .topic-explanation { display: none; }
+    .topic-explanation.active { display: block; }
+    .modal.hidden { display: none; }
+    html:not(.dark) body { background-color: #f8fafc; }
+    html:not(.dark) .bg-dark-900 { background-color: #ffffff; }
+    html:not(.dark) .bg-dark-800 { background-color: #f9fafb; }
+    html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; }
+    html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; }
+    html:not(.dark) .text-neutral-100 { color: #111827; }
+    html:not(.dark) .text-neutral-300 { color: #4b5563; }
+    html:not(.dark) .text-neutral-400 { color: #6b7280; }
+    html:not(.dark) .text-neutral-500 { color: #9ca3af; }
+    html:not(.dark) .border-dark-600 { border-color: #d1d5db; }
+    html:not(.dark) .border-dark-700 { border-color: #e5e7eb; }
+    /* acento purple */
+    html:not(.dark) .text-purple-400 { color: #7c3aed; }
+    html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,0.12); }
+    html:not(.dark) .bg-purple-500\/10 { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) .border-purple-500\/30 { border-color: rgba(124,58,237,0.25); }
+    html:not(.dark) .hover\:bg-purple-500\/30:hover { background-color: rgba(124,58,237,0.18); }
+    html:not(.dark) .hover\:text-purple-400:hover { color: #7c3aed; }
+    html:not(.dark) .hover\:bg-purple-500\/10:hover { background-color: rgba(124,58,237,0.08); }
+    html:not(.dark) .group:hover .group-hover\:text-purple-400 { color: #7c3aed; }
+    /* outras trilhas (nav) */
+    html:not(.dark) .hover\:text-emerald-400:hover { color: #059669; }
+    html:not(.dark) .hover\:bg-emerald-500\/10:hover { background-color: rgba(5,150,105,0.08); }
+    html:not(.dark) .hover\:text-blue-400:hover { color: #2563eb; }
+    html:not(.dark) .hover\:bg-blue-500\/10:hover { background-color: rgba(37,99,235,0.08); }
+    html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; }
+    html:not(.dark) .text-primary { color: #a16207; }
+    html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); }
+    html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); }
+    html:not(.dark) .text-sky-400 { color: #0369a1; }
+    html:not(.dark) .text-yellow-400 { color: #a16207; }
+    html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; }
+    html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; }
+    html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }
+    .dark .border-dark-600 { border-color: #374151; }
+    .dark .divide-dark-600 > :not([hidden]) ~ :not([hidden]) { border-color: #374151; }
+    @keyframes t3-pulse { 0%,100% { opacity:.4 } 50% { opacity:1 } }
+    @keyframes t3-flow { 0% { stroke-dashoffset: 60; } 100% { stroke-dashoffset: 0; } }
+    @media (prefers-reduced-motion: no-preference) {
+      .t3-a { animation: t3-pulse 2.8s ease-in-out infinite; }
+      .t3-a:nth-child(2){animation-delay:.3s} .t3-a:nth-child(3){animation-delay:.6s} .t3-a:nth-child(4){animation-delay:.9s}
+      .t3-flow { animation: t3-flow 1.8s linear infinite; stroke-dasharray: 12 8; }
+    }
+  </style>
+<link href="https://inematds.github.io/skill-video-demonstrativo/curso/trilha3/" hreflang="pt-BR" rel="alternate"/><link href="https://inematds.github.io/skill-video-demonstrativo/en/curso/trilha3/" hreflang="en" rel="alternate"/><link href="https://inematds.github.io/skill-video-demonstrativo/es/curso/trilha3/" hreflang="es" rel="alternate"/></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen"><div class="inema-lang" style="position:fixed;right:14px;bottom:14px;z-index:9999;display:flex;gap:2px;padding:4px;border-radius:10px;background:rgba(12,12,16,.82);border:1px solid rgba(226,162,59,.45);font:600 12px/1 Sora,Inter,system-ui,sans-serif;backdrop-filter:blur(8px)" translate="no"><a href="../../../curso/trilha3/" hreflang="pt-BR" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">PT</a><a href="../../../en/curso/trilha3/" hreflang="en" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#e9e9ee">EN</a><a href="./" hreflang="es" style="padding:6px 8px;border-radius:7px;text-decoration:none;color:#1a1206;background:#E2A23B">ES</a></div>
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-14">
+<div class="flex items-center space-x-4">
+<a class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300" href="../../index.html">
+<span class="text-2xl">🖱️</span><span class="font-bold text-lg hidden sm:inline">Demostrativo</span>
+</a>
+<span class="text-neutral-600">|</span>
+<a class="text-sky-400 hover:text-sky-300 text-sm font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a>
+</div>
+<div class="flex items-center space-x-1 sm:space-x-2">
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors" href="../trilha1/index.html"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors" href="../trilha2/index.html"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Captura</span></a>
+<a class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10" href="index.html"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Render</span></a>
+<button class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2" id="theme-toggle">
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-dark-icon" viewbox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+<svg class="hidden w-5 h-5 text-neutral-300" fill="currentColor" id="theme-toggle-light-icon" viewbox="0 0 20 20"><path clip-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd"></path></svg>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">TRILHA 3 · AVANZADO</span>
+<h1 class="text-3xl sm:text-4xl font-bold mb-4">🎬 Composición y renderizado</h1>
+<p class="text-lg text-neutral-400 max-w-3xl">Las pantallas ya están capturadas. Ahora conviertes estas capturas de pantalla reales en video: marco de navegador, cursor animado que apunta a la <em>bounding box</em> real, zoom en el resultado, narración local con Kokoro, sincronización audio↔animación y el render final en MP4 con HyperFrames — terminando en la CTA de <code class="text-purple-400">INEMA.CLUB</code>.</p>
+<div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">3</div><div class="text-xs text-neutral-400">Módulos</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">~22</div><div class="text-xs text-neutral-400">Temas</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">~1,5h</div><div class="text-xs text-neutral-400">Duración</div></div>
+<div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Avanzado</div><div class="text-xs text-neutral-400">Nivel</div></div>
+</div>
+<!-- Hero SVG: shots + steps.json -> cursor/zoom/narração -> HyperFrames -> MP4 + CTA -->
+<div class="rounded-2xl border border-purple-500/30 bg-dark-900/40 p-3 sm:p-4 mt-8 overflow-hidden">
+<svg aria-label="Las capturas y el JSON de steps alimentan la composición con cursor, zoom y narración, que HyperFrames renderiza en un MP4 dieciséis por nueve que termina en el CTA de INEMA punto CLUB" class="w-full h-auto" role="img" viewbox="0 0 1000 230">
+<defs>
+<lineargradient id="h3-grad" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#c084fc"></stop><stop offset="1" stop-color="#a855f7"></stop></lineargradient>
+<lineargradient id="h3-cyan" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#38bdf8"></stop><stop offset="1" stop-color="#0ea5e9"></stop></lineargradient>
+<filter height="180%" id="h3-glow" width="180%" x="-40%" y="-40%"><fegaussianblur result="b" stddeviation="4"></fegaussianblur><femerge><femergenode in="b"></femergenode><femergenode in="SourceGraphic"></femergenode></femerge></filter>
+<pattern height="28" id="h3-grid" patternunits="userSpaceOnUse" width="28"><circle cx="1.2" cy="1.2" fill="#a855f7" opacity="0.1" r="1.2"></circle></pattern>
+<marker id="h3-ah-purple" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#c084fc"></path></marker>
+<marker id="h3-ah-cyan" markerheight="9" markerwidth="9" orient="auto" refx="6.5" refy="4.5"><path d="M0,0 L8,4.5 L0,9 L2.4,4.5 Z" fill="#38bdf8"></path></marker>
+</defs>
+<rect fill="url(#h3-grid)" height="230" width="1000" x="0" y="0"></rect>
+<!-- entrada: shots + steps.json -->
+<g filter="url(#h3-glow)">
+<rect fill="#1a1230" height="82" rx="16" stroke="url(#h3-grad)" stroke-width="2.5" width="200" x="24" y="74"></rect>
+</g>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="17" font-weight="800" text-anchor="middle" x="124" y="104">shots/*.png</text>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="15" font-weight="700" text-anchor="middle" x="124" y="126">steps.json</text>
+<text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="124" y="145">pantallas + bboxes + diálogos</text>
+<!-- seta -->
+<path d="M224,115 L300,115" fill="none" marker-end="url(#h3-ah-purple)" stroke="#c084fc" stroke-width="2"></path>
+<!-- composição: cursor/zoom/narração -->
+<g class="t3-a" filter="url(#h3-glow)">
+<rect fill="#1a1230" height="50" rx="12" stroke="url(#h3-grad)" stroke-width="2" width="220" x="306" y="28"></rect>
+</g>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="416" y="50">marco + cursor + zoom</text>
+<text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="416" y="68">anima por encima de la captura</text>
+<g class="t3-a" filter="url(#h3-glow)">
+<rect fill="#0e1b26" height="50" rx="12" stroke="url(#h3-cyan)" stroke-width="2" width="220" x="306" y="90"></rect>
+</g>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="416" y="112">narración Kokoro pf_dora</text>
+<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="416" y="130">Archivos WAV medidos con ffprobe</text>
+<g class="t3-a" filter="url(#h3-glow)">
+<rect fill="#1a1230" height="50" rx="12" stroke="url(#h3-grad)" stroke-width="2" width="220" x="306" y="152"></rect>
+</g>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="416" y="174">build-demo.mjs</text>
+<text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="416" y="192">crea el index.html</text>
+<!-- setas para HyperFrames -->
+<path d="M526,53 Q580,90 626,108" fill="none" marker-end="url(#h3-ah-purple)" stroke="#c084fc" stroke-dasharray="6 4" stroke-width="1.8"></path>
+<path d="M526,115 L626,115" fill="none" marker-end="url(#h3-ah-cyan)" stroke="#38bdf8" stroke-width="1.8"></path>
+<path d="M526,177 Q580,140 626,122" fill="none" marker-end="url(#h3-ah-purple)" stroke="#c084fc" stroke-dasharray="6 4" stroke-width="1.8"></path>
+<!-- HyperFrames -->
+<g class="t3-a" filter="url(#h3-glow)">
+<rect fill="#0e1b26" height="66" rx="14" stroke="url(#h3-cyan)" stroke-width="2.5" width="150" x="632" y="82"></rect>
+</g>
+<text fill="#38bdf8" font-family="Inter,sans-serif" font-size="15" font-weight="700" text-anchor="middle" x="707" y="110">HyperFrames</text>
+<text fill="#bfe6ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="707" y="130">HTML → MP4 (render)</text>
+<!-- seta final -->
+<path d="M782,115 L848,115" fill="none" marker-end="url(#h3-ah-purple)" stroke="#c084fc" stroke-width="2"></path>
+<!-- saída: MP4 + CTA -->
+<g filter="url(#h3-glow)">
+<rect fill="#1a1230" height="70" rx="14" stroke="url(#h3-grad)" stroke-width="2.5" width="122" x="854" y="80"></rect>
+</g>
+<text fill="#c084fc" font-family="Inter,sans-serif" font-size="16" font-weight="800" text-anchor="middle" x="915" y="108">MP4 16:9</text>
+<text fill="#e9d5ff" font-family="Inter,sans-serif" font-size="11" text-anchor="middle" x="915" y="128">CTA INEMA.CLUB</text>
+<line opacity="0.2" stroke="#a855f7" stroke-width="0.5" x1="24" x2="976" y1="212" y2="212"></line>
+</svg>
+<p class="text-center text-xs text-neutral-500 mt-2">De la captura al MP4: animar por encima, narrar localmente y renderizar con un único timing</p>
+</div>
+</div>
+</header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- MAPA DA TRILHA -->
+<section class="mb-12">
+<h2 class="text-2xl font-bold mb-6">Mapa de la ruta</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-purple-500/30 p-5 transition-all" href="#modulo-3-1">
+<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold text-sm">3.1</span><span class="text-xs text-neutral-500">~30 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-purple-400 transition-colors">🖱️ Marco, cursor y zoom</h3>
+<p class="text-xs text-neutral-400">Anima por encima de la captura</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-purple-500/30 p-5 transition-all" href="#modulo-3-2">
+<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold text-sm">3.2</span><span class="text-xs text-neutral-500">~30 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-purple-400 transition-colors">🔊 Narración local y composición</h3>
+<p class="text-xs text-neutral-400">Kokoro + build-demo</p>
+</a>
+<a class="group bg-dark-800 rounded-xl border border-dark-600 hover:border-purple-500/30 p-5 transition-all" href="#modulo-3-3">
+<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold text-sm">3.3</span><span class="text-xs text-neutral-500">~30 min</span></div>
+<h3 class="font-semibold mb-1 group-hover:text-purple-400 transition-colors">🎞️ Renderizado en HyperFrames</h3>
+<p class="text-xs text-neutral-400">Lint, inspect y ship</p>
+</a>
+</div>
+</section>
+<h2 class="text-2xl font-bold mb-6">Contenido detallado</h2>
+<!-- MÓDULO 3.1 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-3-1">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.1</span><span class="text-xs text-neutral-500">~30 min</span></div>
+<h3 class="text-2xl font-bold mb-2">🖱️ Marco, cursor y zoom</h3>
+<p class="text-neutral-400 text-sm">La capa de animación que le da un aspecto profesional a la captura: el marco de navegador alrededor de la toma, el cursor SVG que se desliza hasta la <em>bounding box</em> real, el clic con pulse + ripple, el zoom en el resultado y el house style dark premium ámbar.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🪟</span><div><span class="font-medium">El marco de navegador</span><span class="text-neutral-500 text-sm ml-2">- marco de Chrome alrededor del shot</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La ventana persistente <code>#appwin</code> queda en la <code>bg-layer</code> con <code>data-layout-ignore</code>: borde, radio, sombra grande, barra de título con 3 puntos y una píldora de URL monoespaciada (candado + <code>window.urlLabel</code>). Las capturas de pantalla quedan dentro de ella en <code>(WIN_L, SHOT_T)</code>.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">El marco mantiene el aspecto premium y disimula que el contenido es una captura de pantalla estática; sin él, parece una captura suelta.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm"># appwin persistente; data-layout-ignore; barra + píldora de URL; captura dentro de la ventana.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">➡️</span><div><span class="font-medium">El cursor animado y el recorrido hasta el objetivo</span><span class="text-neutral-500 text-sm ml-2">- SVG global, hotspot en la punta</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Un único elemento <code>#cursor</code> (flecha SVG) animada en la timeline principal — no por escena — se desliza continuamente. El hotspot queda en la punta en ~<code>(6,3)</code>, entonces el tween usa <code>x = alvoX - 6</code>, <code>y = alvoY - 3</code> para que la punta caiga en el centro de la bbox. Movimiento <code>duration:.7, ease:"power3.inOut"</code>.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Apuntar al cuadro delimitador real (no al ojo) con una aceleración suave y curva es lo que hace que el cursor parezca profesional en lugar de robótico.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Cursor global; hotspot en la punta; bbox real; power3.inOut.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">👆</span><div><span class="font-medium">El clic y el efecto visual</span><span class="text-neutral-500 text-sm ml-2">- pulse + ripple ámbar</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">En el instante del clic (~<code>start + 1.15s</code>), el cursor hace <code>scale:.82</code> en yoyo (pulse) y un <code>#ripple</code> (el círculo ámbar) se expande y desaparece, ubicado en el centro del objetivo.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">La respuesta visual al clic comunica la acción al espectador; sin ella, parece que el cursor solo pasa por encima del botón.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">pulse scale .82 yoyo; #ripple ámbar; timing ~start+1.15s.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🔍</span><div><span class="font-medium">Zoom y resaltado en la región activa</span><span class="text-neutral-500 text-sm ml-2">- hlbox + acercamiento en el resultado</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">El resaltado <code>.hlbox</code> es un rectángulo solo con <code>box-shadow</code> (anillo ámbar + glow) en el bbox mapeado con ~6px de margen, apareciendo con <code>back.out</code>. En el paso <code>zoom:true</code>, o <code>&lt;img&gt;</code> haz <code>scale 1 → 1.12</code> con <code>transformOrigin</code> en el centro del objetivo.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Centra la mirada en el control activo sin cubrir nada y da un push-in cinematográfico en el momento del «¡tachán!» (el resultado).</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">.hlbox box-shadow; back.out; zoom:true; transformOrigin en el objetivo.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🎨</span><div><span class="font-medium">Estilo dark premium ámbar</span><span class="text-neutral-500 text-sm ml-2">- el ámbar es el único acento</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La paleta fija: fondo <code>#0D1321</code>, panel <code>#1D2D44</code>, borde <code>#3E5C76</code>, texto <code>#F0EBD8</code>, acento ámbar <code>#FFC300</code> y código verde agua <code>#2EC4B6</code>. El ámbar es el ÚNICO destaque dominante — el ripple, el glow y el marco lo usan.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Mantener un solo acento y el mismo fondo en todas las escenas da la identidad premium consistente del canal.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">6 colores fijos; ámbar único; fondo constante; verde agua solo en los valores.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🔤</span><div><span class="font-medium">Las fuentes incrustadas</span><span class="text-neutral-500 text-sm ml-2">- Sora / Inter / JetBrains Mono</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Sora 700–800 para títulos, Inter para el cuerpo y los subtítulos, JetBrains Mono para la píldora de URL y los valores. Las tres vienen como <code>.woff2</code> locales (el subset latin cubre PT-BR) en <code>assets/fonts/</code> — o <code>build-demo.mjs</code> inyecta el <code>fonts.css</code>.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">El render es determinista y offline; una fuente vía CDN fallaría y activaría una alternativa, lo que arruinaría el aspecto visual.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Sora/Inter/JetBrains; woff2 local; sin CDN; subset latin.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">7</span>
+<span class="text-lg">⏱️</span><div><span class="font-medium">La sincronización de cada paso con la narración</span><span class="text-neutral-500 text-sm ml-2">- LEAD/TAIL/FADE</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Ritmo recomendado: <code>LEAD 0.5s</code> (la escena aparece antes que la voz), <code>TAIL 0.7s</code>, <code>FADE 0.4s</code> entre escenas. El cursor llega al objetivo ~0.7s antes de la explicación principal; el clic ocurre cerca de <code>start+1.15s</code>.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Este ritmo es lo que hace que la animación parezca reaccionar a la narración; entender los parámetros te permite ajustar el video sin desincronizarlo.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">LEAD 0.5s; TAIL 0.7s; FADE 0.4s; cursor antes de la voz.</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-3-1')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors" href="modulo-3-1.html">Ver completo</a>
+</div>
+</div>
+<!-- MÓDULO 3.2 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-3-2">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.2</span><span class="text-xs text-neutral-500">~30 min</span></div>
+<h3 class="text-2xl font-bold mb-2">🔊 Narración local y composición</h3>
+<p class="text-neutral-400 text-sm">La voz y el montaje: TTS local gratuito de Kokoro (voz <code class="text-purple-400">pf_dora</code>), generación de los WAV a partir del <code class="text-purple-400">steps.json</code>, medición automática de duraciones y el <code class="text-purple-400">build-demo.mjs</code> que sincroniza todo con el mismo array de tiempos y cierra con la CTA de INEMA.CLUB.</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🎙️</span><div><span class="font-medium">TTS Kokoro local (voz pf_dora)</span><span class="text-neutral-500 text-sm ml-2">- gratuito, sin clave de API</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Kokoro es un TTS que se ejecuta 100% en la máquina (<code>pip install kokoro-onnx soundfile</code>), voz <code>pf_dora</code> en PT-BR, con <code>--speed 0.98</code>. La primera ejecución descarga ~340MB del modelo. No necesitas ninguna clave de API.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">La narración gratuita y sin conexión mantiene la skill autocontenida; la voz es buena, sin actuación — por eso el usuario valida la locución después.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">Kokoro local; pf_dora; speed 0.98; sin API.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">📝</span><div><span class="font-medium">Generar los WAV a partir de steps.json</span><span class="text-neutral-500 text-sm ml-2">- narration-template.sh</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">O <code>narration-template.sh</code> lee <code>steps[].narration</code> e <code>ctaNarration</code> del <code>steps.json</code>, escribe <code>assets/txt/sN.txt</code> (1 por paso + CTA) y llama al TTS para generar <code>assets/audio/sN.wav</code>.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">El steps.json es la fuente de los diálogos: generar los textos a partir de él evita que haya discrepancias entre lo escrito y lo que se dice.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">steps[].narration; sN.txt → sN.wav; CTA al final.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">📏</span><div><span class="font-medium">Medir la duración real de los WAV</span><span class="text-neutral-500 text-sm ml-2">- ffprobe, sin AUDIO[] manual</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">O <code>build-demo.mjs</code> ejecuta <code>ffprobe</code> en cada <code>sN.wav</code> y arma el array <code>AUDIO[]</code> con las duraciones reales. No existe un array de tiempos escrito a mano.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">El timing es la única fuente: medir el audio real elimina el riesgo de que el video y la voz no coincidan.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">ffprobe; AUDIO[] derivado; timing como fuente única.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">⚙️</span><div><span class="font-medium">La composición: build-demo.mjs</span><span class="text-neutral-500 text-sm ml-2">- lee steps.json, genera el index.html</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">O <code>composition-template.mjs</code> (copiado como <code>build-demo.mjs</code>) lee el <code>steps.json</code> (pantallas + bboxes + captions + narración), mide los WAV y genera el <code>index.html</code> con marco, cursor, resaltado, zoom y CTA — todo listo.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es el corazón del render: un único <code>node build-demo.mjs</code> produce el HTML renderizable a partir de los datos de la captura.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">build-demo.mjs; lee steps.json; genera index.html; no editar a mano.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🔗</span><div><span class="font-medium">Sincronizar audio ↔ animación</span><span class="text-neutral-500 text-sm ml-2">- el mismo array de tiempos (S[])</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">A partir de <code>AUDIO[]</code>, el generador calcula <code>S[]</code> con <code>start</code>, <code>dur</code>, <code>audioStart</code> e <code>end</code> por escena (sumando LEAD/TAIL). La timeline GSAP y los <code>&lt;audio&gt;</code> las pistas leen ese mismo <code>S[]</code> — audio y animación sincronizados por construcción.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Compartir la fuente de tiempo entre la voz y el movimiento es lo que garantiza la sincronía sin ajustes manuales.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">S[] se deriva de AUDIO[]; start/dur/audioStart; tracks alternados.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">💬</span><div><span class="font-medium">Captions en el pie de página</span><span class="text-neutral-500 text-sm ml-2">- subtítulos sincronizados por escena</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Cada paso tiene un <code>caption</code> no <code>steps.json</code> que se convierte en un subtítulo translúcido en el pie (Inter 600), que aparece y desaparece junto con la escena, en un track alternado con respecto a las escenas.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Los captions hacen que el video se entienda sin sonido (feeds silenciados) y refuerzan lo que se dice: se escriben una vez en steps.json.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">subtítulo por paso; pie translúcido; sincronizado con la escena.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">7</span>
+<span class="text-lg">📣</span><div><span class="font-medium">El CTA final de INEMA.CLUB</span><span class="text-neutral-500 text-sm ml-2">- escena lista en la plantilla</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">La última escena es la CTA: «CONTINÚA EN» + <code>INEMA.CLUB</code> (INEMA en crema, .CLUB ámbar con glow) + <code>🌐 inema.club</code>. La narración predeterminada es "Esto es contenido de INEMA punto CLUB. Accede: inema punto club." y ya viene lista en la plantilla.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es el punto de conversión del canal; viene incluido de forma predeterminada y garantiza que ningún video salga sin la llamada de marca.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">CTA automática; INEMA.CLUB; ctaNarration; el cursor desaparece en la CTA.</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-3-2')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors" href="modulo-3-2.html">Ver completo</a>
+</div>
+</div>
+<!-- MÓDULO 3.3 -->
+<div class="bg-dark-800 rounded-xl border border-dark-600 mb-6" id="modulo-3-3">
+<div class="p-6 border-b border-dark-600">
+<div class="flex items-center justify-between mb-2"><span class="text-purple-400 font-bold">3.3</span><span class="text-xs text-neutral-500">~30 min</span></div>
+<h3 class="text-2xl font-bold mb-2">🎞️ Renderizado en HyperFrames</h3>
+<p class="text-neutral-400 text-sm">La recta final: montar el proyecto HyperFrames, ejecutar la captura y la composición, validar con <code class="text-purple-400">lint</code> e <code class="text-purple-400">inspect</code>, renderizar en alta resolución — y qué está en el roadmap (9:16, grabación real, cursor en curva).</p>
+</div>
+<div class="divide-y divide-dark-600">
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">1</span>
+<span class="text-lg">🚀</span><div><span class="font-medium">npx hyperframes init &lt;nome&gt;</span><span class="text-neutral-500 text-sm ml-2">- proyecto blank no interactivo</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm"><code>npx hyperframes init &lt;nome&gt; --example blank --non-interactive</code> crea la carpeta del proyecto de video con la estructura base de HyperFrames.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es el punto de partida de cada render: el proyecto queda aislado y ahí copias los scripts de la skill.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">init; --example blank; --non-interactive.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">2</span>
+<span class="text-lg">📦</span><div><span class="font-medium">Copiar scripts + assets/fonts</span><span class="text-neutral-500 text-sm ml-2">- skill autocontenida</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Copia al proyecto: <code>capture.mjs</code>, <code>composition-template.mjs</code> (como <code>build-demo.mjs</code>), <code>narration-template.sh</code> e <code>assets/fonts/</code> — o ejecuta <code>node fetch-fonts.mjs</code> para descargarlas.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">La skill es autocontenida: incluye sus propias fuentes y su house style, sin depender de otro proyecto.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">capture/build-demo/narration; assets/fonts; fetch-fonts.mjs.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">3</span>
+<span class="text-lg">📸</span><div><span class="font-medium">node capture.mjs actions.json</span><span class="text-neutral-500 text-sm ml-2">- genera shots + steps.json</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm"><code>node capture.mjs actions.json</code> abre la app en un viewport fijo, ejecuta cada acción, toma 1 captura de pantalla por estado y obtiene el bounding box real del objetivo — salida: <code>assets/shots/*.png</code> + <code>steps.json</code>.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Es el vínculo entre la Trilha 2 (captura) y esta: sin el steps.json, el build-demo no tiene qué montar.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">actions.json; viewport fijo; bbox real; capturas + steps.json.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">4</span>
+<span class="text-lg">🧱</span><div><span class="font-medium">node build-demo.mjs + lint/inspect</span><span class="text-neutral-500 text-sm ml-2">- genera y valida</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm"><code>node build-demo.mjs</code> genera el <code>index.html</code>. Después <code>npx hyperframes lint</code> (0 errores) y <code>npx hyperframes inspect --samples 14</code> (0 problemas) validan el diseño y las reglas antes de invertir tiempo en el render.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Lint e inspect detectan fuentes vía CDN, clips incorrectos y elementos fuera del canvas sin <code>data-layout-ignore</code> — barato comparado con volver a renderizar.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">build-demo.mjs; lint 0 errores; inspect --samples 14.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">5</span>
+<span class="text-lg">🎬</span><div><span class="font-medium">render --quality high</span><span class="text-neutral-500 text-sm ml-2">- primero draft, después alta resolución</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Renderiza <code>--quality draft</code> para verificar (extrae 1 frame por paso y muéstraselo al usuario), después <code>--quality high --fps 30 --output renders/&lt;nome&gt;-16x9.mp4</code>.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">No escuchas el audio en el renderizado; siempre revisa los fotogramas con el usuario y pídele que valide la locución antes del final.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">draft → high; --fps 30; revisar frames; el usuario valida la voz.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">6</span>
+<span class="text-lg">🧯</span><div><span class="font-medium">Últimos detalles</span><span class="text-neutral-500 text-sm ml-2">- viewport fijo, .scene-inner, determinismo</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Las reglas de oro: capturar antes y animar después (render determinista, sin sitio en vivo); viewport fijo = espacio de coordenadas; animar <code>.scene-inner</code> nunca <code>.clip</code>; elementos decorativos y marco con <code>data-layout-ignore</code>; fuentes locales.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Son los errores que más hacen fallar el render; conocerlos de antemano evita horas de depuración en el inspect.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">capturar primero; viewport fijo; .scene-inner; data-layout-ignore.</p></div>
+</div></div>
+</div>
+<div class="topic-item">
+<button class="w-full px-6 py-4 flex items-center space-x-3 hover:bg-dark-700/50 transition-colors text-left" onclick="toggleTopic(this)">
+<span class="w-6 h-6 rounded-full bg-purple-500/20 text-purple-400 text-sm font-bold flex items-center justify-center flex-shrink-0">7</span>
+<span class="text-lg">🗺️</span><div><span class="font-medium">Roadmap (futuro)</span><span class="text-neutral-500 text-sm ml-2">- 9:16, grabación real v3, cursor en curva</span></div>
+</button>
+<div class="topic-explanation px-6 pb-4"><div class="bg-dark-700/50 rounded-lg p-4 space-y-3 ml-9">
+<div><span class="text-purple-400 font-semibold">Qué es:</span><p class="text-neutral-300 text-sm">Aún NO implementado: 9:16/Shorts (las pantallas de las apps son apaisadas y habría que reencuadrarlas); v3 grabación real de pantalla (<code>agent-browser record</code>) para apps con mucho movimiento; pulido del cursor en curva y de la «escritura» (typewriter) en los campos.</p></div>
+<div><span class="text-purple-400 font-semibold">Por qué aprender:</span><p class="text-neutral-300 text-sm">Conocer lo que está en el roadmap evita prometer lo que la skill aún no hace; hoy el formato natural es 16:9 con capturas de pantalla estáticas animadas.</p></div>
+<div><span class="text-purple-400 font-semibold">Conceptos clave:</span><p class="text-neutral-300 text-sm">9:16 futuro; v3 record; cursor en curva; typewriter — todo está en la hoja de ruta.</p></div>
+</div></div>
+</div>
+</div>
+<div class="p-4 bg-dark-700/30 flex justify-start space-x-3">
+<button class="px-4 py-2 text-sm bg-dark-600 hover:bg-dark-500 rounded-lg transition-colors" onclick="openModal('modal-3-3')">Ver en modal</button>
+<a class="px-4 py-2 text-sm bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors" href="modulo-3-3.html">Ver completo</a>
+</div>
+</div>
+<!-- NAVEGAÇÃO TRILHA -->
+<div class="flex flex-col sm:flex-row gap-4 mt-10">
+<a class="flex-1 text-center px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-500 transition-colors" href="../trilha2/index.html">← Ruta 2: Captura</a>
+<a class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors" href="../index.html">Todas las pistas</a>
+</div>
+</main>
+<!-- MODAIS -->
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-3-1" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-purple-400 font-bold">3.1</span><span class="font-semibold">Marco, cursor &amp; zoom</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-3-1.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-3-2" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-purple-400 font-bold">3.2</span><span class="font-semibold">Narración local y composición</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-3-2.html"></iframe>
+</div>
+</div>
+<div class="modal hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80" id="modal-3-3" onclick="if(event.target === this) closeModal()">
+<div class="bg-dark-800 rounded-xl w-full max-w-6xl h-[95vh] flex flex-col border border-dark-600">
+<div class="p-4 border-b border-dark-600 flex justify-between items-center flex-shrink-0"><div class="flex items-center space-x-3"><span class="text-purple-400 font-bold">3.3</span><span class="font-semibold">Render en HyperFrames</span></div><button class="text-neutral-400 hover:text-white text-2xl leading-none" onclick="closeModal()">×</button></div>
+<iframe class="flex-1 w-full rounded-b-xl" src="modulo-3-3.html"></iframe>
+</div>
+</div>
+<footer class="border-t border-dark-600 py-8 mt-8">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm">
+<p class="mb-1">Contenido de <a class="text-sky-400 hover:text-sky-300 font-medium" href="https://inema.club" target="_blank">INEMA.CLUB</a></p>
+<p>Video demostrativo — Ruta 3: Composición y renderizado · 2026</p>
+</div>
+</footer>
+<script>
+    function toggleTopic(button) {
+      const topicItem = button.closest('.topic-item');
+      const explanation = topicItem.querySelector('.topic-explanation');
+      const moduleCard = button.closest('.bg-dark-800');
+      moduleCard.querySelectorAll('.topic-explanation.active').forEach(exp => { if (exp !== explanation) exp.classList.remove('active'); });
+      explanation.classList.toggle('active');
+    }
+    function openModal(id){ const m=document.getElementById(id); if(m){ m.classList.remove('hidden'); document.body.style.overflow='hidden'; } }
+    function closeModal(){ document.querySelectorAll('.modal').forEach(m=>m.classList.add('hidden')); document.body.style.overflow='auto'; }
+    document.addEventListener('keydown', e => { if(e.key==='Escape') closeModal(); });
+    const themeToggle=document.getElementById('theme-toggle');
+    const di=document.getElementById('theme-toggle-dark-icon'), li=document.getElementById('theme-toggle-light-icon');
+    const root=document.documentElement;
+    if(localStorage.getItem('theme')==='light'){ di.classList.remove('hidden'); root.classList.remove('dark'); } else { li.classList.remove('hidden'); }
+    themeToggle.addEventListener('click', ()=>{ di.classList.toggle('hidden'); li.classList.toggle('hidden'); root.classList.toggle('dark'); localStorage.setItem('theme', root.classList.contains('dark')?'dark':'light'); });
+  </script>
+</body>
+</html>
